@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "11"
+cache: yarn
+script:
+  - yarn lint
+  - yarn test --watch=false --browsers=ChromeHeadless
+  - yarn build --prod
