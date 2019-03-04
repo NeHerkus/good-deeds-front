@@ -6,11 +6,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class IdeaService {
 
-  getIdea(): Iideas[] {
-    return [
-      {}
-      {}
-    ]
-
+  constructor(private http: HttpClient) {
   }
 }
