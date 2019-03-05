@@ -1,29 +1,31 @@
-<div class="input-form">
-  <mat-card class="card-large">
-    <h2 class="button-section-header">Please fill the idea form</h2>
+<div class="main-form">
+
+  <mat-card class="card">
+    <h2 style="text-align: center">Please fill the idea form</h2>
     <mat-card-content style="height: auto">
+
       <!--Name-->
-      <form class="main-form">
+      <form class="form">
         <mat-form-field class="full-width">
-          <input matInput #nameOfIdea maxlength="77" placeholder="Name of idea">
+          <input matInput #nameOfIdea maxlength="77" placeholder="Name of idea" required>
           <mat-hint align="start"><strong>Enter the name of your idea</strong></mat-hint>
           <mat-hint align="end">{{nameOfIdea.value.length}} / 77</mat-hint>
         </mat-form-field>
       </form>
 
       <!--Location-->
-      <form class="main-form">
+      <form class="form">
         <mat-form-field class="full-width">
-          <input matInput #location maxlength="77" placeholder="Location">
+          <input matInput #location maxlength="77" placeholder="Location" required>
           <mat-hint align="start"><strong>Enter a short name for your idea</strong></mat-hint>
           <mat-hint align="end">{{location.value.length}} / 77</mat-hint>
         </mat-form-field>
       </form>
 
       <!--Organization-->
-      <form class="main-form">
+      <form class="form">
         <mat-form-field class="full-width">
-          <input matInput #organizationName maxlength="77" placeholder="Organization">
+          <input matInput #organizationName maxlength="77" placeholder="Organization" required>
           <mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>
           </mat-hint>
           <mat-hint align="end">{{organizationName.value.length}} / 77</mat-hint>
@@ -31,9 +33,9 @@
       </form>
 
       <!--Website-->
-      <form class="main-form">
+      <form class="form">
         <mat-form-field class="full-width">
-          <input matInput #website maxlength="77" placeholder="Web site">
+          <input matInput #website maxlength="77" placeholder="Web site" required>
           <mat-hint align="start"><strong>Enter the website of the organization where you are going to do good
             job</strong>
           </mat-hint>
@@ -42,7 +44,7 @@
       </form>
 
       <!--Optimal participators amount-->
-      <form class="main-form">
+      <form class="form">
         <mat-form-field class="full-width">
           <mat-label>Optimal participators amount</mat-label>
           <input matInput #participatorsAmount maxlength="20" placeholder="Unimportant">
@@ -52,14 +54,15 @@
 
       <!--Idea description-->
       <mat-form-field class="full-width">
-        <textarea matInput #ideaDescription maxlength="500" placeholder="Idea for good job"></textarea>
+        <textarea matInput #ideaDescription maxlength="500" placeholder="Idea for good job" required></textarea>
         <mat-hint align="end">{{ideaDescription.value.length}} / 500</mat-hint>
         <mat-hint align="start"><strong>Enter your idea</strong>
         </mat-hint>
       </mat-form-field>
 
+      <!--Contact person-->
       <mat-form-field class="full-width">
-        <textarea matInput #contactPerson maxlength="150" placeholder="Contact person"></textarea>
+        <textarea matInput #contactPerson maxlength="150" placeholder="Contact person" required></textarea>
         <mat-hint align="end">{{contactPerson.value.length}} / 150</mat-hint>
         <mat-hint align="start"><strong>Enter your idea</strong>
         </mat-hint>
@@ -68,23 +71,28 @@
     </mat-card-content>
   </mat-card>
 
-
+  <!--Checkboxes-->
   <mat-card class="card">
-    <mat-card-content>
-      <h2 class="button-section-header">Category of job:</h2>
+    <mat-card-content style="height: auto">
+      <h2 class="button-section-header" style="text-align: center">Categorize your idea</h2>
 
-      <section class="button-section-first-line">
+      <section class="checkbox-section">
         <mat-checkbox class="button-margin-1">Time/Help to others</mat-checkbox>
         <mat-checkbox class="button-margin-1">Time for better environment</mat-checkbox>
         <mat-checkbox class="button-margin-1">Time of sharing knowledge</mat-checkbox>
       </section>
 
-      <section class="button-section-second-line">
+      <section class="checkbox-section">
         <mat-checkbox class="button-margin-2">Time for local communities</mat-checkbox>
         <mat-checkbox class="button-margin-2">Professional volunteering</mat-checkbox>
       </section>
     </mat-card-content>
   </mat-card>
 
+  <div class="submit-button-block">
+    <div class="submit-button">
+      <button mat-flat-button color="primary">Primary</button>
+    </div>
+  </div>
 
 </div>
