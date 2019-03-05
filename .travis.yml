@@ -2,9 +2,14 @@ language: node_js
 node_js:
   - "11"
 cache: yarn
+<<<<<<< HEAD
 
 before_script:
   - npm install --save @angular/material @angular/cdk @angular/animations
+=======
+before_script:
+  - npm install
+>>>>>>> feature-toolbar
 script:
   - yarn lint
   - yarn test --watch=false --browsers=ChromeHeadless
