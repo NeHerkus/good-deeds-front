@@ -6,6 +6,6 @@ import {HttpClient} from '@angular/common/http';
 })
 export class IdeaService {
 
-  constructor(private http: HttpClient) {
+  constructor(private ideaService: IdeaService) {
   }
 }
