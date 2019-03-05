@@ -24,7 +24,7 @@ import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/materia
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule
