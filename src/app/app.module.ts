@@ -6,12 +6,14 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 
 import {HomePageComponent} from './homepage/home-page.component';
+import {NavigationBarComponent} from './navigation-bar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
