@@ -1,7 +1,5 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MatIconModule} from '@angular/material';
-import {MatButtonModule} from '@angular/material/typings/button';
-import {MatToolbarModule} from '@angular/material/typings/toolbar';
+import {MatIconModule, MatButtonModule, MatToolbarModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
