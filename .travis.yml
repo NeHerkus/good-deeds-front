@@ -4,7 +4,7 @@ node_js:
 cache: yarn
 
 before_script:
-  - npm install
+  - npm install --save @angular/material @angular/cdk @angular/animations
 script:
   - yarn lint
   - yarn test --watch=false --browsers=ChromeHeadless
