@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HomePageComponent} from './homepage/home-page.component';
 import {NavigationBarComponent} from './navigation-bar/components/navigation-bar/navigation-bar.component';
-import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,7 @@ import {MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatL
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
-    MatListModule,
     BrowserAnimationsModule
   ],
   providers: [],
