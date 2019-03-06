@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Idea} from '../models/Idea';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -7,7 +9,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NewIdeaFormpageComponent implements OnInit {
 
-  constructor() {
+  idea: Idea;
+  isReady: false;
+  ideaForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              private ideadService: IdeaService,
+              private route: ActivatedRoute
+  ) {
 
   }
 
