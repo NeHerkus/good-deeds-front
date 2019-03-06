@@ -3,13 +3,14 @@ import {IdeaService} from '../services/idea.service';
 import {Idea} from '../models/Idea';
 
 @Component({
-  selector: 'app-ideas',
-  templateUrl: './ideastable.component.html',
-  styleUrls: ['./ideastable.component.css']
+  selector: 'app-ideas-table',
+  templateUrl: './ideas-table.component.html',
+  styleUrls: ['./ideas-table.component.css']
 })
-export class IdeastableComponent implements OnInit {
+export class IdeasTableComponent implements OnInit {
 
   ideas: Idea[];
+  columnNames: string[] = ['name', 'organization', 'location'];
 
   constructor(private ideaService: IdeaService) {
   }
@@ -23,5 +24,3 @@ export class IdeastableComponent implements OnInit {
   }
 
 }
-
-
