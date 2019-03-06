@@ -13,11 +13,7 @@ export class NewIdeaFormpageComponent implements OnInit {
   isReady: false;
   ideaForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,
-              private ideadService: IdeaService,
-              private route: ActivatedRoute
-  ) {
-
+  constructor() {
   }
 
   ngOnInit() {
