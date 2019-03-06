@@ -3,6 +3,7 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule} from 
 
 import {NewIdeaFormpageComponent} from './new-idea-formpage.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {IdeastableComponent} from '../ideastable/ideastable.component';
 
 describe('NewIdeaFormpageComponent', () => {
   let component: NewIdeaFormpageComponent;
@@ -18,7 +19,8 @@ describe('NewIdeaFormpageComponent', () => {
         MatInputModule,
         MatCheckboxModule,
         MatButtonModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        IdeastableComponent
       ]
     })
       .compileComponents();
