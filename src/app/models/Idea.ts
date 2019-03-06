@@ -1,14 +1,10 @@
 export class Idea {
-  nameOfIdea: string;
+  name: string;
   location: string;
-  organizationName: string;
-  website: string;
-  participatorsAmount?: string;
-  HelpingOthers?: boolean;
-  betterEnvironment?: boolean;
-  sharingKnowledge?: boolean;
-  localCommunities?: boolean;
-  professionalVolunteering?: boolean;
-  ideaDescription: string;
+  organization: string;
+  website?: string;
+  optimalParticipatorsAmount?: string;
+  category?: string[];
+  description: string;
   contactPerson: string;
 }

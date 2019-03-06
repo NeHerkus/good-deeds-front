@@ -17,13 +17,12 @@
 
 .checkbox-section {
   display: flex;
-  align-content: center;
-  align-items: center;
+  margin: auto;
   height: 45px;
 }
 
 .button-margin-1 {
-  margin: 10px 10px 10px 10px;
+  margin:  auto;
 }
 
 .button-margin-2 {

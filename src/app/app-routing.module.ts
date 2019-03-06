@@ -1,13 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+
+import {HomePageComponent} from './homepage/home-page.component';
 import {NewIdeaFormpageComponent} from './new-idea-formpage/new-idea-formpage.component';
+import {IdeastableComponent} from './ideastable/ideastable.component';
 
 const routes: Routes = [
-  {path: 'newidea', component: NewIdeaFormpageComponent}
+  {path: 'home', component: HomePageComponent},
+  {path: 'newidea', component: NewIdeaFormpageComponent},
+  {path: 'ideastable', component: IdeastableComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

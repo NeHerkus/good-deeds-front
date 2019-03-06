@@ -1,8 +1,12 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule} from '@angular/material';
+import {AngularMaterialModule} from '../angular-material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import {NewIdeaFormpageComponent} from './new-idea-formpage.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {IdeastableComponent} from '../ideastable/ideastable.component';
 
 describe('NewIdeaFormpageComponent', () => {
   let component: NewIdeaFormpageComponent;
@@ -11,14 +15,15 @@ describe('NewIdeaFormpageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NewIdeaFormpageComponent
+        NewIdeaFormpageComponent,
+        IdeastableComponent,
       ],
       imports: [
-        MatCardModule,
-        MatInputModule,
-        MatCheckboxModule,
-        MatButtonModule,
-        BrowserAnimationsModule
+        AngularMaterialModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
       ]
     })
       .compileComponents();
