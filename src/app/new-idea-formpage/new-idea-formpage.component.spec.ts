@@ -12,15 +12,15 @@ describe('NewIdeaFormpageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NewIdeaFormpageComponent
+        NewIdeaFormpageComponent,
+        IdeastableComponent
       ],
       imports: [
         MatCardModule,
         MatInputModule,
         MatCheckboxModule,
         MatButtonModule,
-        BrowserAnimationsModule,
-        IdeastableComponent
+        BrowserAnimationsModule
       ]
     })
       .compileComponents();
