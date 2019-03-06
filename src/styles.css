@@ -1,8 +1,4 @@
 /*Import of an angular prebuilt theme because it doesnt run without one and should be changed after*/
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body, html {
-  background-color: white;
-  background-size: cover;
-  margin: 0;
-}
+
