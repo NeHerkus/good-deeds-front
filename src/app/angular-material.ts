@@ -18,7 +18,9 @@ import {MatSnackBarModule} from '@angular/material';
     MatFormFieldModule,
     MatSelectModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatTableModule
   ]
 })
 export class AngularMaterialModule {

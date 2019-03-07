@@ -1,11 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-<<<<<<< HEAD
 import {IdeaService} from '../services/idea.service';
-=======
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {IdeaService} from '../services/idea.service';
 import {MatSnackBar} from '@angular/material';
->>>>>>> new-idea-form-page
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -14,9 +10,6 @@ import {MatSnackBar} from '@angular/material';
 })
 export class NewIdeaFormpageComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor(private ideaService: IdeaService) {
-=======
   ideaForm: FormGroup;
   locations: string[] = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevežys', 'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena',
     'Kėdainiai', 'Telšiai', 'Tauragė', 'Ukmergė', 'Visaginas', 'Plungė', 'Kretinga', 'Šilutė', 'Palanga', 'Radviliškis', 'Gargždai'];
@@ -24,14 +17,13 @@ export class NewIdeaFormpageComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private ideaService: IdeaService,
               private invalidFormError: MatSnackBar) {
->>>>>>> new-idea-form-page
   }
+
 
   ngOnInit() {
     this.createIdeaForm();
   }
-<<<<<<< HEAD
-=======
+
 
   createIdeaForm() {
     this.ideaForm = this.formBuilder.group({
@@ -47,6 +39,7 @@ export class NewIdeaFormpageComponent implements OnInit {
       contactPerson: ['', [Validators.required, Validators.maxLength(150)]]
     });
   }
+
 
   openInvalidFormError(message: string, action: string) {
     this.invalidFormError.open(message, action, {
@@ -68,6 +61,5 @@ export class NewIdeaFormpageComponent implements OnInit {
       this.openInvalidFormError('The form is invalid', 'Close');
     }
   }
->>>>>>> new-idea-form-page
 }
 
