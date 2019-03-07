@@ -7,3 +7,7 @@
 .mat-icon:hover {
   color: grey;
 }
+.icon-container{
+  margin-left: 20px;
+  margin-right: 20px;
+}
