@@ -6,23 +6,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatToolbarModule} from '@angular/material';
+import {MatSnackBarModule} from '@angular/material';
 
 @NgModule({
-
-  // if modules goes BOTH INTO import/export you can write it only in the export part
-  // to be deleted after next commit
-
-  // imports: [
-  //   MatButtonModule,
-  //   MatCheckboxModule,
-  //   MatInputModule,
-  //   MatCardModule,
-  //   MatIconModule,
-  //   MatFormFieldModule,
-  //   MatSelectModule,
-  //   MatToolbarModule
-  // ],
-
   exports: [
     MatButtonModule,
     MatCheckboxModule,
@@ -31,8 +17,9 @@ import {MatButtonModule, MatCheckboxModule, MatSelectModule, MatToolbarModule} f
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatToolbarModule
-  ],
+    MatToolbarModule,
+    MatSnackBarModule
+  ]
 })
 export class AngularMaterialModule {
 }

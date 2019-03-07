@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IdeaService} from '../services/idea.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -10,9 +11,12 @@ import {IdeaService} from '../services/idea.service';
 export class NewIdeaFormpageComponent implements OnInit {
 
   ideaForm: FormGroup;
+  locations: string[] = ['Vilnius', 'Kaunas', 'Klaipėda', 'Šiauliai', 'Panevežys', 'Alytus', 'Marijampolė', 'Mažeikiai', 'Jonava', 'Utena',
+    'Kėdainiai', 'Telšiai', 'Tauragė', 'Ukmergė', 'Visaginas', 'Plungė', 'Kretinga', 'Šilutė', 'Palanga', 'Radviliškis', 'Gargždai'];
 
   constructor(private formBuilder: FormBuilder,
-              private ideaService: IdeaService) {
+              private ideaService: IdeaService,
+              private invalidFormError: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -24,8 +28,8 @@ export class NewIdeaFormpageComponent implements OnInit {
       name: ['', [Validators.required, Validators.maxLength(77)]],
       location: ['', [Validators.required, Validators.maxLength(77)]],
       organization: ['', [Validators.required, Validators.maxLength(77)]],
-      website: ['', [Validators.required, Validators.maxLength(77)]],
-      optimalParticipatorsAmount: ['', [Validators.required, Validators.maxLength(20)]],
+      website: [null, [Validators.maxLength(77)]],
+      optimalParticipatorsAmount: ['Unimportant', [Validators.maxLength(20)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
       category: [null],
@@ -34,14 +38,25 @@ export class NewIdeaFormpageComponent implements OnInit {
     });
   }
 
+  openInvalidFormError(message: string, action: string) {
+    this.invalidFormError.open(message, action, {
+      duration: 3000,
+    });
+  }
+
   onSubmitButtonPress() {
-    this.ideaService.createIdea(this.ideaForm.value).subscribe(
-      res => {
-        console.log('Request succesfully sent');
-      },
-      err => {
-        console.log('Error while sending request');
-      }
-    );
+    if (this.ideaForm.valid) {
+      this.ideaService.createIdea(this.ideaForm.value).subscribe(
+        res => {
+          console.log('Request succesfully sent');
+        },
+        err => {
+          console.log('Error while sending request');
+        }
+      );
+    } else {
+      this.openInvalidFormError('The form is invalid', 'Close');
+    }
   }
 }
+

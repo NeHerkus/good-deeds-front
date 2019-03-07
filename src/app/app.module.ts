@@ -5,8 +5,6 @@ import {AngularMaterialModule} from './angular-material';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-
 // dev imports
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -14,6 +12,7 @@ import {NewIdeaFormpageComponent} from './new-idea-formpage/new-idea-formpage.co
 import {HomePageComponent} from './homepage/home-page.component';
 import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {IdeastableComponent} from './ideastable/ideastable.component';
+import {IdeaService} from './services/idea.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,7 @@ import {IdeastableComponent} from './ideastable/ideastable.component';
     IdeastableComponent,
     NewIdeaFormpageComponent,
     HomePageComponent,
-    NavigationBarComponent,
+    NavigationBarComponent
   ],
 
   imports: [
@@ -31,10 +30,10 @@ import {IdeastableComponent} from './ideastable/ideastable.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule
   ],
 
-  providers: [],
+  providers: [IdeaService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

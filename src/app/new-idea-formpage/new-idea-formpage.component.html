@@ -21,27 +21,9 @@
         <!--Location-->
         <mat-form-field class="full-width">
           <mat-select formControlName="location" placeholder="Location" required>
-            <mat-option value="option">Vilnius</mat-option>
-            <mat-option value="option">Kaunas</mat-option>
-            <mat-option value="option">Klaipėda</mat-option>
-            <mat-option value="option">Šiauliai</mat-option>
-            <mat-option value="option">Panevėžys</mat-option>
-            <mat-option value="option">Alytus</mat-option>
-            <mat-option value="option">Marijampolė</mat-option>
-            <mat-option value="option">Mažeikiai</mat-option>
-            <mat-option value="option">Jonava</mat-option>
-            <mat-option value="option">Utena</mat-option>
-            <mat-option value="option">Kėdainiai</mat-option>
-            <mat-option value="option">Telšiai</mat-option>
-            <mat-option value="option">Tauragė</mat-option>
-            <mat-option value="option">Ukmergė</mat-option>
-            <mat-option value="option">Visaginas</mat-option>
-            <mat-option value="option">Plungė</mat-option>
-            <mat-option value="option">Kretinga</mat-option>
-            <mat-option value="option">Šilutė</mat-option>
-            <mat-option value="option">Palanga</mat-option>
-            <mat-option value="option">Radviliškis</mat-option>
-            <mat-option value="option">Gargždai</mat-option>
+            <mat-option value="{{location}}" *ngFor="let location of locations">
+              {{location}}
+            </mat-option>
 
           </mat-select>
           <mat-hint align="start">
@@ -67,8 +49,7 @@
                  formControlName="website"
                  type="text"
                  maxlength="77"
-                 placeholder="Web site"
-                 required>
+                 placeholder="Web site">
           <mat-hint align="start"><strong>Enter the website of the organization where you are going to do good
             job</strong>
           </mat-hint>
@@ -125,7 +106,7 @@
                     placeholder="Contact person"
                     required></textarea>
           <mat-hint align="end">max: 150</mat-hint>
-          <mat-hint align="start"><strong>Enter your idea</strong>
+          <mat-hint align="start"><strong>Enter contact's info</strong>
           </mat-hint>
         </mat-form-field>
 
@@ -135,7 +116,7 @@
 
   <div class="submit-button-block">
     <div class="submit-button">
-      <button mat-flat-button
+      <button mat-raised-button
               color="primary"
               (click)="onSubmitButtonPress()">Submit
       </button>
