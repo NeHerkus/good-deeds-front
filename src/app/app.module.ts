@@ -3,8 +3,6 @@ import {NgModule} from '@angular/core';
 import {AngularMaterialModule} from './angular-material';
 import {HttpClientModule} from '@angular/common/http';
 
-import { IdeastableComponent } from './ideastable/ideastable.component';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -12,17 +10,18 @@ import {AppComponent} from './app.component';
 import {NewIdeaFormpageComponent} from './new-idea-formpage/new-idea-formpage.component';
 import {HomePageComponent} from './homepage/home-page.component';
 import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
-import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatIconModule, MatTable, MatTableDataSource} from '@angular/material';
+import { IdeasTableComponent } from './ideas-table/ideas-table.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    IdeastableComponent,
+    IdeasTableComponent,
     NewIdeaFormpageComponent,
     HomePageComponent,
-    NavigationBarComponent
-
+    NavigationBarComponent,
+    IdeasTableComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,7 @@ import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/materia
     AngularMaterialModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

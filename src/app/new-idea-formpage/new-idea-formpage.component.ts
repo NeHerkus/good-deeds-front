@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {IdeaService} from '../services/idea.service';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -7,11 +8,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NewIdeaFormpageComponent implements OnInit {
 
-  constructor() {
-
+  constructor(private ideaService: IdeaService) {
   }
 
   ngOnInit() {
   }
-
 }

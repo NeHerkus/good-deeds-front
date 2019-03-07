@@ -11,7 +11,7 @@ describe('NewIdeaFormpageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NewIdeaFormpageComponent
+        NewIdeaFormpageComponent,
       ],
       imports: [
         MatCardModule,
