@@ -1,11 +1,12 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {AngularMaterialModule} from '../angular-material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import {NewIdeaFormpageComponent} from './new-idea-formpage.component';
+import {IdeasTableComponent} from '../ideastable/ideas-table.component';
 
 describe('NewIdeaFormpageComponent', () => {
   let component: NewIdeaFormpageComponent;
@@ -15,6 +16,7 @@ describe('NewIdeaFormpageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         NewIdeaFormpageComponent,
+        IdeasTableComponent
       ],
       imports: [
         AngularMaterialModule,

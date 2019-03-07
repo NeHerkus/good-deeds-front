@@ -34,7 +34,7 @@ export class NewIdeaFormpageComponent implements OnInit {
       optimalParticipatorsAmount: ['Unimportant', [Validators.maxLength(20)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
-      category: [null],
+      category: [[null, null, null, null, null]],
       description: ['', [Validators.required, Validators.maxLength(500)]],
       contactPerson: ['', [Validators.required, Validators.maxLength(150)]]
     });
@@ -52,7 +52,7 @@ export class NewIdeaFormpageComponent implements OnInit {
       this.ideaService.createIdea(this.ideaForm.value).subscribe(
         res => {
           console.log('Request succesfully sent');
-          location.reload();
+          // location.reload();
         },
         err => {
           console.log('Error while sending request');
