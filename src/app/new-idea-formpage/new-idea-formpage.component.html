@@ -1,101 +1,126 @@
-<app-ideas-table></app-ideas-table>
+<app-ideas></app-ideas>
 
-<!--<div class="main-form">-->
+<div class="card">
+  <form [formGroup]="ideaForm">
+    <mat-card class="card">
+      <h2 style="text-align: center">Please fill the idea form</h2>
+      <mat-card-content style="height: auto">
 
-<!--<mat-card class="card">-->
-<!--<h2 style="text-align: center">Please fill the idea form</h2>-->
-<!--<mat-card-content style="height: auto">-->
+        <!--Name-->
+        <mat-form-field class="full-width">
+          <input matInput
+                 formControlName="name"
+                 type="text"
+                 maxlength="77"
+                 placeholder="Name of idea"
+                 required>
+          <mat-hint align="start"><strong>Enter the name of your idea</strong></mat-hint>
+          <mat-hint align="end"> max: 77</mat-hint>
+        </mat-form-field>
 
-<!--&lt;!&ndash;Name&ndash;&gt;-->
-<!--<form class="form">-->
-<!--<mat-form-field class="full-width">-->
-<!--<input matInput #nameOfIdea maxlength="77" placeholder="Name of idea" required>-->
-<!--<mat-hint align="start"><strong>Enter the name of your idea</strong></mat-hint>-->
-<!--<mat-hint align="end">{{nameOfIdea.value.length}} / 77</mat-hint>-->
-<!--</mat-form-field>-->
-<!--</form>-->
+        <!--Location-->
+        <mat-form-field class="full-width">
+          <mat-select formControlName="location" placeholder="Location" required>
+            <mat-option value="{{location}}" *ngFor="let location of locations">
+              {{location}}
+            </mat-option>
 
-<!--&lt;!&ndash;Location&ndash;&gt;-->
-<!--<form class="form">-->
-<!--<mat-form-field class="full-width">-->
-<!--<input matInput #location maxlength="77" placeholder="Location" required>-->
-<!--<mat-hint align="start"><strong>Enter a short name for your idea</strong></mat-hint>-->
-<!--<mat-hint align="end">{{location.value.length}} / 77</mat-hint>-->
-<!--</mat-form-field>-->
-<!--</form>-->
+          </mat-select>
+          <mat-hint align="start">
+            <strong>Choose location</strong></mat-hint>
+        </mat-form-field>
 
-<!--&lt;!&ndash;Organization&ndash;&gt;-->
-<!--<form class="form">-->
-<!--<mat-form-field class="full-width">-->
-<!--<input matInput #organizationName maxlength="77" placeholder="Organization" required>-->
-<!--<mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>-->
-<!--</mat-hint>-->
-<!--<mat-hint align="end">{{organizationName.value.length}} / 77</mat-hint>-->
-<!--</mat-form-field>-->
-<!--</form>-->
+        <!--Organization-->
+        <mat-form-field class="full-width">
+          <input matInput
+                 formControlName="organization"
+                 type="text"
+                 maxlength="77"
+                 placeholder="Organization"
+                 required>
+          <mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>
+          </mat-hint>
+          <mat-hint align="end">max: 77</mat-hint>
+        </mat-form-field>
 
-<!--&lt;!&ndash;Website&ndash;&gt;-->
-<!--<form class="form">-->
-<!--<mat-form-field class="full-width">-->
-<!--<input matInput #website maxlength="77" placeholder="Web site" required>-->
-<!--<mat-hint align="start"><strong>Enter the website of the organization where you are going to do good-->
-<!--job</strong>-->
-<!--</mat-hint>-->
-<!--<mat-hint align="end">{{website.value.length}} / 77</mat-hint>-->
-<!--</mat-form-field>-->
-<!--</form>-->
+        <!--Website-->
+        <mat-form-field class="full-width">
+          <input matInput
+                 formControlName="website"
+                 type="text"
+                 maxlength="77"
+                 placeholder="Web site">
+          <mat-hint align="start"><strong>Enter the website of the organization where you are going to do good
+            job</strong>
+          </mat-hint>
+          <mat-hint align="end"> max: 77</mat-hint>
+        </mat-form-field>
 
-<!--&lt;!&ndash;Optimal participators amount&ndash;&gt;-->
-<!--<form class="form">-->
-<!--<mat-form-field class="full-width">-->
-<!--<mat-label>Optimal participators amount</mat-label>-->
-<!--<input matInput #participatorsAmount maxlength="20" placeholder="Unimportant">-->
-<!--<mat-hint align="end">{{participatorsAmount.value.length}} / 20</mat-hint>-->
-<!--</mat-form-field>-->
-<!--</form>-->
+        <!--Optimal participators amount-->
+        <mat-form-field class="full-width">
+          <mat-label>Optimal participators amount</mat-label>
+          <input matInput
+                 formControlName="optimalParticipatorsAmount"
+                 type="text"
+                 maxlength="20"
+                 placeholder="Unimportant">
+          <mat-hint align="end">max: 20</mat-hint>
+        </mat-form-field>
 
-<!--&lt;!&ndash;Idea description&ndash;&gt;-->
-<!--<mat-form-field class="full-width">-->
-<!--<textarea matInput #ideaDescription maxlength="500" placeholder="Idea for good job" required></textarea>-->
-<!--<mat-hint align="end">{{ideaDescription.value.length}} / 500</mat-hint>-->
-<!--<mat-hint align="start"><strong>Enter your idea</strong>-->
-<!--</mat-hint>-->
-<!--</mat-form-field>-->
+        <!--Checkboxes-->
+        <mat-card-content style="height: auto">
+          <h2 class="button-section-header" style="text-align: center">Categorize your idea</h2>
 
-<!--&lt;!&ndash;Contact person&ndash;&gt;-->
-<!--<mat-form-field class="full-width">-->
-<!--<textarea matInput #contactPerson maxlength="150" placeholder="Contact person" required></textarea>-->
-<!--<mat-hint align="end">{{contactPerson.value.length}} / 150</mat-hint>-->
-<!--<mat-hint align="start"><strong>Enter your idea</strong>-->
-<!--</mat-hint>-->
-<!--</mat-form-field>-->
+          <section class="checkbox-section">
+            <mat-checkbox class="button-margin-1">Time/Help to others</mat-checkbox>
+            <mat-checkbox class="button-margin-1">Time for better environment</mat-checkbox>
+            <mat-checkbox class="button-margin-1">Time of sharing knowledge</mat-checkbox>
+          </section>
 
-<!--</mat-card-content>-->
-<!--</mat-card>-->
+          <section class="checkbox-section">
+            <mat-checkbox class="button-margin-2">Time for local communities</mat-checkbox>
+            <mat-checkbox class="button-margin-2">Professional volunteering</mat-checkbox>
+          </section>
+        </mat-card-content>
 
-<!--&lt;!&ndash;Checkboxes&ndash;&gt;-->
-<!--<mat-card class="card">-->
-<!--<mat-card-content style="height: auto">-->
-<!--<h2 class="button-section-header" style="text-align: center">Categorize your idea</h2>-->
 
-<!--<section class="checkbox-section">-->
-<!--<mat-checkbox class="button-margin-1">Time/Help to others</mat-checkbox>-->
-<!--<mat-checkbox class="button-margin-1">Time for better environment</mat-checkbox>-->
-<!--<mat-checkbox class="button-margin-1">Time of sharing knowledge</mat-checkbox>-->
-<!--</section>-->
+        <!--Idea description-->
+        <mat-form-field class="full-width">
+          <textarea matInput
+                    formControlName="description"
+                    type="text"
+                    maxlength="500"
+                    placeholder="Idea for good job"
+                    required></textarea>
+          <mat-hint align="end"> max: 500</mat-hint>
+          <mat-hint align="start"><strong>Enter your idea</strong>
+          </mat-hint>
+        </mat-form-field>
 
-<!--<section class="checkbox-section">-->
-<!--<mat-checkbox class="button-margin-2">Time for local communities</mat-checkbox>-->
-<!--<mat-checkbox class="button-margin-2">Professional volunteering</mat-checkbox>-->
-<!--</section>-->
-<!--</mat-card-content>-->
-<!--</mat-card>-->
+        <!--Contact person-->
+        <mat-form-field class="full-width">
+          <textarea matInput
+                    formControlName="contactPerson"
+                    type="text"
+                    maxlength="150"
+                    placeholder="Contact person"
+                    required></textarea>
+          <mat-hint align="end">max: 150</mat-hint>
+          <mat-hint align="start"><strong>Enter contact's info</strong>
+          </mat-hint>
+        </mat-form-field>
 
-<!--<div class="submit-button-block">-->
-<!--<div class="submit-button">-->
-<!--<button mat-flat-button color="primary">Submit</button>-->
-<!--</div>-->
-<!--</div>-->
+      </mat-card-content>
+    </mat-card>
+  </form>
 
-<!--</div>-->
+  <div class="submit-button-block">
+    <div class="submit-button">
+      <button mat-raised-button
+              color="primary"
+              (click)="onSubmitButtonPress()">Submit
+      </button>
+    </div>
+  </div>
 
+</div>

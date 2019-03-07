@@ -26,11 +26,10 @@
   display: flex;
   align-content: center;
   align-items: center;
-  height: 60px;
 }
 
 .button-margin-1 {
-  margin: 10px 10px 10px 10px;
+  margin:  auto;
 }
 
 .button-margin-2 {
