@@ -1,5 +1,3 @@
-// included an additional angular-material.ts file for imports from Angular Material
-
 import {MatButtonModule, MatCheckboxModule, MatPaginatorModule, MatTableModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {NgModule} from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
