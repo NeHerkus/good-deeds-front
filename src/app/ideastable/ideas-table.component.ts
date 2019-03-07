@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {IdeaService} from '../services/idea.service';
 import {Idea} from '../models/Idea';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
