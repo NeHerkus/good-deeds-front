@@ -52,6 +52,7 @@ export class NewIdeaFormpageComponent implements OnInit {
       this.ideaService.createIdea(this.ideaForm.value).subscribe(
         res => {
           console.log('Request succesfully sent');
+          location.reload();
         },
         err => {
           console.log('Error while sending request');
