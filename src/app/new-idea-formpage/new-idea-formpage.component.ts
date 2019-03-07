@@ -45,12 +45,3 @@ export class NewIdeaFormpageComponent implements OnInit {
     );
   }
 }
-
-
-//   name: [idea ? idea.location : 's', [Validators.required, Validators.maxLength(77)]],
-//   location: [idea ? idea.location : '', [Validators.required, Validators.maxLength(77)]],
-//   organization: [idea ? idea.organization : '', [Validators.required, Validators.maxLength(77)]],
-//   website: [idea ? idea.website : '', [Validators.required, Validators.maxLength(77)]],
-//   optimalParticipatorsAmount: [idea ? idea.optimalParticipatorsAmount : '', [Validators.required, Validators.maxLength(20)]],
-//   description: [idea ? idea.description : '', [Validators.required, Validators.maxLength(500)]],
-//   contactPerson: [idea ? idea.contactPerson : '', [Validators.required, Validators.maxLength(150)]]

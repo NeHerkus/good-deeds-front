@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IdeastableComponent } from './ideastable.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 describe('IdeastableComponent', () => {
   let component: IdeastableComponent;
@@ -8,7 +10,12 @@ describe('IdeastableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IdeastableComponent ]
+      declarations: [
+        IdeastableComponent,
+      ],
+      imports: [
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));
