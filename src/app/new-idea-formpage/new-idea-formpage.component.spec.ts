@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import {NewIdeaFormpageComponent} from './new-idea-formpage.component';
-import {IdeastableComponent} from '../ideastable/ideastable.component';
 
 describe('NewIdeaFormpageComponent', () => {
   let component: NewIdeaFormpageComponent;
@@ -16,7 +15,6 @@ describe('NewIdeaFormpageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         NewIdeaFormpageComponent,
-        IdeastableComponent,
       ],
       imports: [
         AngularMaterialModule,
