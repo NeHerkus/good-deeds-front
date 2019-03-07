@@ -9,7 +9,7 @@ import {IdeasTableComponent} from './ideas-table/ideas-table.component';
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
   {path: 'newidea', component: NewIdeaFormpageComponent},
-  {path: 'Ideastable', component: IdeasTableComponent},
+  {path: 'ideastable', component: IdeasTableComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];

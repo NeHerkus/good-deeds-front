@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { IdeasTableComponent } from './ideas-table.component';
+import {IdeasTableComponent} from './ideas-table.component';
+import {AngularMaterialModule} from '../angular-material';
+
 
 describe('IdeasTableComponent', () => {
   let component: IdeasTableComponent;
@@ -8,9 +10,10 @@ describe('IdeasTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IdeasTableComponent ]
+      declarations: [IdeasTableComponent],
+      imports: [AngularMaterialModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

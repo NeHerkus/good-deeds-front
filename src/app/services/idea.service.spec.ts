@@ -1,12 +1,25 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { IdeaService } from './idea.service';
+import {IdeaService} from './idea.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('IdeaService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+  let service: IdeaService;
+
+
+
+  beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientTestingModule],
+    providers: [IdeaService]
+  }));
+
+
+  beforeEach(() => {
+    service =  TestBed.get(IdeaService);
+  });
+
 
   it('should be created', () => {
-    const service: IdeaService = TestBed.get(IdeaService);
     expect(service).toBeTruthy();
   });
 });

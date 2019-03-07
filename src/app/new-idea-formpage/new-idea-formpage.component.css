@@ -26,11 +26,10 @@
   display: flex;
   align-content: center;
   align-items: center;
-  height: 60px;
 }
 
 .button-margin-1 {
-  margin: 10px 10px 10px 10px;
+  margin:  50px 50px 50px 50px;
 }
 
 .button-margin-2 {
@@ -53,4 +52,5 @@
   max-width: 650px;
   height: 85px;
   margin: 0 auto;
+  display: block !important;
 }
