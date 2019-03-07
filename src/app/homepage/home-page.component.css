@@ -1,10 +1,7 @@
-li {
-  margin-bottom: 15px;
+body {
+  margin-left: 200px;
+  margin-right: 200px;
 }
-
-.home {
-  font-family: Helvetica, serif;
-  text-align: center;
-  margin-left: 15%;
-  margin-right: 15%;
+h1, h2, h3, h4, h5 {
+  font-family: "Raleway", sans-serif;
 }
