@@ -10,8 +10,10 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 })
 export class IdeasTableComponent implements OnInit, AfterViewInit {
 
-  dataLength: number;
-  dataSource = new MatTableDataSource<Idea>();
+  ideasLength: number;
+  ideasSource = new MatTableDataSource<Idea>();
+  readonly pageSize: number = 5;
+  readonly pageSizeOptions: number[] = [5, 10, 15];
   columnNames: string[] = ['name', 'organization', 'location'];
   private paginator: MatPaginator;
 
@@ -26,19 +28,18 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.ideaService.getIdeas().subscribe(
       ideasList => {
-        this.dataSource.data = ideasList;
-        this.dataLength = ideasList.length;
-        console.log(this.dataLength);
+        this.ideasSource.data = ideasList;
+        this.ideasLength = ideasList.length;
       }
     );
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+    this.ideasSource.paginator = this.paginator;
   }
 
   setDataSourceAttributes() {
-    this.dataSource.paginator = this.paginator;
+    this.ideasSource.paginator = this.paginator;
     if (this.paginator) {
       this.applyFilter('');
     }
@@ -47,7 +48,7 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim();
     filterValue = filterValue.toLowerCase();
-    this.dataSource.filter = filterValue;
+    this.ideasSource.filter = filterValue;
   }
 
 }
