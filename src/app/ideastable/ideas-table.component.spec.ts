@@ -2,6 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {IdeasTableComponent} from './ideas-table.component';
 import {AngularMaterialModule} from '../angular-material';
+import {MatPaginatorModule} from '@angular/material';
+import {HttpClientModule} from '@angular/common/http';
 
 
 describe('IdeasTableComponent', () => {
@@ -11,7 +13,7 @@ describe('IdeasTableComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [IdeasTableComponent],
-      imports: [AngularMaterialModule]
+      imports: [AngularMaterialModule, MatPaginatorModule, HttpClientModule]
     })
       .compileComponents();
   }));

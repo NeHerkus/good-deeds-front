@@ -1,4 +1,4 @@
-export class Idea {
+export interface Idea {
   name: string;
   location: string;
   organization: string;

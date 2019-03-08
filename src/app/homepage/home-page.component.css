@@ -1,6 +1,9 @@
-body {
-  margin-left: 200px;
-  margin-right: 200px;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+
+.top-level-container {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 h1, h2, h3, h4, h5 {
   font-family: "Raleway", sans-serif;
@@ -17,3 +20,7 @@ h1, h2, h3, h4, h5 {
 
 
 
+
+.header-container {
+  max-width: 1400px;
+}
