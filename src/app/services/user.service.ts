@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-import {User} from '../models';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -26,10 +26,6 @@ export class UserService {
   }
 
   update(user: User) {
-    return this.http.put(this.baseUrl + '/users/' + user.id, user);
-  }
-
-  delete(id: number) {
-    return this.http.delete(this.baseUrl + '/users/' + id);
+    return this.http.put(this.baseUrl + '/users/' + user, user);
   }
 }
