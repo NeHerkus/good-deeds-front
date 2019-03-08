@@ -7,7 +7,6 @@ describe('IdeaService', () => {
   let service: IdeaService;
 
 
-
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
     providers: [IdeaService]
@@ -15,7 +14,7 @@ describe('IdeaService', () => {
 
 
   beforeEach(() => {
-    service =  TestBed.get(IdeaService);
+    service = TestBed.get(IdeaService);
   });
 
 
