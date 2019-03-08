@@ -1,4 +1,7 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+
+.top-level-container {
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -6,3 +9,40 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: "Raleway", sans-serif;
 }
+
+
+/*.w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {*/
+/*color: #000 !important;*/
+/*background-color: #f1f1f1 !important*/
+/*}*/
+
+/*.w3-content, .w3-auto {*/
+/*margin-left: auto;*/
+/*margin-right: auto*/
+/*}*/
+
+/*.w3-content {*/
+/*max-width: 980px*/
+/*}*/
+
+/*.w3-auto {*/
+/*max-width: 1140px*/
+/*}*/
+
+/*.w3-container, .w3-panel {*/
+/*padding: 0.01em 16px*/
+/*}*/
+
+/*.w3-panel {*/
+/*margin-top: 16px;*/
+/*margin-bottom: 16px*/
+/*}*/
+
+/*.w3-center {*/
+/*text-align: center !important*/
+/*}*/
+
+/*.w3-padding-32 {*/
+/*padding-top: 32px !important;*/
+/*padding-bottom: 32px !important*/
+/*}*/
