@@ -1,0 +1,32 @@
+.fill-remaining-space {
+  /*This fills the remaining space, by using flexbox.
+ Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+
+
+.button {
+
+  color: black;
+  position:relative;
+  transition: .1s ease;
+  top: 0px;
+  right: -1200px;
+  bottom: -191px;
+  background-color: gold;
+}
+.button:hover {
+
+  color: grey;
+}
+
+ .a:hover {
+
+   color: gold;
+ }
+
+.icon-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}

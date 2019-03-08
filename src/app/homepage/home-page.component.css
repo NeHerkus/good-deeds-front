@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+
+.top-level-container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+h1, h2, h3, h4, h5 {
+  font-family: "Raleway", sans-serif;
+}
+
+.w3-content
+{
+
+  max-width:1400px
+}
+
+
+.header-container {
+  max-width: 1400px;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+.fourth-text {
+  font-size: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 9%;
+  left: 25%;
+  opacity: 0;
+  color: black;
+  animation-name: fadeInOut;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  margin: auto;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
