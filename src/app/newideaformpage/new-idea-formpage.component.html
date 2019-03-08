@@ -6,7 +6,7 @@
     <mat-card-content style="height: auto">
 
       <!--Name-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
         <input matInput
                formControlName="name"
                type="text"
@@ -14,23 +14,22 @@
                placeholder="Name of idea"
                required>
         <mat-hint align="start"><strong>Enter the name of your idea</strong></mat-hint>
-        <mat-hint align="end"> max: 77</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['name'].value.length}} / 77</mat-hint>
       </mat-form-field>
 
       <!--Location-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
         <mat-select formControlName="location" placeholder="Location" required>
           <mat-option value="{{location}}" *ngFor="let location of locations">
             {{location}}
           </mat-option>
-
         </mat-select>
         <mat-hint align="start">
           <strong>Choose location</strong></mat-hint>
       </mat-form-field>
 
       <!--Organization-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
         <input matInput
                formControlName="organization"
                type="text"
@@ -39,11 +38,11 @@
                required>
         <mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>
         </mat-hint>
-        <mat-hint align="end">max: 77</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['organization'].value.length}} / {{maxInputLength77}}</mat-hint>
       </mat-form-field>
 
       <!--Website-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
         <input matInput
                formControlName="website"
                type="text"
@@ -52,24 +51,24 @@
         <mat-hint align="start"><strong>Enter the website of the organization where you are going to do good
           job</strong>
         </mat-hint>
-        <mat-hint align="end"> max: 77</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['website'].value.length}} / {{maxInputLength77}}</mat-hint>
       </mat-form-field>
 
       <!--Optimal participators amount-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
         <mat-label>Optimal participators amount</mat-label>
         <input matInput
                formControlName="optimalParticipatorsAmount"
                type="text"
                maxlength="20"
                placeholder="Unimportant">
-        <mat-hint align="end">max: 20</mat-hint>
+        <mat-hint align="end">
+          {{ideaForm.controls['optimalParticipatorsAmount'].value.length}} / {{maxInputLength20}}</mat-hint>
       </mat-form-field>
 
       <!--Checkboxes-->
       <mat-card-content style="height: auto">
-        <h2 class="button-section-header" style="text-align: center">Categorize your idea</h2>
-
+        <h2 class="button-section-header">Categorize your idea</h2>
         <section class="checkbox-section">
           <mat-checkbox class="checkbox">Time/Help to others</mat-checkbox>
           <mat-checkbox class="checkbox">Time for better environment</mat-checkbox>
@@ -79,36 +78,35 @@
         </section>
       </mat-card-content>
 
-
       <!--Idea description-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
           <textarea matInput
                     formControlName="description"
                     type="text"
                     maxlength="500"
                     placeholder="Idea for good job"
                     required></textarea>
-        <mat-hint align="end"> max: 500</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['description'].value.length}} / {{maxInputLength500}}</mat-hint>
         <mat-hint align="start"><strong>Enter your idea</strong>
         </mat-hint>
       </mat-form-field>
 
       <!--Contact person-->
-      <mat-form-field class="full-width">
+      <mat-form-field class="input-form">
           <textarea matInput
                     formControlName="contactPerson"
                     type="text"
                     maxlength="150"
                     placeholder="Contact person"
                     required></textarea>
-        <mat-hint align="end">max: 150</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['contactPerson'].value.length}} / {{maxInputLength150}}</mat-hint>
         <mat-hint align="start"><strong>Enter contact's info</strong>
         </mat-hint>
       </mat-form-field>
-
     </mat-card-content>
   </mat-card>
 </form>
+
 <div class="flex-container">
   <div class="submit-button-block button-container">
     <div class="submit-button">
@@ -119,4 +117,3 @@
     </div>
   </div>
 </div>
-

@@ -1,17 +1,13 @@
-/*.main-form {*/
-/*min-width: 300px;*/
-/*max-width: 600px;*/
-/*width: 100%;*/
-/*height: 130px;*/
-/*margin: 0 auto;*/
-/*}*/
-
+/*input form part*/
 .input-form {
-  margin: 0 auto;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.full-width {
-  width: 100%;
+/*button part*/
+.button-section-header {
+  text-align: center;
 }
 
 .button-section-first-line {
@@ -27,6 +23,7 @@
   align-items: center;
 }
 
+/*checkbox section part*/
 .checkbox-section {
   margin-top: 10px;
   margin-right: 5px;
@@ -39,6 +36,7 @@
   margin-right: 2%;
 }
 
+/*card part*/
 .card {
   min-width: 300px;
   max-width: 600px;
@@ -48,6 +46,7 @@
   margin-right: auto;
 }
 
+/*submit button part styles*/
 .submit-button {
   position: center;
   margin-top: 15px;
@@ -57,7 +56,6 @@
   max-width: 650px;
   height: 85px;
   margin: 0 auto;
-  display: block !important;
 }
 
 .flex-container {
