@@ -1,6 +1,13 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {AngularMaterialModule} from '../angular-material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
-import { NewUserFormpageComponent } from './new-user-formpage.component';
+
+import {NewUserFormpageComponent} from './new-user-formpage.component';
+import {IdeasTableComponent} from '../ideastable/ideas-table.component';
+import {NewIdeaFormpageComponent} from '../newideaformpage/new-idea-formpage.component';
 
 describe('NewUserFormpageComponent', () => {
   let component: NewUserFormpageComponent;
@@ -8,9 +15,19 @@ describe('NewUserFormpageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewUserFormpageComponent ]
+      declarations: [
+        NewUserFormpageComponent,
+        IdeasTableComponent
+      ],
+      imports: [
+        AngularMaterialModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
