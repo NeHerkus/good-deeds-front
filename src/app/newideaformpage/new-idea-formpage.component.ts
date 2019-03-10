@@ -51,16 +51,16 @@ export class NewIdeaFormpageComponent implements OnInit {
 
   createIdeaForm() {
     this.ideaForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.maxLength(77)]],
-      location: ['', [Validators.required, Validators.maxLength(77)]],
-      organization: ['', [Validators.required, Validators.maxLength(77)]],
-      website: ['', [Validators.maxLength(77)]],
-      optimalParticipatorsAmount: ['', [Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
+      location: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
+      organization: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
+      website: ['', [Validators.maxLength(this.maxInputLength77)]],
+      optimalParticipatorsAmount: ['', [Validators.maxLength(this.maxInputLength20)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
       category: [[null, null, null, null, null]],
-      description: ['', [Validators.required, Validators.maxLength(500)]],
-      contactPerson: ['', [Validators.required, Validators.maxLength(150)]]
+      description: ['', [Validators.required, Validators.maxLength(this.maxInputLength500)]],
+      contactPerson: ['', [Validators.required, Validators.maxLength(this.maxInputLength150)]]
     });
   }
 
@@ -69,7 +69,6 @@ export class NewIdeaFormpageComponent implements OnInit {
       this.ideaService.createIdea(this.ideaForm.value).subscribe(
         res => {
           console.log('Request succesfully sent');
-          // location.reload();
         },
         err => {
           console.log('Error while sending request');

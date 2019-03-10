@@ -6,10 +6,6 @@
 }
 
 /*checkbox section part*/
-
-.checkbox-form-part{
-  height: auto;
-}
 .checkbox-section-header {
   text-align: center;
 }
@@ -36,7 +32,7 @@
   margin-right: auto;
 }
 
-/*submit button part*/
+/*submit button part styles*/
 .submit-button {
   position: center;
   margin-top: 15px;
