@@ -28,8 +28,7 @@ import {AlertService} from './services/alert.service';
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
-    AlertComponent,
-    AlertService
+    AlertComponent
   ],
 
   imports: [
@@ -45,7 +44,7 @@ import {AlertService} from './services/alert.service';
     FormsModule
   ],
 
-  providers: [IdeaService],
+  providers: [IdeaService, AlertService],
   bootstrap:
     [AppComponent]
 })
