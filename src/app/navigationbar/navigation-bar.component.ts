@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../services/auth.service';
+import {User} from '../models/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -13,11 +14,21 @@ export class NavigationBarComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,      // {3}
-    private authService: AuthService // {4}
-  ) {}
+    private router: Router // {4}
+  ) {
+  }
 
   ngOnInit() {
     this.createUserForm();
+
+  }
+
+  createUserForm() {
+
+    this.form = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
 
   }
 
@@ -30,19 +41,18 @@ export class NavigationBarComponent implements OnInit {
   }
 
   onSubmit() {
+
     if (this.form.valid) {
-      this.authService.login(this.form.value);
+      this.login(this.form.value);
     }
     this.formSubmitAttempt = true;
   }
 
-  createUserForm() {
-
-    this.form = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-
+  login(user: User) {
+    if (!(user.name !== '' && user.password !== '')) {
+      return;
+    }
+    this.router.navigate(['newidea']);
   }
 
 }
