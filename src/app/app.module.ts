@@ -16,7 +16,6 @@ import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationService} from './services/authentication.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
