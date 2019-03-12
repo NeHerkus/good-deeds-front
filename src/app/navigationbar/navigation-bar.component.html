@@ -15,11 +15,11 @@
       </button>
     </a>
     <form [formGroup]="form">
-      <input type="text" name="email" formControlName="email" maxlength="77" placeholder="Email">
+      <input type="text" name="email" formControlName="email" maxlength="{{maxInputLength}}" placeholder="Email">
       <mat-error *ngIf="isFieldInvalid('email')">
         <b class="emailmessage"> Please enter your email</b>
       </mat-error>
-      <input class="password" type="password" formControlName="password" name="password" maxlength="77"
+      <input class="password" type="password" formControlName="password" name="password" maxlength="{{maxInputLength}}"
              placeholder="Password">
       <mat-error *ngIf="isFieldInvalid('password')">
         <b class="passwordmessage"> Please enter your password</b>
