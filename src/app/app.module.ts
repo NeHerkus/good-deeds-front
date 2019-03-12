@@ -14,6 +14,7 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
+import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {IdeaService} from './services/idea.service';
     IdeasTableComponent,
     NewIdeaFormpageComponent,
     HomePageComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    PageNotFoundComponent
   ],
 
   imports: [
