@@ -42,7 +42,7 @@ import {AuthService} from './services/auth.service';
     FormsModule
   ],
 
-  providers: [IdeaService, AuthService],
+  providers: [IdeaService],
   bootstrap:
     [AppComponent]
 })
