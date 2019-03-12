@@ -14,6 +14,7 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
+import {AuthenticationService} from './services/authentication.service';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import {IdeaService} from './services/idea.service';
     FormsModule
   ],
 
-  providers: [IdeaService],
+  providers: [IdeaService, AuthenticationService],
   bootstrap:
     [AppComponent]
 })
