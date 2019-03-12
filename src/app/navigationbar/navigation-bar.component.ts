@@ -10,7 +10,7 @@ import {User} from '../models/user';
 export class NavigationBarComponent implements OnInit {
   form: FormGroup;                    // {1}
   private formSubmitAttempt: boolean;
-
+  maxInputLength = 77;
   constructor(
     private formBuilder: FormBuilder,      // {3}
   ) {
@@ -50,7 +50,7 @@ export class NavigationBarComponent implements OnInit {
     if (!(user.name !== '' && user.password !== '')) {
       return;
     }
-    console.log('oba');
+
   }
 
 }
