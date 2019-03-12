@@ -14,20 +14,16 @@
         <b> Add idea</b>
       </button>
     </a>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <input type="text" name="email" placeholder="Email" maxlength="77">
+    <form [formGroup]="form" >
+        <input type="text" name="email" formControlName="email"placeholder="Email" maxlength="77">
         <mat-error *ngIf="isFieldInvalid('email')">
-          Please inform your user name
+          <b class="emailmessage"> Please enter your email</b>
         </mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input class="password" type="password" name="password" placeholder="Password" maxlength="77">
-        <mat-error *ngIf="isFieldInvalid('userName')">
-          Please inform your password
+        <input class="password" type="password" formControlName="password" name="password" placeholder="Password" maxlength="77">
+        <mat-error *ngIf="isFieldInvalid('password')">
+          <b class="passwordmessage"> Please enter your password</b>
         </mat-error>
-      </mat-form-field>
-      <button class="loginbutton" mat-button routerLink="/home">Login</button>
+      <button class="loginbutton" mat-button (click)="onSubmit">Login</button>
     </form>
     <a href="/home">
       <button mat-button class="button">
