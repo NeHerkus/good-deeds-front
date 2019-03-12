@@ -11,8 +11,8 @@
   color: black;
   position:relative;
   transition: .1s ease;
-  top: 0px;
-  right: -1200px;
+  top: -35px;
+  right: -1400px;
   bottom: -191px;
   background-color: gold;
 }
@@ -20,7 +20,15 @@
 
   color: grey;
 }
+.a{
 
+  position:relative;
+  transition: .1s ease;
+  top: 30px;
+  right: -0px;
+  bottom: -191px;
+
+}
  .a:hover {
 
    color: gold;
@@ -30,3 +38,71 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+
+input {
+
+  color: black;
+  position: relative;
+  top: 0px;
+  right: -800px;
+  bottom: -191px;
+  background-color: white;
+  border: 0px solid;
+  height:25px;
+  width:180px;
+  font-size: 12pt;
+  font-family: "Raleway", sans-serif;
+}
+
+.password {
+
+  color: black;
+  position:relative;
+  top: 0px;
+  right: -805px;
+  bottom: -191px;
+  background-color: white;
+  border: 0px solid;
+  height:25px;
+  width:180px;
+  font-size: 12pt;
+  font-family: "Raleway", sans-serif;
+}
+
+.loginbutton
+{
+  color: black;
+  position:relative;
+  transition: .1s ease;
+  top: -0px;
+  right: -815px;
+  bottom: -191px;
+  background-color: white;
+
+}
+
+.emailmessage  {
+
+  color: yellow;
+  position:relative;
+  top: -25px;
+  right: -620px;
+  bottom: -191px;
+  font-size: 8pt;
+  font-family: "Raleway", sans-serif;
+
+
+}
+
+.passwordmessage{
+
+  color: yellow;
+  position:relative;
+  top: -25px;
+  right: -620px;
+  bottom: -191px;
+  font-size: 8pt;
+  font-family: "Raleway", sans-serif;
+
+}
+
