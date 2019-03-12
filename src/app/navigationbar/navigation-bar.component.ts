@@ -13,7 +13,7 @@ export class NavigationBarComponent implements OnInit {
   private formSubmitAttempt: boolean;
 
   constructor(
-    private fb: FormBuilder,      // {3}
+    private formBuilder: FormBuilder,      // {3}
     private router: Router // {4}
   ) {
   }
@@ -25,7 +25,7 @@ export class NavigationBarComponent implements OnInit {
 
   createUserForm() {
 
-    this.form = this.fb.group({
+    this.form = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
