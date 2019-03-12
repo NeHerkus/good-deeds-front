@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../models/user';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -14,7 +13,6 @@ export class NavigationBarComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,      // {3}
-    private router: Router // {4}
   ) {
   }
 
@@ -52,7 +50,7 @@ export class NavigationBarComponent implements OnInit {
     if (!(user.name !== '' && user.password !== '')) {
       return;
     }
-    this.router.navigate(['newidea']);
+    console.log('oba');
   }
 
 }

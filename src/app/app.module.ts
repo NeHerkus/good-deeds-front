@@ -14,6 +14,7 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
