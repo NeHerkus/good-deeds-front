@@ -25,7 +25,8 @@ import {AuthenticationService} from './services/authentication.service';
     IdeasTableComponent,
     NewIdeaFormpageComponent,
     HomePageComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+
   ],
 
   imports: [
