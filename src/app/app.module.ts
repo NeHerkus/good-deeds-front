@@ -14,17 +14,10 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import {AuthenticationService} from './services/authentication.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
-=======
-=======
->>>>>>> 9cd5d76379ce1b67366ab69898738b9b0da2a174
 import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
-
->>>>>>> 2037fe0... Add alert service and component for login
 
 @NgModule({
   declarations: [
@@ -36,20 +29,9 @@ import {AlertService} from './services/alert.service';
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    NewUserFormpageComponent
-=======
+    NewUserFormpageComponent,
     AlertComponent,
     AlertService
->>>>>>> 2037fe0... Add alert service and component for login
-=======
-    AlertComponent
->>>>>>> 9364d64... Fix app module providers after creating Alert service
-=======
-    AlertComponent
->>>>>>> 9cd5d76379ce1b67366ab69898738b9b0da2a174
   ],
 
   imports: [
@@ -64,16 +46,7 @@ import {AlertService} from './services/alert.service';
     ReactiveFormsModule,
     FormsModule
   ],
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-  providers: [IdeaService, AuthenticationService],
-=======
-  providers: [IdeaService, AlertService],
->>>>>>> 9364d64... Fix app module providers after creating Alert service
-=======
-  providers: [IdeaService, AlertService],
->>>>>>> 9cd5d76379ce1b67366ab69898738b9b0da2a174
+  providers: [IdeaService, AuthenticationService, AlertService, IdeaService, AlertService],
   bootstrap:
     [AppComponent]
 })
