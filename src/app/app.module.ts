@@ -34,11 +34,15 @@ import {AlertService} from './services/alert.service';
     HomePageComponent,
     NavigationBarComponent,
 <<<<<<< HEAD
+<<<<<<< HEAD
     NewUserFormpageComponent
 =======
     AlertComponent,
     AlertService
 >>>>>>> 2037fe0... Add alert service and component for login
+=======
+    AlertComponent
+>>>>>>> 9364d64... Fix app module providers after creating Alert service
   ],
 
   imports: [
@@ -54,7 +58,11 @@ import {AlertService} from './services/alert.service';
     FormsModule
   ],
 
+<<<<<<< HEAD
   providers: [IdeaService, AuthenticationService],
+=======
+  providers: [IdeaService, AlertService],
+>>>>>>> 9364d64... Fix app module providers after creating Alert service
   bootstrap:
     [AppComponent]
 })
