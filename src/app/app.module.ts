@@ -14,8 +14,7 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
-import { NewUserFormpageComponent } from './newuserformpage/new-user-formpage.component';
-
+import {Router} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,7 @@ import { NewUserFormpageComponent } from './newuserformpage/new-user-formpage.co
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
-    NewUserFormpageComponent
+
   ],
 
   imports: [

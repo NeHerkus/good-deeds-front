@@ -1,32 +1,11 @@
-var express = require('express');
-var compression = require('compression');
-var proxy = require('http-proxy-middleware');
-var API_HOST = process.env.API_HOST || 'localhost:8080';
-var PORT = process.env.PORT || 8080
+const express = require('express');
+const app = express();
+const path = require('path');
 
-var buildPath = 'dist/good-deeds-front'
+app.use(express.static(__dirname + '/dist/good-deeds-front'));
 
-// Initialize
-var app = express();
+app.listen(process.env.PORT || 4200);
 
-// Serve static resources from 'build' folder
-app.use(express.static(buildPath));
-
-// Enable gzip response compression
-app.use(compression());
-
-// Enable proxy to api
-app.use('/api', proxy({
-  target: API_HOST,
-  changeOrigin: true,
-  pathRewrite: {
-    '^/api': ''
-  }
-}));
-
-// Otherwise serve index.html
-app.get('*', function (req, res) {
-  res.sendFile(__dirname + buildPath + "/index.html");
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname + '/dist/good-deeds-front/index.html'));
 });
-
-app.listen(PORT);

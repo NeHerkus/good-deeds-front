@@ -10,6 +10,70 @@ h1, h2, h3, h4, h5 {
   font-family: "Raleway", sans-serif;
 }
 
+.w3-content {
+
+  max-width: 1400px
+}
+
+
 .header-container {
   max-width: 1400px;
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fourth-text {
+  font-size: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 9%;
+  left: 25%;
+  opacity: 0;
+  color: black;
+  animation-name: fadeInOut;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  margin: auto;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
