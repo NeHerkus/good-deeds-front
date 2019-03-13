@@ -22,13 +22,17 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
-    return this.http.post<any>(this.baseUrl + '/login', {username, password}).pipe(map(user => {
-      if (user && user.token) {
-        localStorage.setItem('token', JSON.stringify(user.token));
-        this.currentUserSubject.next(user);
-      }
+  login(email: string, password: string) {
+    return this.http.post<any>(this.baseUrl + '/login', {email, password}, {observe: 'response'}).pipe(map(res => {
+      console.log(res.headers.get('Authorization'));
     }));
+    //   .pipe(map(user => {
+    //   console.log(user.token + ' ' + user.getToken());
+    //   if (user && user.token) {
+    //     localStorage.setItem('token', JSON.stringify(user.token));
+    //     this.currentUserSubject.next(user);
+    //   }
+    // }));
   }
 
   logout() {

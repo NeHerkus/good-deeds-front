@@ -14,7 +14,7 @@
         <b> Add idea</b>
       </button>
     </a>
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <input type="text" name="email" formControlName="email" maxlength="{{maxInputLength}}" placeholder="Email">
       <mat-error *ngIf="isFieldInvalid('email')">
         <b class="emailmessage"> Please enter your email</b>
@@ -25,6 +25,14 @@
         <b class="passwordmessage"> Please enter your password</b>
       </mat-error>
       <button class="loginbutton" mat-button (click)="onSubmit()">Login</button>
+      <div>
+        <a href="home">
+          <button mat-button class="button">
+            <mat-icon>how_to_reg</mat-icon>
+            <b>Log in</b>
+          </button>
+        </a>
+      </div>
     </form>
     <a href="/newuser">
       <button mat-button class="button">

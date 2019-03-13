@@ -17,6 +17,7 @@ import {IdeaService} from './services/idea.service';
 import {AuthenticationService} from './services/authentication.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
+import {JwtModule} from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,16 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          return localStorage.getItem('access_token');
+        },
+        whitelistedDomains: ['localhost:4200'],
+        blacklistedRoutes: ['https://good-deed.herokuapp.com/login']
+      }
+    })
   ],
 
   providers: [IdeaService, AuthenticationService],
