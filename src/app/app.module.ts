@@ -16,6 +16,7 @@ import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationService} from './services/authentication.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
+import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.comp
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
-    NewUserFormpageComponent
+    NewUserFormpageComponent,
+    PageNotFoundComponent
   ],
 
   imports: [
