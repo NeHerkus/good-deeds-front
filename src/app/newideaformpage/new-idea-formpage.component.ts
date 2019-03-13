@@ -10,6 +10,13 @@ import {MatSnackBar} from '@angular/material';
 })
 export class NewIdeaFormpageComponent implements OnInit {
 
+  private nameFieldMaxSymbols = 77;
+  private locationFieldMaxSymbols = 77;
+  private organizationFieldMaxSymbols = 77;
+  private websiteFieldMaxSymbols = 77;
+  private optPartFieldMaxSymbols = 20;
+  private descFieldMaxSymbols = 500;
+ private contactPersFieldMaxSymbols = 150;
   ideaForm: FormGroup;
   locations: string[] = [
     'Vilnius',
@@ -34,33 +41,29 @@ export class NewIdeaFormpageComponent implements OnInit {
     'Radviliškis',
     'Gargždai'];
 
-  maxInputLength20 = 20;
-  maxInputLength77 = 77;
-  maxInputLength150 = 150;
-  maxInputLength500 = 500;
-
   constructor(private formBuilder: FormBuilder,
               private ideaService: IdeaService,
               private invalidFormError: MatSnackBar) {
   }
 
   ngOnInit() {
+
     this.createIdeaForm();
 
   }
 
   createIdeaForm() {
     this.ideaForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
-      location: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
-      organization: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
-      website: ['', [Validators.maxLength(this.maxInputLength77)]],
-      optimalParticipatorsAmount: ['', [Validators.maxLength(this.maxInputLength20)]],
+      name: ['', [Validators.required, Validators.maxLength(this.nameFieldMaxSymbols)]],
+      location: ['', [Validators.required, Validators.maxLength(this.locationFieldMaxSymbols)]],
+      organization: ['', [Validators.required, Validators.maxLength(this.organizationFieldMaxSymbols)]],
+      website: ['', [Validators.maxLength(this.websiteFieldMaxSymbols)]],
+      optimalParticipatorsAmount: ['', [Validators.maxLength(this.optPartFieldMaxSymbols)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
       category: [[null, null, null, null, null]],
-      description: ['', [Validators.required, Validators.maxLength(this.maxInputLength500)]],
-      contactPerson: ['', [Validators.required, Validators.maxLength(this.maxInputLength150)]]
+      description: ['', [Validators.required, Validators.maxLength(this.descFieldMaxSymbols)]],
+      contactPerson: ['', [Validators.required, Validators.maxLength(this.contactPersFieldMaxSymbols)]]
     });
   }
 

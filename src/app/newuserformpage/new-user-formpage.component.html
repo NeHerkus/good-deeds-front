@@ -3,14 +3,6 @@
     <h2 style="text-align: center">Please fill the user registration form</h2>
     <mat-card-content style="height: auto">
 
-      <!--<p>{{userForm.value | json}}</p>-->
-      <!--<p>{{userForm.status }}</p>-->
-      <!--<p>{{userForm.hasError('notMatching') }}</p>-->
-      <!--<p>{{userForm.get('fullName').errors | json}}</p>-->
-      <!--<p>{{userForm.get('email').errors | json}}</p>-->
-      <!--<p>{{userForm.get('password').errors | json}}</p>-->
-      <!--<p>{{userForm.get('confirmPassword').errors | json}}</p>-->
-
       <!--Full name-->
       <mat-form-field class="input-form">
         <input matInput
@@ -24,7 +16,7 @@
         <mat-error *ngIf="userForm.get('fullName').hasError('required')">
           Full name is a required field
         </mat-error>
-        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{}}</mat-hint>
       </mat-form-field>
 
       <!--Email-->
