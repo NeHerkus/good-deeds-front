@@ -1,3 +1,4 @@
+// angular imports
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AngularMaterialModule} from './angular-material';
@@ -15,6 +16,8 @@ import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationInterceptorService} from './services/authentication-interceptor.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
+import {AlertComponent} from './alert/alert.component';
+import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 
 @NgModule({
@@ -27,6 +30,8 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
+    NewUserFormpageComponent,
+    AlertComponent,
     NewUserFormpageComponent,
     PageNotFoundComponent
   ],
@@ -43,8 +48,7 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     ReactiveFormsModule,
     FormsModule
   ],
-
-  providers: [IdeaService, AuthenticationInterceptorService],
+  providers: [IdeaService, AlertService, AuthenticationInterceptorService],
   bootstrap:
     [AppComponent]
 })
