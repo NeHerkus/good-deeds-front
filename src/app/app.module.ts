@@ -13,10 +13,9 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
-import {AuthenticationService} from './services/authentication.service';
+import {AuthenticationInterceptorService} from './services/authentication-interceptor.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
-import {JwtModule} from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -42,18 +41,10 @@ import {JwtModule} from '@auth0/angular-jwt';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    FormsModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function tokenGetter() {
-          return localStorage.getItem('access_token');
-        },
-        whitelistedDomains: ['localhost:4200', 'https://good-deeds-front-staging.herokuapp.com/'],
-      }
-    })
+    FormsModule
   ],
 
-  providers: [IdeaService, AuthenticationService],
+  providers: [IdeaService, AuthenticationInterceptorService],
   bootstrap:
     [AppComponent]
 })
