@@ -14,8 +14,14 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
+<<<<<<< HEAD
 import {AuthenticationService} from './services/authentication.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
+=======
+import {AlertComponent} from './alert/alert.component';
+import {AlertService} from './services/alert.service';
+
+>>>>>>> 2037fe0... Add alert service and component for login
 
 @NgModule({
   declarations: [
@@ -27,7 +33,12 @@ import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.comp
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
+<<<<<<< HEAD
     NewUserFormpageComponent
+=======
+    AlertComponent,
+    AlertService
+>>>>>>> 2037fe0... Add alert service and component for login
   ],
 
   imports: [
