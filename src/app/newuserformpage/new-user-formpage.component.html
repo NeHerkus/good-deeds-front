@@ -16,7 +16,7 @@
         <mat-error *ngIf="userForm.get('fullName').hasError('required')">
           Full name is a required field
         </mat-error>
-        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{}}</mat-hint>
+        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{maxInputLength77}}</mat-hint>
       </mat-form-field>
 
       <!--Email-->
