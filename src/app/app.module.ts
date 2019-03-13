@@ -31,7 +31,6 @@ import {AlertService} from './services/alert.service';
     NavigationBarComponent,
     NewUserFormpageComponent,
     AlertComponent,
-    AlertService
   ],
 
   imports: [
