@@ -1,11 +1,10 @@
-// angular imports
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AngularMaterialModule} from './angular-material';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-// dev imports
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {NewIdeaFormpageComponent} from './newideaformpage/new-idea-formpage.component';
@@ -49,8 +48,7 @@ import {JwtModule} from '@auth0/angular-jwt';
         tokenGetter: function tokenGetter() {
           return localStorage.getItem('access_token');
         },
-        whitelistedDomains: ['localhost:4200'],
-        blacklistedRoutes: ['https://good-deed.herokuapp.com/login']
+        whitelistedDomains: ['localhost:4200', 'https://good-deeds-front-staging.herokuapp.com/'],
       }
     })
   ],

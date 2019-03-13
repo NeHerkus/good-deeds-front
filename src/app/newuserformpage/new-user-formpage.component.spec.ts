@@ -3,7 +3,7 @@ import {AngularMaterialModule} from '../angular-material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
+import {RouterTestingModule} from '@angular/router/testing';
 
 import {NewUserFormpageComponent} from './new-user-formpage.component';
 
@@ -21,7 +21,8 @@ describe('NewUserFormpageComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterTestingModule
       ]
     })
       .compileComponents();
