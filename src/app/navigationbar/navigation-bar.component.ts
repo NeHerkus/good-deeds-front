@@ -58,7 +58,7 @@ export class NavigationBarComponent implements OnInit {
 
     this.loading = true;
     this.authService.login(this.f.email.value, this.f.password.value)
-      // .pipe(first())
+    // .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
@@ -67,5 +67,9 @@ export class NavigationBarComponent implements OnInit {
           // this.alertService.error(error);
           this.loading = false;
         });
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 }
