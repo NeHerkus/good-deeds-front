@@ -15,7 +15,7 @@ import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/materia
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationService} from './services/authentication.service';
-
+import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import {AuthenticationService} from './services/authentication.service';
     IdeasTableComponent,
     NewIdeaFormpageComponent,
     HomePageComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    PageNotFoundComponent
   ],
 
   imports: [
