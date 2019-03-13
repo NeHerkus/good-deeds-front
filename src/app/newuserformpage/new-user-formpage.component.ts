@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserFormErrorStateMatcher} from './user-form-error-state-matcher';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-new-user-formpage',
@@ -12,11 +12,12 @@ export class NewUserFormpageComponent implements OnInit {
   hide = true;
   userForm: FormGroup;
 
-  formControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  matcher = new UserFormErrorStateMatcher();
+  static checkPasswords(c: AbstractControl) {
+    const password = c.get('password').value;
+    const confirmPassword = c.get('confirmPassword').value;
+
+    return password === confirmPassword ? null : {notMatching: true};
+  }
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -27,11 +28,30 @@ export class NewUserFormpageComponent implements OnInit {
 
   initForm() {
     this.userForm = this.formBuilder.group({
-      fullName: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
-      email: [this.formControl, Validators.maxLength(this.maxInputLength77)],
-      password: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]],
-      confirmPassword: ['', [Validators.required, Validators.maxLength(this.maxInputLength77)]]
-    });
+      fullName: [
+        '',
+        [Validators.required,
+          Validators.maxLength(this.maxInputLength77)]
+      ],
+      email: [
+        '',
+        [Validators.required,
+          Validators.email,
+          Validators.maxLength(this.maxInputLength77),
+        ]
+      ],
+      password: [
+        '',
+        [Validators.required,
+          Validators.maxLength(this.maxInputLength77),
+          Validators.pattern('^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$'),
+        ]
+      ],
+      confirmPassword: [
+        '',
+        [Validators.required]
+      ]
+    }, {validators : NewUserFormpageComponent.checkPasswords});
   }
 }
 
