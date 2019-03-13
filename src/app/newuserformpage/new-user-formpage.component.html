@@ -16,7 +16,7 @@
         <mat-error *ngIf="userForm.get('fullName').hasError('required')">
           Full name is a required field
         </mat-error>
-        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{this.maxInputLength77}}</mat-hint>
       </mat-form-field>
 
       <!--Email-->
@@ -26,7 +26,7 @@
                formControlName="email"
                required>
         <mat-hint>Enter your Email address</mat-hint>
-        <mat-hint align="end"> {{userForm.get('email').value.length}} / {{maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> {{userForm.get('email').value.length}} / {{this.maxInputLength77}}</mat-hint>
 
         <mat-error *ngIf="userForm.get('email').hasError('required')">
           Email is a required field
@@ -44,7 +44,7 @@
                [type]="hide ? 'password' : 'text'"
                required>
         <mat-hint>Enter your password</mat-hint>
-        <mat-hint align="end"> max: {{maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> max: {{this.maxInputLength77}}</mat-hint>
 
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
@@ -65,7 +65,7 @@
                [type]="hide ? 'password' : 'text'"
                required>
         <mat-hint> Confirm password</mat-hint>
-        <mat-hint align="end"> max: {{maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> max: {{this.maxInputLength77}}</mat-hint>
         <mat-error *ngIf="userForm.get('confirmPassword').hasError('required')">
           Confirm password is a required field
         </mat-error>

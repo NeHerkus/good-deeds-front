@@ -8,6 +8,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
   styleUrls: ['./new-user-formpage.component.css']
 })
 export class NewUserFormpageComponent implements OnInit {
+
   maxInputLength77 = 77;
   hide = true;
   userForm: FormGroup;
