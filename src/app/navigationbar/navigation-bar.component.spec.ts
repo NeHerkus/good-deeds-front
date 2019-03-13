@@ -3,6 +3,8 @@ import {MatIconModule, MatButtonModule, MatToolbarModule} from '@angular/materia
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterTestingModule} from '@angular/router/testing';
 
 import {NavigationBarComponent} from './navigation-bar.component';
 import {AngularMaterialModule} from '../angular-material';
@@ -21,7 +23,9 @@ describe('NavigationBarComponent', () => {
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        AngularMaterialModule
+        AngularMaterialModule,
+        HttpClientModule,
+        RouterTestingModule
       ],
       declarations: [
         NavigationBarComponent
@@ -35,7 +39,6 @@ describe('NavigationBarComponent', () => {
     fixture = TestBed.createComponent(NavigationBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
   });
 
   it('should create', () => {
