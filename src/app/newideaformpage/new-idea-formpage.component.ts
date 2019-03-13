@@ -6,10 +6,10 @@ import {AppConstants} from '../app-constants';
 
 @Component({
   selector: 'app-new-idea-formpage',
-  templateUrl: './new-idea-form-page.component.html',
-  styleUrls: ['./new-idea-form-page.component.css']
+  templateUrl: './new-idea-formpage.component.html',
+  styleUrls: ['./new-idea-formpage.component.css']
 })
-export class NewIdeaFormPageComponent implements OnInit {
+export class NewIdeaFormpageComponent implements OnInit {
 
   ideaForm: FormGroup;
   locations: string[] = [
@@ -56,7 +56,7 @@ export class NewIdeaFormPageComponent implements OnInit {
       website: ['', [Validators.maxLength(AppConstants.WEBSITE_FORM_MAX_SYMBOLS)]],
       optimalParticipatorsAmount: ['', [Validators.maxLength(AppConstants.PARTICIPATORS_FORM_MAX_SYMBOLS)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
-      //  rasau category kaip null ir bandau siusti i BE
+      //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
       category: [[null, null, null, null, null]],
       description: ['', [Validators.required, Validators.maxLength(AppConstants.IDEA_FORM_MAX_SYMBOLS)]],
       contactPerson: ['', [Validators.required, Validators.maxLength(AppConstants.CONTACT_FORM_MAX_SYMBOLS)]]

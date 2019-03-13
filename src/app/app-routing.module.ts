@@ -2,13 +2,13 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {HomePageComponent} from './homepage/home-page.component';
-import {NewIdeaFormPageComponent} from './newideaformpage/new-idea-form-page.component';
-import {NewUserFormPageComponent} from './newuserformpage/new-user-form-page.component';
+import {NewIdeaFormpageComponent} from './newideaformpage/new-idea-formpage.component';
+import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
-  {path: 'newidea', component: NewIdeaFormPageComponent},
-  {path: 'newuser', component: NewUserFormPageComponent},
+  {path: 'newidea', component: NewIdeaFormpageComponent},
+  {path: 'newuser', component: NewUserFormpageComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', redirectTo: '/home', pathMatch: 'full'},
 ];

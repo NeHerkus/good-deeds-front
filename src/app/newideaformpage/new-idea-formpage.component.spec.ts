@@ -5,17 +5,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
-import {NewIdeaFormPageComponent} from './new-idea-form-page.component';
+import {NewIdeaFormpageComponent} from './new-idea-formpage.component';
 import {IdeasTableComponent} from '../ideastable/ideas-table.component';
 
-describe('NewIdeaFormPageComponent', () => {
-  let component: NewIdeaFormPageComponent;
-  let fixture: ComponentFixture<NewIdeaFormPageComponent>;
+describe('NewIdeaFormpageComponent', () => {
+  let component: NewIdeaFormpageComponent;
+  let fixture: ComponentFixture<NewIdeaFormpageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NewIdeaFormPageComponent,
+        NewIdeaFormpageComponent,
         IdeasTableComponent
       ],
       imports: [
@@ -30,7 +30,7 @@ describe('NewIdeaFormPageComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewIdeaFormPageComponent);
+    fixture = TestBed.createComponent(NewIdeaFormpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
