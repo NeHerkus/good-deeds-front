@@ -5,16 +5,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
-import {NewUserFormpageComponent} from './new-user-formpage.component';
+import {NewUserFormPageComponent} from './new-user-form-page.component';
 
-describe('NewUserFormpageComponent', () => {
-  let component: NewUserFormpageComponent;
-  let fixture: ComponentFixture<NewUserFormpageComponent>;
+describe('NewUserFormPageComponent', () => {
+  let component: NewUserFormPageComponent;
+  let fixture: ComponentFixture<NewUserFormPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        NewUserFormpageComponent,
+        NewUserFormPageComponent,
       ],
       imports: [
         AngularMaterialModule,
@@ -28,7 +28,7 @@ describe('NewUserFormpageComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewUserFormpageComponent);
+    fixture = TestBed.createComponent(NewUserFormPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

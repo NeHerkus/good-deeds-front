@@ -8,26 +8,26 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // dev imports
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {NewIdeaFormpageComponent} from './newideaformpage/new-idea-formpage.component';
+import {NewIdeaFormPageComponent} from './newideaformpage/new-idea-form-page.component';
 import {HomePageComponent} from './homepage/home-page.component';
 import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationService} from './services/authentication.service';
-import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
+import {NewUserFormPageComponent} from './newuserformpage/new-user-form-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewIdeaFormpageComponent,
+    NewIdeaFormPageComponent,
     HomePageComponent,
     NavigationBarComponent,
     IdeasTableComponent,
-    NewIdeaFormpageComponent,
+    NewIdeaFormPageComponent,
     HomePageComponent,
     NavigationBarComponent,
-    NewUserFormpageComponent
+    NewUserFormPageComponent
   ],
 
   imports: [

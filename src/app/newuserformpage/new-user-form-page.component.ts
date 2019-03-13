@@ -4,10 +4,10 @@ import {AppConstants} from '../app-constants';
 
 @Component({
   selector: 'app-new-user-formpage',
-  templateUrl: './new-user-formpage.component.html',
-  styleUrls: ['./new-user-formpage.component.css']
+  templateUrl: './new-user-form-page.component.html',
+  styleUrls: ['./new-user-form-page.component.css']
 })
-export class NewUserFormpageComponent implements OnInit {
+export class NewUserFormPageComponent implements OnInit {
   hide = true;
   userForm: FormGroup;
 
@@ -54,7 +54,7 @@ export class NewUserFormpageComponent implements OnInit {
         '',
         [Validators.required]
       ]
-    }, {validators: NewUserFormpageComponent.checkPasswords});
+    }, {validators: NewUserFormPageComponent.checkPasswords});
   }
 }
 
