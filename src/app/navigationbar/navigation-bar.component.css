@@ -40,7 +40,7 @@
 
 .topnav {
   overflow: hidden;
-  background-color: darkslategrey;
+  background-color: #242623;
   width: 100%;
   flex: 1 1 auto;
 }
@@ -81,8 +81,8 @@
 }
 
 .the-button {
-  background-color: black;
-  color: white;
+  background-color: #f7cd02;
+  color: #0e0e0e;
   font-size: 17px;
   border: none;
   cursor: pointer;
