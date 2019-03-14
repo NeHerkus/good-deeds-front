@@ -1,41 +1,37 @@
-<mat-toolbar color="green">
 
-  <span class="example-fill-remaining-space"></span>
-  <div>
-    <a class="a" href="/home">
-      <button mat-button>
-        <mat-icon color="white">home</mat-icon>
-        <b> Home</b>
-      </button>
-    </a>
-    <a class="a" href="/newidea">
-      <button mat-button>
-        <mat-icon color="white">assignment</mat-icon>
-        <b>Add idea</b>
-      </button>
-    </a>
+<span class="example-fill-remaining-space" ></span>
+<div class="topnav" color="grey">
+  <a class="active" class="a" href="/home">
+    <button mat-button  >
+      <mat-icon color="white">home</mat-icon>
+      <b> Home</b>
+    </button>
+  </a>
+  <a class="a" href="/newidea">
+    <button mat-button >
+      <mat-icon color="white">assignment</mat-icon>
+      <b> Add idea</b>
+    </button>
+  </a>
+  <div class="login-container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoggedIn()">
       <input type="text" name="email" formControlName="email" maxlength="{{maxInputLength}}" placeholder="Email">
       <mat-error *ngIf="isFieldInvalid('email')">
         <b class="emailmessage"> Please enter your email</b>
       </mat-error>
-      <input class="password" type="password" formControlName="password" name="password" maxlength="{{maxInputLength}}"
-             placeholder="Password">
+      <input  type="password" formControlName="password" name="password" maxlength="{{maxInputLength}}"
+              placeholder="Password">
       <mat-error *ngIf="isFieldInvalid('password')">
         <b class="passwordmessage"> Please enter your password</b>
       </mat-error>
-      <button class="loginbutton" mat-button (click)="onSubmit()">Login</button>
+      <div *ngIf="!isLoggedIn()">
+      <button  mat-button class="register" routerLink="/newuser">
+        <mat-icon>how_to_reg</mat-icon>
+        <b>Sign up</b>
+      </button>
+      </div>
+      <button class="login-container" mat-button (click)="onSubmit()">Login</button>
     </form>
-    <div *ngIf="!isLoggedIn()">
-      <a href="/newuser">
-        <button mat-button class="button">
-          <mat-icon>how_to_reg</mat-icon>
-          <b>Sign up</b>
-        </button>
-      </a>
-    </div>
+
   </div>
-</mat-toolbar>
-
-
-
+</div>
