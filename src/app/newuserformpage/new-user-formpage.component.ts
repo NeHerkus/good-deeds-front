@@ -3,6 +3,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {JwtService} from '../services/jwt.service';
 import {Router, ActivatedRoute} from '@angular/router';
 
+import {AppConstants} from '../app-constants';
 
 @Component({
   selector: 'app-new-user-formpage',
@@ -12,11 +13,14 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class NewUserFormpageComponent implements OnInit {
 
   submitted = false;
-  maxInputLength77 = 77;
   hide = true;
   userForm: FormGroup;
   loading = false;
   returnUrl: string;
+
+  get appConstants() {
+    return AppConstants;
+  }
 
   static checkPasswords(c: AbstractControl) {
     const password = c.get('password').value;
@@ -43,19 +47,19 @@ export class NewUserFormpageComponent implements OnInit {
       fullName: [
         '',
         [Validators.required,
-          Validators.maxLength(this.maxInputLength77)]
+          Validators.maxLength(AppConstants.FULLNAME_FORM_MAX_SYMBOLS)]
       ],
       email: [
         '',
         [Validators.required,
           Validators.email,
-          Validators.maxLength(this.maxInputLength77),
+          Validators.maxLength(AppConstants.EMAIL_FORM_MAX_SYMBOLS),
         ]
       ],
       password: [
         '',
         [Validators.required,
-          Validators.maxLength(this.maxInputLength77),
+          Validators.maxLength(AppConstants.PASSWORD_FORM_MAX_SYMBOLS),
           Validators.pattern('^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$'),
         ]
       ],
@@ -63,7 +67,7 @@ export class NewUserFormpageComponent implements OnInit {
         '',
         [Validators.required]
       ]
-    }, {validators : NewUserFormpageComponent.checkPasswords});
+    }, {validators: NewUserFormpageComponent.checkPasswords});
   }
 
   get f() {
