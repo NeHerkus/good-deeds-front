@@ -23,7 +23,11 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "src/custom-theme.scss"
+              },
               "src/styles.css"
+
             ],
             "scripts": [],
             "es5BrowserSupport": true

@@ -1,4 +1,15 @@
 
+.login-bar{
+  position: absolute;
+  right: 0;
+}
+
+.form-spacing{
+  margin-right: 10px;
+  margin-top: 14.5px;
+}
+
+
 
 .emailmessage {
 
@@ -9,7 +20,6 @@
   bottom: -191px;
   font-size: 8pt;
   font-family: "Raleway", sans-serif;
-
 
 }
 
@@ -30,7 +40,7 @@
 
 .topnav {
   overflow: hidden;
-  background-color: lightslategrey;
+  background-color: darkslategrey;
   width: 100%;
   flex: 1 1 auto;
 }
@@ -52,14 +62,11 @@
   color: gold;
 }
 
-/* Active/current link */
-.topnav a.active {
-  background-color: #2196F3;
-}
+
 
 /* Style the input container */
 .topnav .login-container {
-  float: right;
+  flex: 1 1 auto;
 }
 
 
@@ -73,12 +80,7 @@
 
 }
 
-.topnav .login-container button {
-  float: right;
-  padding: 3px 8px;
-  margin-top: 8px;
-  margin-right: 70px;
-  margin-left: 50px;
+.the-button {
   background-color: black;
   color: white;
   font-size: 17px;
@@ -87,7 +89,7 @@
 }
 
 .topnav .login-container button.register {
-  float: right;
+
   padding: 6px 10px;
   margin-top: 8px;
   margin-left: 50px;
