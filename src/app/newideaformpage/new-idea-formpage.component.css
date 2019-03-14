@@ -5,11 +5,16 @@
   margin-bottom: 10px;
 }
 
+.centered {
+  text-align: center;
+}
+
 /*checkbox section part*/
 
-.checkbox-form-part{
+.checkbox-form-part {
   height: auto;
 }
+
 .checkbox-section-header {
   text-align: center;
 }
@@ -34,6 +39,9 @@
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+.card-content {
+  height: auto;
 }
 
 /*submit button part*/
