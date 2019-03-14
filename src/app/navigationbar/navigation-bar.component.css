@@ -81,12 +81,12 @@
 }
 
 .the-button {
-  background-color: #f7cd02;
-  color: #0e0e0e;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
+   background-color: #f7cd02;
+   color: #0e0e0e;
+   font-size: 17px;
+   border: none;
+   cursor: pointer;
+ }
 
 .topnav .login-container button.register {
 
