@@ -54,7 +54,7 @@ export class NewIdeaFormpageComponent implements OnInit {
       location: ['', [Validators.required]],
       organization: ['', [Validators.required, Validators.maxLength(AppConstants.ORGANIZATION_FORM_MAX_SYMBOLS)]],
       website: ['', [Validators.maxLength(AppConstants.WEBSITE_FORM_MAX_SYMBOLS)]],
-      optimalParticipatorsAmount: ['', [Validators.maxLength(AppConstants.PARTICIPATORS_FORM_MAX_SYMBOLS)]],
+      optimalParticipatorsAmount: ['Unimportant', [Validators.maxLength(AppConstants.PARTICIPATORS_FORM_MAX_SYMBOLS)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
       category: [[null, null, null, null, null]],
