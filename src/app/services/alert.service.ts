@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Router, NavigationStart} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
+import {AlertType} from '../models/alert-type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlertService {
-  private subject = new Subject<any>();
+  private messageSource = new Subject<any>();
   private keepAfterNavigationChange = false;
 
   constructor(private router: Router) {
@@ -15,23 +16,27 @@ export class AlertService {
         if (this.keepAfterNavigationChange) {
           this.keepAfterNavigationChange = false;
         } else {
-          this.subject.next();
+          this.messageSource.next();
         }
       }
     });
   }
 
-  success(message: string, keepAfterNavigationChange = false) {
-    this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject.next({type: 'success', text: message});
+  get alertType() {
+    return AlertType;
   }
 
-  error(message: string, keepAfterNavigationChange = false) {
-    this.keepAfterNavigationChange = keepAfterNavigationChange;
-    this.subject.next({type: 'error', text: message});
+  success(alert) {
+    this.keepAfterNavigationChange = alert.keepAfterNavigationChange;
+    this.messageSource.next({type: AlertType.SUCCESS, text: alert.message});
+  }
+
+  error(alert) {
+    this.keepAfterNavigationChange = alert.keepAfterNavigationChange;
+    this.messageSource.next({type: AlertType.ERROR, text: alert.message});
   }
 
   getMessage(): Observable<any> {
-    return this.subject.asObservable();
+    return this.messageSource.asObservable();
   }
 }
