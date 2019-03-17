@@ -1,5 +1,4 @@
 export class AppConstants {
-
   // idea form
   public static readonly NAME_FORM_MAX_SYMBOLS = 77;
   public static readonly ORGANIZATION_FORM_MAX_SYMBOLS = 77;
@@ -12,4 +11,5 @@ export class AppConstants {
   public static readonly FULLNAME_FORM_MAX_SYMBOLS = 77;
   public static readonly EMAIL_FORM_MAX_SYMBOLS = 77;
   public static readonly PASSWORD_FORM_MAX_SYMBOLS = 77;
+  public static readonly API_URL = 'https://good-deed.herokuapp.com';
 }

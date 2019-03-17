@@ -12,20 +12,11 @@ export class UserService {
 
   constructor(private http: HttpClient) {
   }
-
-  // getAll(): Observable<User[]> {
-  //   return this.http.get<User[]>(this.baseUrl + '/users');
-  // }
-
-  // getById(id: number) {
-  //   return this.http.get(this.baseUrl + '/users' + id);
-  // }
-
-  register(user: User) {
+  register(user: User): Observable<object> {
     return this.http.post(this.baseUrl + '/user', user);
   }
 
-  update(user: User) {
+  update(user: User): Observable<object> {
     return this.http.put(this.baseUrl + '/users/' + user, user);
   }
 }
