@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
 import {map} from 'rxjs/operators';
 import {Router, ActivatedRoute} from '@angular/router';
+import {AppConstants} from '../app-constants';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class JwtService {
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post<{ access_token: string }>('https://good-deed.herokuapp.com/login', {
+    return this.httpClient.post<{ access_token: string }>(AppConstants.API_URL, {
         email,
         password
       },
@@ -28,7 +29,7 @@ export class JwtService {
   }
 
   register(fullName: string, email: string, password: string) {
-    return this.httpClient.post<{ access_token: string }>('https://good-deed.herokuapp.com/user', {
+    return this.httpClient.post<{ access_token: string }>(AppConstants.API_URL, {
         fullName,
         email,
         password
