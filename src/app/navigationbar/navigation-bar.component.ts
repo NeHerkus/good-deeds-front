@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
 import {JwtService} from '../services/jwt.service';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -58,7 +59,7 @@ export class NavigationBarComponent implements OnInit {
 
     this.loading = true;
     this.authService.login(this.f.email.value, this.f.password.value)
-    // .pipe(first())
+      .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
