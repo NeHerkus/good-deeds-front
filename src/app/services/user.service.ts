@@ -9,15 +9,13 @@ import {API_ENDPOINTS} from '../constants/api-constants';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl = 'https://good-deed.herokuapp.com';
-
   constructor(private http: HttpClient) {
   }
   register(user: User): Observable<any> {
-    return this.http.post(API_ENDPOINTS.API_URL + 'user', user);
+    return this.http.post(API_ENDPOINTS.apiUrl + 'user', user);
   }
 
   update(user: User): Observable<any> {
-    return this.http.put(API_ENDPOINTS.API_URL + 'users' + user, user);
+    return this.http.put(API_ENDPOINTS.apiUrl + 'users' + user, user);
   }
 }
