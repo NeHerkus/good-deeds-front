@@ -13,10 +13,10 @@ export class IdeaService {
   }
 
   getIdeas(): Observable<Idea[]> {
-    return this.http.get<Idea[]>(API_ENDPOINTS.API_URL + '/idea');
+    return this.http.get<Idea[]>(API_ENDPOINTS.apiUrl + '/idea');
   }
 
   createIdea(idea: Idea) {
-    return this.http.post(API_ENDPOINTS.API_URL + '/idea', idea);
+    return this.http.post(API_ENDPOINTS.apiUrl + '/idea', idea);
   }
 }
