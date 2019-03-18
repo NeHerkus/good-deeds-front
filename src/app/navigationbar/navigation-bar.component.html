@@ -1,58 +1,81 @@
-<span class="example-fill-remaining-space"></span>
-<div class="topnav">
+<mat-toolbar>
 
-  <a class="active , a" href="/home">
-    <button mat-button>
-      <mat-icon color="white">home</mat-icon>
-      <b>Home</b>
-    </button>
-  </a>
-  <a class="a" href="/newidea">
-    <button mat-button>
-      <mat-icon color="white">assignment</mat-icon>
-      <b> Add idea</b>
-    </button>
-  </a>
-
-
-  <div class="login-bar">
-
-    <form [formGroup]="form"
-          (ngSubmit)="onSubmit()"
-          *ngIf="!isLoggedIn()">
-      <input type="text"
-             class="form-spacing"
-             name="email"
-             formControlName="email"
-             maxlength="{{maxInputLength}}"
-             placeholder="Email">
-
-      <!--<mat-error *ngIf="isFieldInvalid('email')">-->
-      <!--<b class="emailmessage"> Please enter your email</b>-->
-      <!--</mat-error>-->
-
-      <input type="password"
-             class="form-spacing"
-             formControlName="password"
-             name="password" maxlength="{{maxInputLength}}"
-             placeholder="Password">
-
-      <!--<mat-error *ngIf="isFieldInvalid('password')">-->
-      <!--<b class="passwordmessage"> Please enter your password</b>-->
-      <!--</mat-error>-->
-
-      <button class="the-button , form-spacing"
-              mat-button (click)="onSubmit()"><B>Login</B>
-      </button>
-
-      <button mat-button
-              class="the-button , form-spacing"
-              routerLink="/newuser"
-              *ngIf="!isLoggedIn()">
-        <mat-icon>how_to_reg</mat-icon>
-        <b>Sign up</b>
-      </button>
-
-    </form>
+  <div class="navbar-title">
+    <div class="navbar-title-text">
+      Summer of good deeds
+    </div>
   </div>
+
+  <div class="navbar-button-block">
+
+    <div class="navbar-button">
+      <a href="/home">
+        <button mat-button class="color">
+          <mat-icon>home</mat-icon>
+          <b>Home</b>
+        </button>
+      </a>
+    </div>
+
+    <div class="navbar-button">
+      <a href="/newidea">
+        <button mat-button class="color">
+          <mat-icon>assignment</mat-icon>
+          <b>Deeds list</b>
+        </button>
+      </a>
+    </div>
+
+    <div class="navbar-button">
+      <a href="/newidea">
+        <button mat-button class="color">
+          <mat-icon>playlist_add</mat-icon>
+          <b> Add idea</b>
+        </button>
+      </a>
+    </div>
+  </div>
+
+
+  <span class="example-spacer"></span>
+
+
+    <div class="login-button">
+      <div class="login-button-text">Log in / Sign up</div>
+    </div>
+
+</mat-toolbar>
+
+<div class="login-bar">
+
+  <form [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        *ngIf="!isLoggedIn()">
+    <!--<input type="text"-->
+    <!--class="form-spacing"-->
+    <!--name="email"-->
+    <!--formControlName="email"-->
+    <!--maxlength="{{maxInputLength}}"-->
+    <!--placeholder="Email">-->
+
+
+    <!--<input type="password"-->
+    <!--class="form-spacing"-->
+    <!--formControlName="password"-->
+    <!--name="password" maxlength="{{maxInputLength}}"-->
+    <!--placeholder="Password">-->
+
+    <!--<button class="the-button , form-spacing"-->
+    <!--mat-button (click)="onSubmit()"><B>Login</B>-->
+    <!--</button>-->
+
+    <!--<button mat-button-->
+    <!--class="the-button , form-spacing"-->
+    <!--routerLink="/newuser"-->
+    <!--*ngIf="!isLoggedIn()">-->
+    <!--<mat-icon>how_to_reg</mat-icon>-->
+    <!--<b>Sign up</b>-->
+    <!--</button>-->
+
+  </form>
 </div>
