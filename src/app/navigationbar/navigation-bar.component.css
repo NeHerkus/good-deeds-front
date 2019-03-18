@@ -1,9 +1,4 @@
-.color{
-  color: #004C8C !important;
-  font-family: Roboto, monospace !important;
-  font-size: 14px !important;
-  padding: 0px!important;
-}
+
 .navbar {
   display: flex;
   height: 69px;
@@ -46,28 +41,20 @@
   background-color: rgba(0, 102, 153, 1);
   border-radius: 15px;
   font-family: Roboto, monospace;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
   color: #FFFFFF;
   cursor: pointer;
   text-align: center;
-  margin-right: 30px;
-  margin-top: 18px;
-  right: 0;
-  position: absolute;
-
-
-
-
-
+  width: 120px;
 }
+
 .login-button-text{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 125px;
-  float:right;
 }
 
+.example-spacer{
+  flex: 1 1 auto;
+}
 
 
 /* Style the input container */
@@ -79,15 +66,15 @@
   cursor: pointer;
 }
 
-.navbar .login-container button.register {
+/*.navbar .login-container button.register {*/
 
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-left: 50px;
-  background-color: black;
-  color: white;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
+  /*padding: 6px 10px;*/
+  /*margin-top: 8px;*/
+  /*margin-left: 50px;*/
+  /*background-color: black;*/
+  /*color: white;*/
+  /*font-size: 17px;*/
+  /*border: none;*/
+  /*cursor: pointer;*/
+/*}*/
 
