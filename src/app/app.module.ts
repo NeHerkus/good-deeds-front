@@ -16,6 +16,8 @@ import {IdeaService} from './services/idea.service';
 import {AuthenticationInterceptorService} from './services/authentication-interceptor.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
+import {AlertComponent} from './alert/alert.component';
+import {AlertService} from './services/alert.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     HomePageComponent,
     NavigationBarComponent,
     NewUserFormpageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AlertComponent
   ],
 
   imports: [
@@ -43,8 +46,7 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     ReactiveFormsModule,
     FormsModule
   ],
-
-  providers: [IdeaService, AuthenticationInterceptorService],
+  providers: [IdeaService, AuthenticationInterceptorService, AuthenticationService, AlertService, IdeaService, AlertService],
   bootstrap:
     [AppComponent]
 })
