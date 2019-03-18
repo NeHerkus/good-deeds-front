@@ -11,10 +11,10 @@
     <a class="a" href="/newidea">
       <button mat-button>
         <mat-icon color="white">assignment</mat-icon>
-        <b> Add idea</b>
+        <b>Add idea</b>
       </button>
     </a>
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoggedIn()">
       <input type="text" name="email" formControlName="email" maxlength="{{maxInputLength}}" placeholder="Email">
       <mat-error *ngIf="isFieldInvalid('email')">
         <b class="emailmessage"> Please enter your email</b>
@@ -26,12 +26,14 @@
       </mat-error>
       <button class="loginbutton" mat-button (click)="onSubmit()">Login</button>
     </form>
-    <a href="/newuser">
-      <button mat-button class="button">
-        <mat-icon>how_to_reg</mat-icon>
-        <b>Sign up</b>
-      </button>
-    </a>
+    <div *ngIf="!isLoggedIn()">
+      <a href="/newuser">
+        <button mat-button class="button">
+          <mat-icon>how_to_reg</mat-icon>
+          <b>Sign up</b>
+        </button>
+      </a>
+    </div>
   </div>
 </mat-toolbar>
 

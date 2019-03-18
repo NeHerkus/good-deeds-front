@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {JwtService} from '../services/jwt.service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -9,9 +11,12 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 })
 export class NewUserFormpageComponent implements OnInit {
 
+  submitted = false;
   maxInputLength77 = 77;
   hide = true;
   userForm: FormGroup;
+  loading = false;
+  returnUrl: string;
 
   static checkPasswords(c: AbstractControl) {
     const password = c.get('password').value;
@@ -20,11 +25,17 @@ export class NewUserFormpageComponent implements OnInit {
     return password === confirmPassword ? null : {notMatching: true};
   }
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: JwtService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
     this.initForm();
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   initForm() {
@@ -53,6 +64,31 @@ export class NewUserFormpageComponent implements OnInit {
         [Validators.required]
       ]
     }, {validators : NewUserFormpageComponent.checkPasswords});
+  }
+
+  get f() {
+    return this.userForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.userForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.authService.register(this.f.fullName.value, this.f.email.value, this.f.password.value)
+    // .pipe(first())
+      .subscribe(
+        data => {
+          this.router.navigate([this.returnUrl]);
+        },
+        error => {
+          // this.alertService.error(error);
+          this.loading = false;
+        });
   }
 }
 
