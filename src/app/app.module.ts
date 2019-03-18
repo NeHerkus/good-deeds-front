@@ -14,8 +14,10 @@ import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
 import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
-import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
-
+import {AuthenticationService} from './services/authentication.service';
+import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
+import {AlertComponent} from './alert/alert.component';
+import {AlertService} from './services/alert.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     NewIdeaFormpageComponent,
     HomePageComponent,
     NavigationBarComponent,
-    PageNotFoundComponent
+    NewUserFormpageComponent,
+    AlertComponent,
   ],
 
   imports: [
@@ -42,8 +45,7 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     ReactiveFormsModule,
     FormsModule
   ],
-
-  providers: [IdeaService],
+  providers: [IdeaService, AuthenticationService, AlertService, IdeaService, AlertService],
   bootstrap:
     [AppComponent]
 })

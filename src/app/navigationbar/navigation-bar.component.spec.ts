@@ -2,8 +2,10 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {MatIconModule, MatButtonModule, MatToolbarModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {NavigationBarComponent} from './navigation-bar.component';
+import {AngularMaterialModule} from '../angular-material';
 
 describe('NavigationBarComponent', () => {
   let component: NavigationBarComponent;
@@ -16,11 +18,15 @@ describe('NavigationBarComponent', () => {
         MatToolbarModule,
         MatButtonModule,
         BrowserModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularMaterialModule
       ],
       declarations: [
         NavigationBarComponent
-      ]
+      ],
+      providers: []
     })
       .compileComponents();
   }));
@@ -29,6 +35,7 @@ describe('NavigationBarComponent', () => {
     fixture = TestBed.createComponent(NavigationBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
   });
 
   it('should create', () => {
