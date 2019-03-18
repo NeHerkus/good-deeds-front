@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Router, NavigationStart} from '@angular/router';
 import {Observable, Subject} from 'rxjs';
-import {AlertType} from '../models/alert-type';
+import {AlertType} from '../enums/alert-type';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +20,6 @@ export class AlertService {
         }
       }
     });
-  }
-
-  get alertType() {
-    return AlertType;
   }
 
   success(alert) {
