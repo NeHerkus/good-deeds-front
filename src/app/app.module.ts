@@ -46,7 +46,7 @@ import {AlertService} from './services/alert.service';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [IdeaService, AuthenticationInterceptorService, AuthenticationService, AlertService, IdeaService, AlertService],
+  providers: [IdeaService, AuthenticationInterceptorService, AlertService],
   bootstrap:
     [AppComponent]
 })
