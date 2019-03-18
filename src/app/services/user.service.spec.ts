@@ -1,18 +1,18 @@
 import {TestBed} from '@angular/core/testing';
 
-import {IdeaService} from './idea.service';
+import {UserService} from './user.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
-describe('IdeaService', () => {
-  let service: IdeaService;
+describe('UserService', () => {
+  let service: UserService;
 
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientTestingModule],
-    providers: [IdeaService]
+    providers: [UserService]
   }));
 
   beforeEach(() => {
-    service = TestBed.get(IdeaService);
+    service = TestBed.get(UserService);
   });
 
   it('should be created', () => {
