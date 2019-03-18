@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {IdeaService} from '../services/idea.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
-import {AppConstants} from '../app-constants';
+import {IDEA_FORM_OPTIONS} from '../constants/idea-form-constants';
+import {Idea} from '../models/Idea';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -44,22 +45,18 @@ export class NewIdeaFormpageComponent implements OnInit {
     this.createIdeaForm();
   }
 
-  get appConstants() {
-    return AppConstants;
-  }
-
   createIdeaForm() {
     this.ideaForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.maxLength(AppConstants.NAME_FORM_MAX_SYMBOLS)]],
+      name: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.nameFormMaxSymbols)]],
       location: ['', [Validators.required]],
-      organization: ['', [Validators.required, Validators.maxLength(AppConstants.ORGANIZATION_FORM_MAX_SYMBOLS)]],
-      website: ['', [Validators.maxLength(AppConstants.WEBSITE_FORM_MAX_SYMBOLS)]],
-      optimalParticipatorsAmount: ['Unimportant', [Validators.maxLength(AppConstants.PARTICIPATORS_FORM_MAX_SYMBOLS)]],
+      organization: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.organisationFormMaxSymbols)]],
+      website: ['', [Validators.maxLength(IDEA_FORM_OPTIONS.websiteFormMaxSymbols)]],
+      optimalParticipatorsAmount: ['Unimportant', [Validators.maxLength(IDEA_FORM_OPTIONS.optimalParticipatorsAmount)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
-      category: [[null, null, null, null, null]],
-      description: ['', [Validators.required, Validators.maxLength(AppConstants.IDEA_FORM_MAX_SYMBOLS)]],
-      contactPerson: ['', [Validators.required, Validators.maxLength(AppConstants.CONTACT_FORM_MAX_SYMBOLS)]]
+      category: [[ null]],
+      description: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.ideaFormMaxSymbols)]],
+      contactPerson: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.contactFormMaxSymbols)]]
     });
   }
 

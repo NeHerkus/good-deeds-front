@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
-import {AppConstants} from '../app-constants';
+import {API_ENDPOINTS} from '../constants/api-constants';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class JwtService {
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post(AppConstants.API_URL + 'login', {
+    return this.httpClient.post(API_ENDPOINTS.API_URL + 'login', {
         email,
         password
       },
@@ -26,7 +26,7 @@ export class JwtService {
   }
 
   register(fullName: string, email: string, password: string) {
-    return this.httpClient.post(AppConstants.API_URL + 'user', {
+    return this.httpClient.post(API_ENDPOINTS.API_URL + 'user', {
       fullName,
       email,
       password
