@@ -1,0 +1,107 @@
+<form class="form" [formGroup]="userForm">
+  <mat-card class="card">
+    <h2 class="centered">Please fill the user registration form</h2>
+    <mat-card-content class="card-content">
+
+      <!--Full name-->
+      <mat-form-field class="input-form">
+        <input matInput
+               type="text"
+               formControlName="fullName"
+               maxlength="{{userFormOptions.fullNameFormMaxSymbols}}"
+               placeholder="Full name"
+               required>
+        <mat-hint align="start">Enter your full name</mat-hint>
+
+        <mat-error *ngIf="userForm.get('fullName').hasError('required')">
+          Full name is a required field
+        </mat-error>
+        <mat-hint align="end"> {{userForm.get('fullName').value.length}}
+          / {{userFormOptions.fullNameFormMaxSymbols}}</mat-hint>
+      </mat-form-field>
+
+      <!--Email-->
+      <mat-form-field class="input-form">
+        <input matInput
+               type="text"
+               formControlName="email"
+               maxlength="{{userFormOptions.emailFormMaxSymbols}}"
+               placeholder="Email"
+               required>
+        <mat-hint>Enter your Email address</mat-hint>
+        <mat-hint align="end"> {{userForm.get('email').value.length}}
+          / {{userFormOptions.emailFormMaxSymbols}}</mat-hint>
+
+        <mat-error *ngIf="userForm.get('email').hasError('required')">
+          Email is a required field
+        </mat-error>
+        <mat-error *ngIf="userForm.get('email').hasError('email')">
+          Email is invalid
+        </mat-error>
+      </mat-form-field>
+
+      <!--Password field-->
+      <mat-form-field class="input-form">
+        <input matInput
+               type="text"
+               formControlName="password"
+               maxlength="{{userFormOptions.passwordFormMaxSymbols}}"
+               placeholder="Enter your password"
+               [type]="hide ? 'password' : 'text'"
+               required>
+        <mat-hint>Enter a password 8 symbols or longer with a number, one lowercase and one uppercase symbol</mat-hint>
+        <mat-hint align="end"> max: {{userFormOptions.passwordFormMaxSymbols}}</mat-hint>
+
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+        <mat-error *ngIf="userForm.get('password').hasError('required')">
+          Password is a required field
+        </mat-error>
+        <mat-error *ngIf="userForm.get('password').hasError('pattern')">
+          Password must longer that 8 symbols, contain one lowercase letter, one uppercase letter and a number
+        </mat-error>
+
+      </mat-form-field>
+
+      <!--Confirm password field-->
+      <mat-form-field class="input-form">
+        <input matInput
+               type="text"
+               formControlName="confirmPassword"
+               maxlength="{{userFormOptions.passwordFormMaxSymbols}}"
+               placeholder="Confirm your password"
+               [type]="hide ? 'password' : 'text'"
+               required>
+        <mat-hint> Confirm password</mat-hint>
+        <mat-hint align="end"> max: {{userFormOptions.passwordFormMaxSymbols}}</mat-hint>
+        <mat-error *ngIf="userForm.get('confirmPassword').hasError('required')">
+          Confirm password is a required field
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-error
+        *ngIf="userForm.getError('notMatching') &&
+        (userForm.get('password').dirty && userForm.get('password').touched) &&
+        (userForm.get('confirmPassword').dirty && userForm.get('confirmPassword').touched)">
+        Passwords do not match
+      </mat-error>
+
+    </mat-card-content>
+  </mat-card>
+</form>
+
+<div class="flex-container">
+  <div class="submit-button-block button-container">
+    <div class="submit-button">
+      <button mat-raised-button
+              color="primary"
+              (click)="onSubmit()"
+              class="the-button">
+        <b>Register</b>
+      </button>
+    </div>
+  </div>
+
+</div>
+

@@ -20,7 +20,8 @@ import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { LayoutModule } from '@angular/cdk/layout';
+import {LayoutModule} from '@angular/cdk/layout';
+import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     AlertComponent,
     NewUserFormpageComponent,
     PageNotFoundComponent,
+    LoginSignupPageComponent,
   ],
 
   imports: [
