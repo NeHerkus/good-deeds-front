@@ -1,7 +1,8 @@
 
 .t {
+  display: flex;
+  flex-direction: row;
   margin-left: 32%;
-  margin-bottom: 15%;
 }
 
 .top-level-container {
@@ -20,7 +21,6 @@ h1, h2, h3, h4, h5 {
 
 
 .center {
-
   font-family: Raleway;
   text-align: center;
   font-size: 14pt;
@@ -28,70 +28,62 @@ h1, h2, h3, h4, h5 {
 }
 
 .the-button {
-
+  border:none;
+  color:white;
   background-color: rgba(0, 102, 153, 1);
   position: center;
   height: 70px;
   width: 300px;
   font-family: Roboto;
-  font-size: 17pt;
   border-radius: 40px;
 }
 
 .the-button:hover {
-
-  color: black;
+  transform: scale(1.1, 1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-  .img {
 
-    margin-right: 10%;
-    margin-bottom: 10%;
-    float: left;
-    width: 200px;
-    height: 200px;
-    box-shadow: #cccccc;
-    opacity: 0.5;
-  }
-
+.img {
+  margin-bottom: 10px;
+  float: left;
+  box-shadow: #cccccc;
+  opacity: 0.5;
+}
 
 
 .background {
-
   background-color: #e6f0f5;
+  border-bottom-width: thin;
   border-bottom-style: groove;
 }
 
 .line {
-
-  border-color: grey;
-  border-style: double;
+  border-bottom-color: #CCCCCC;
+  border-bottom-style: dashed;
+  border-bottom-width: 1.5px;
   margin-bottom: 70px;
-  margin-right: 80px;
-  margin-left: 80px;
-
 }
 
 .smallbutton {
-
+  font-size: 12pt;
   position: relative;
   bottom: 30px;
   width: 200px;
   height: 50px;
-
 }
-
+.text-container{
+  flex-direction: column;
+  align-items: flex-start;
+}
 .left {
-
-
   text-align: left;
   font-family: Arial, serif;
   font-size: 13pt;
 }
 
 .textcenter {
-
-
+  justify-content: center;
   text-align: center
 }
 
@@ -101,15 +93,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .bigbutton {
-
+  font-size: 17pt;
   position: relative;
   bottom: -40px;
 }
 
 .background2 {
-
-  background-color: rgba(96, 112, 255, 0.3);
+  border-top-width: thin;
   border-top-style: groove;
+  height: 75px;
 }
 
 .container:after, .container:before {
@@ -124,32 +116,60 @@ h1, h2, h3, h4, h5 {
 }
 
 
+.responsive {
 
-  .responsive {
-
-    position: relative;
-    right: 20px;
-
-  }
-
-
-@media screen and (max-width: 992px) {
-  .column {
-    width: 40%;
-    margin-left: 40%;
-  }
+  position: relative;
+  right: 15%;
 }
 
-/*!* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other *!*/
-/*@media screen and (max-width: 100px) {*/
-  /*.column {*/
-    /*width: 100%;*/
-  /*}*/
-/*}*/
 @media screen and (max-width: 992px) {
   .column2 {
     text-align: center;
     margin-right: 15%;
     margin-left: 20%
+  }
+}
+.title{
+  font-family: 'Raleway Medium', 'Raleway Regular', 'Raleway';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  color: #004C8C;
+}
+.res{
+  width: 100px;
+  height: 100px;
+}
+.smallbutton-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.icon-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+.heading{
+  font-size: 18px;
+}
+.paragraph{
+  font-family: "Arial";
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1000px) {
+  .icon-container {
+    flex-direction: row-reverse;
+  }
+  .t{
+    flex-direction: column;
+  }
+  .top-level-container{
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
