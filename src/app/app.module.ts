@@ -20,7 +20,6 @@ import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
 import { LayoutModule } from '@angular/cdk/layout';
 
 
@@ -56,7 +55,9 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule
   ],
-  providers: [IdeaService, AlertService, AuthenticationInterceptorService],
+
+  providers: [IdeaService, AuthenticationInterceptorService, AlertService],
+
   bootstrap:
     [AppComponent]
 })
