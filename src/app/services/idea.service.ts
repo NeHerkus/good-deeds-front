@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Idea} from '../models/Idea';
+import {Idea} from '../models/idea';
 import {API_ENDPOINTS} from '../constants/api-constants';
 
 @Injectable({

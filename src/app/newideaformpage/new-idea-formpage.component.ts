@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IdeaService} from '../services/idea.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
+import {IDEA_FORM_OPTIONS} from '../constants/idea-form-constants';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -10,13 +11,7 @@ import {MatSnackBar} from '@angular/material';
 })
 export class NewIdeaFormpageComponent implements OnInit {
 
-  private nameFieldMaxSymbols = 77;
-  private locationFieldMaxSymbols = 77;
-  private organizationFieldMaxSymbols = 77;
-  private websiteFieldMaxSymbols = 77;
-  private optPartFieldMaxSymbols = 20;
-  private descFieldMaxSymbols = 500;
- private contactPersFieldMaxSymbols = 150;
+  ideaFormOptions = IDEA_FORM_OPTIONS;
   ideaForm: FormGroup;
   locations: string[] = [
     'Vilnius',
@@ -47,23 +42,21 @@ export class NewIdeaFormpageComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.createIdeaForm();
-
   }
 
   createIdeaForm() {
     this.ideaForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.maxLength(this.nameFieldMaxSymbols)]],
-      location: ['', [Validators.required, Validators.maxLength(this.locationFieldMaxSymbols)]],
-      organization: ['', [Validators.required, Validators.maxLength(this.organizationFieldMaxSymbols)]],
-      website: ['', [Validators.maxLength(this.websiteFieldMaxSymbols)]],
-      optimalParticipatorsAmount: ['', [Validators.maxLength(this.optPartFieldMaxSymbols)]],
+      name: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.nameFormMaxSymbols)]],
+      location: ['', [Validators.required]],
+      organization: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.organisationFormMaxSymbols)]],
+      website: ['', [Validators.maxLength(IDEA_FORM_OPTIONS.websiteFormMaxSymbols)]],
+      optimalParticipantsAmount: ['Unimportant', [Validators.maxLength(IDEA_FORM_OPTIONS.optimalParticipantsAmount)]],
       // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
       //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
-      category: [[null, null, null, null, null]],
-      description: ['', [Validators.required, Validators.maxLength(this.descFieldMaxSymbols)]],
-      contactPerson: ['', [Validators.required, Validators.maxLength(this.contactPersFieldMaxSymbols)]]
+      category: [[ null]],
+      description: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.ideaFormMaxSymbols)]],
+      contactPerson: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.contactFormMaxSymbols)]]
     });
   }
 
@@ -71,7 +64,7 @@ export class NewIdeaFormpageComponent implements OnInit {
     if (this.ideaForm.valid) {
       this.ideaService.createIdea(this.ideaForm.value).subscribe(
         res => {
-          console.log('Request succesfully sent');
+          console.log('Request successfully sent');
         },
         err => {
           console.log('Error while sending request');

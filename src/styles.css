@@ -1,1 +1,4 @@
-@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://www.w3schools.com/w3css/4/w3.css');
+@import "../node_modules/roboto-fontface/css/roboto/roboto-fontface.css";

@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://www.w3schools.com/w3css/4/w3.css');
+
+.t {
+  margin-left: 30%;
+  margin-bottom: 10%;
+}
 
 .top-level-container {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 h1, h2, h3, h4, h5 {
@@ -77,3 +80,62 @@ button {
   width: 100%;
 }
 
+.footer {
+  background-color: #242623 !important;
+}
+
+.center {
+
+  font-family: Raleway;
+  text-align: center;
+  font-size: 14pt;
+  color: #333333;
+}
+
+.the-button {
+
+  background-color: rgba(0, 102, 153, 1);
+  position: center;
+  height: 70px;
+  width: 300px;
+  font-family: Roboto;
+  font-size: 17pt;
+  border-radius: 40px;
+}
+
+.the-button:hover {
+
+  color: black;
+}
+
+.img {
+  margin-right: 10%;
+  float: left;
+  width: 200px;
+  height: 200px;
+  color: #333333;
+  box-shadow: #cccccc;
+}
+
+.class2 {
+
+  position: absolute;
+  left: 2px;
+  top: 115px;
+  height: 125px;
+  font-family: 'Raleway Medium', 'Raleway Regular', 'Raleway';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 21px;
+  text-align: center;
+  border-width: 0px;
+  width: 1352px;
+  word-wrap: break-word
+
+}
+
+.background {
+
+  background-color: lightskyblue;
+  border-bottom-style: groove;
+}

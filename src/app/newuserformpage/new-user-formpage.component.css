@@ -5,6 +5,10 @@
   margin-bottom: 10px;
 }
 
+.centered {
+  text-align: center;
+}
+
 /*checkbox section part*/
 .checkbox-section-header {
   text-align: center;
@@ -32,6 +36,10 @@
   margin-right: auto;
 }
 
+.card-content {
+  height: auto;
+}
+
 /*submit button part styles*/
 .submit-button {
   position: center;
@@ -49,4 +57,14 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+.the-button {
+  background-color: #f7cd02;
+  color: #0e0e0e;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.footer{
+  background-color: #242623 !important;
 }

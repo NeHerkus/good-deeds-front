@@ -1,14 +1,14 @@
 <form class="form" [formGroup]="userForm">
   <mat-card class="card">
-    <h2 style="text-align: center">Please fill the user registration form</h2>
-    <mat-card-content style="height: auto">
+    <h2 class="centered">Please fill the user registration form</h2>
+    <mat-card-content class="card-content">
 
       <!--Full name-->
       <mat-form-field class="input-form">
         <input matInput
                type="text"
                formControlName="fullName"
-               maxlength="77"
+               maxlength="{{userFormOptions.fullNameFormMaxSymbols}}"
                placeholder="Full name"
                required>
         <mat-hint align="start">Enter your full name</mat-hint>
@@ -16,17 +16,21 @@
         <mat-error *ngIf="userForm.get('fullName').hasError('required')">
           Full name is a required field
         </mat-error>
-        <mat-hint align="end"> {{userForm.get('fullName').value.length}} / {{this.maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> {{userForm.get('fullName').value.length}}
+          / {{userFormOptions.fullNameFormMaxSymbols}}</mat-hint>
       </mat-form-field>
 
       <!--Email-->
       <mat-form-field class="input-form">
         <input matInput
-               placeholder="Email"
+               type="text"
                formControlName="email"
+               maxlength="{{userFormOptions.emailFormMaxSymbols}}"
+               placeholder="Email"
                required>
         <mat-hint>Enter your Email address</mat-hint>
-        <mat-hint align="end"> {{userForm.get('email').value.length}} / {{this.maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> {{userForm.get('email').value.length}}
+          / {{userFormOptions.emailFormMaxSymbols}}</mat-hint>
 
         <mat-error *ngIf="userForm.get('email').hasError('required')">
           Email is a required field
@@ -39,12 +43,14 @@
       <!--Password field-->
       <mat-form-field class="input-form">
         <input matInput
-               placeholder="Enter your password"
+               type="text"
                formControlName="password"
+               maxlength="{{userFormOptions.passwordFormMaxSymbols}}"
+               placeholder="Enter your password"
                [type]="hide ? 'password' : 'text'"
                required>
-        <mat-hint>Enter your password</mat-hint>
-        <mat-hint align="end"> max: {{this.maxInputLength77}}</mat-hint>
+        <mat-hint>Enter a password 8 symbols or longer with a number, one lowercase and one uppercase symbol</mat-hint>
+        <mat-hint align="end"> max: {{userFormOptions.passwordFormMaxSymbols}}</mat-hint>
 
         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
 
@@ -52,7 +58,7 @@
           Password is a required field
         </mat-error>
         <mat-error *ngIf="userForm.get('password').hasError('pattern')">
-          Password must longer that 8 symbols, contain one lowercase letter , one uppercase letter and a number
+          Password must longer that 8 symbols, contain one lowercase letter, one uppercase letter and a number
         </mat-error>
 
       </mat-form-field>
@@ -60,12 +66,14 @@
       <!--Confirm password field-->
       <mat-form-field class="input-form">
         <input matInput
-               placeholder="Confirm your password"
+               type="text"
                formControlName="confirmPassword"
+               maxlength="{{userFormOptions.passwordFormMaxSymbols}}"
+               placeholder="Confirm your password"
                [type]="hide ? 'password' : 'text'"
                required>
         <mat-hint> Confirm password</mat-hint>
-        <mat-hint align="end"> max: {{this.maxInputLength77}}</mat-hint>
+        <mat-hint align="end"> max: {{userFormOptions.passwordFormMaxSymbols}}</mat-hint>
         <mat-error *ngIf="userForm.get('confirmPassword').hasError('required')">
           Confirm password is a required field
         </mat-error>
@@ -88,8 +96,15 @@
     <div class="submit-button">
       <button mat-raised-button
               color="primary"
-              (click)="onSubmit()">Register
+              (click)="onSubmit()"
+              class="the-button">
+              <b>Register</b>
       </button>
     </div>
   </div>
+
 </div>
+
+<footer class="w3-container w3-padding-32 footer ">
+</footer>
+
