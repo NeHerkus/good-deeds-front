@@ -18,6 +18,7 @@ import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.comp
 import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
+    FlexLayoutModule
   ],
   providers: [IdeaService, AuthenticationInterceptorService, AlertService],
   bootstrap:
