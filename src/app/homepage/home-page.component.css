@@ -1,7 +1,7 @@
 
 .t {
-  margin-left: 30%;
-  margin-bottom: 10%;
+  margin-left: 32%;
+  margin-bottom: 15%;
 }
 
 .top-level-container {
@@ -43,12 +43,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .img {
+
   margin-right: 10%;
+  margin-bottom: 10%;
   float: left;
   width: 200px;
   height: 200px;
-  color: #333333;
   box-shadow: #cccccc;
+  opacity: 0.5;
 }
 
 
@@ -73,7 +75,8 @@ h1, h2, h3, h4, h5 {
   position: relative;
   bottom: 30px;
   width: 200px;
-  height: 50px
+  height: 50px;
+
 }
 
 .left {
@@ -114,4 +117,11 @@ h1, h2, h3, h4, h5 {
 .padding {
   padding-top: 32px !important;
   padding-bottom: 32px !important
+}
+
+.responsive {
+
+  position: relative;
+  right: 20px;
+
 }
