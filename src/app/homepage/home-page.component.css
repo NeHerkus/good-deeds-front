@@ -28,13 +28,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .the-button {
-
+  border:none;
+  color:white;
   background-color: rgba(0, 102, 153, 1);
   position: center;
   height: 70px;
   width: 300px;
   font-family: Roboto;
-  font-size: 17pt;
   border-radius: 40px;
 }
 
@@ -43,37 +43,32 @@ h1, h2, h3, h4, h5 {
   color: black;
 }
 
-  .img {
+.img {
 
-    margin-right: 10%;
-    margin-bottom: 10%;
-    float: left;
-    width: 200px;
-    height: 200px;
-    box-shadow: #cccccc;
-    opacity: 0.5;
-  }
-
+  margin-right: 10%;
+  margin-bottom: 10%;
+  float: left;
+  width: 200px;
+  height: 200px;
+  box-shadow: #cccccc;
+  opacity: 0.5;
+}
 
 
 .background {
-
   background-color: #e6f0f5;
+  border-bottom-width: thin;
   border-bottom-style: groove;
 }
 
 .line {
-
   border-color: grey;
-  border-style: double;
+  border-style: dashed;
   margin-bottom: 70px;
-  margin-right: 80px;
-  margin-left: 80px;
-
 }
 
 .smallbutton {
-
+  font-size: 12pt;
   position: relative;
   bottom: 30px;
   width: 200px;
@@ -91,7 +86,7 @@ h1, h2, h3, h4, h5 {
 
 .textcenter {
 
-
+  justify-content: center;
   text-align: center
 }
 
@@ -101,15 +96,15 @@ h1, h2, h3, h4, h5 {
 }
 
 .bigbutton {
-
+  font-size: 17pt;
   position: relative;
   bottom: -40px;
 }
 
 .background2 {
-
-  background-color: rgba(96, 112, 255, 0.3);
+  border-top-width: thin;
   border-top-style: groove;
+  height: 75px;
 }
 
 .container:after, .container:before {
@@ -124,13 +119,11 @@ h1, h2, h3, h4, h5 {
 }
 
 
+.responsive {
 
-  .responsive {
-
-    position: relative;
-    right: 20px;
-
-  }
+  position: relative;
+  right: 15%;
+}
 
 
 @media screen and (max-width: 992px) {
@@ -142,9 +135,9 @@ h1, h2, h3, h4, h5 {
 
 /*!* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other *!*/
 /*@media screen and (max-width: 100px) {*/
-  /*.column {*/
-    /*width: 100%;*/
-  /*}*/
+/*.column {*/
+/*width: 100%;*/
+/*}*/
 /*}*/
 @media screen and (max-width: 992px) {
   .column2 {
@@ -152,4 +145,11 @@ h1, h2, h3, h4, h5 {
     margin-right: 15%;
     margin-left: 20%
   }
+}
+.title{
+  font-family: 'Raleway Medium', 'Raleway Regular', 'Raleway';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  color: #004C8C;
 }
