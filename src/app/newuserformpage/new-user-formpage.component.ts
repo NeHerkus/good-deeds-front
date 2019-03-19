@@ -12,6 +12,7 @@ import {USER_FORM_OPTIONS} from '../constants/user-form-constants';
 })
 export class NewUserFormpageComponent implements OnInit {
 
+  userFormOptions = USER_FORM_OPTIONS;
   submitted = false;
   hide = true;
   userForm: FormGroup;

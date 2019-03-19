@@ -10,11 +10,11 @@
         <input matInput
                formControlName="name"
                type="text"
-               maxlength="{{appConstants.NAME_FORM_MAX_SYMBOLS}}"
+               maxlength="{{ideaFormOptions.nameFormMaxSymbols}}"
                placeholder="Name of idea"
                required>
         <mat-hint align="start"><strong>Enter the name of your idea</strong></mat-hint>
-        <mat-hint align="end"> {{ideaForm.controls['name'].value.length}} / {{appConstants.NAME_FORM_MAX_SYMBOLS}} </mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['name'].value.length}} / {{ideaFormOptions.nameFormMaxSymbols}} </mat-hint>
       </mat-form-field>
 
       <!--Location-->
@@ -33,12 +33,12 @@
         <input matInput
                formControlName="organization"
                type="text"
-               maxlength="{{appConstants.ORGANIZATION_FORM_MAX_SYMBOLS}}"
+               maxlength="{{ideaFormOptions.organisationFormMaxSymbols}}"
                placeholder="Organization"
                required>
         <mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>
         </mat-hint>
-        <mat-hint align="end"> {{ideaForm.controls['organization'].value.length}} / {{appConstants.ORGANIZATION_FORM_MAX_SYMBOLS}}</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['organization'].value.length}} / {{ideaFormOptions.organisationFormMaxSymbols}}</mat-hint>
       </mat-form-field>
 
       <!--Website-->
@@ -51,7 +51,7 @@
         <mat-hint align="start"><strong>Enter the website of the organization where you are going to do good
           job</strong>
         </mat-hint>
-        <mat-hint align="end"> {{ideaForm.controls['website'].value.length}} / {{appConstants.WEBSITE_FORM_MAX_SYMBOLS}}</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['website'].value.length}} / {{ideaFormOptions.websiteFormMaxSymbols}}</mat-hint>
       </mat-form-field>
 
       <!--Optimal participators amount-->
@@ -60,10 +60,10 @@
         <input matInput
                formControlName="optimalParticipatorsAmount"
                type="text"
-               maxlength="{{appConstants.PARTICIPATORS_FORM_MAX_SYMBOLS}}"
+               maxlength="{{ideaFormOptions.optimalParticipatorsAmount}}"
                placeholder="Unimportant">
         <mat-hint align="end">
-          {{ideaForm.controls['optimalParticipatorsAmount'].value.length}} / {{appConstants.PARTICIPATORS_FORM_MAX_SYMBOLS}}</mat-hint>
+          {{ideaForm.controls['optimalParticipatorsAmount'].value.length}} / {{ideaFormOptions.optimalParticipatorsAmount}}</mat-hint>
       </mat-form-field>
 
       <!--Checkboxes-->
@@ -83,10 +83,10 @@
           <textarea matInput
                     formControlName="description"
                     type="text"
-                    maxlength="{{appConstants.IDEA_FORM_MAX_SYMBOLS}}"
+                    maxlength="{{ideaFormOptions.ideaFormMaxSymbols}}"
                     placeholder="Idea for good job"
                     required></textarea>
-        <mat-hint align="end"> {{ideaForm.controls['description'].value.length}} / {{appConstants.IDEA_FORM_MAX_SYMBOLS}}</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['description'].value.length}} / {{ideaFormOptions.ideaFormMaxSymbols}}</mat-hint>
         <mat-hint align="start"><strong>Enter your idea</strong>
         </mat-hint>
       </mat-form-field>
@@ -99,7 +99,7 @@
                     maxlength="150"
                     placeholder="Contact person"
                     required></textarea>
-        <mat-hint align="end"> {{ideaForm.controls['contactPerson'].value.length}} / {{appConstants.CONTACT_FORM_MAX_SYMBOLS}}</mat-hint>
+        <mat-hint align="end"> {{ideaForm.controls['contactPerson'].value.length}} / {{ideaFormOptions.contactFormMaxSymbols}}</mat-hint>
         <mat-hint align="start"><strong>Enter contact's info</strong>
         </mat-hint>
       </mat-form-field>

@@ -3,7 +3,6 @@ import {IdeaService} from '../services/idea.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import {IDEA_FORM_OPTIONS} from '../constants/idea-form-constants';
-import {Idea} from '../models/Idea';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -12,6 +11,7 @@ import {Idea} from '../models/Idea';
 })
 export class NewIdeaFormpageComponent implements OnInit {
 
+  ideaFormOptions = IDEA_FORM_OPTIONS;
   ideaForm: FormGroup;
   locations: string[] = [
     'Vilnius',
