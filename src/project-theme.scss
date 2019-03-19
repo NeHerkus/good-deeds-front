@@ -2,10 +2,16 @@
 
 @include mat-core();
 
-$project-theme-primary: mat-palette($mat-red);
-$project-theme-accent: mat-palette($mat-red);
+$project-theme-primary: mat-palette($mat-blue);
+$project-theme-accent: mat-palette($mat-gray);
 $project-theme-warn: mat-palette($mat-red);
+
 
 $project-theme: mat-light-theme($project-theme-accent, $project-theme-primary, $project-theme-warn);
 
+
+
 @include angular-material-theme($project-theme);
+
+
+
