@@ -3,7 +3,7 @@ export interface Idea {
   location: string;
   organization: string;
   website?: string;
-  optimalParticipatorsAmount?: string;
+  optimalParticipantsAmount?: string;
   category?: string[];
   description: string;
   contactPerson: string;
