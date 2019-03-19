@@ -24,7 +24,6 @@
 
 .navbar-button {
   display: inline-block;
-  font-weight: normal;
 }
 
 .navbar-title {
@@ -45,7 +44,10 @@
   cursor: pointer;
   text-align: center;
   width: 120px;
+}
 
+.login-button-text{
+  text-decoration: none;
 }
 
 .example-spacer {
@@ -62,76 +64,43 @@
     color: #003b77;
     font-size: 16px;
   }
+
   .login-button {
     font-size: 12px;
     width: 100px;
+  }
+
+  .navbar-button-block {
+    margin-left: 20px;
   }
 }
 
 @media screen and (min-width: 631px) and(max-width: 768px) {
 
   .navbar-title {
-    color: #003b77;
-    font-family: Roboto, sans-serif;
-    font-weight: bold;
     font-size: 21px;
-  }
-
-  .login-button {
-    height: 32px;
-    background-color: rgba(0, 102, 153, 1);
-    border-radius: 15px;
-    font-family: Roboto, monospace;
-    font-weight: 300;
-    font-size: 12px;
-    color: #FFFFFF;
-    cursor: pointer;
-    text-align: center;
-    width: 120px;
   }
 
   .navbar-button-block {
     margin-left: 10px;
-    font-weight: normal;
-    font-family: Arial, serif;
   }
 }
 
 @media screen and (min-width: 769px ) and (max-width: 960px) {
 
-  .navbar-title {
-    color: #003b77;
-    font-family: Roboto, sans-serif;
-    font-weight: bold;
-    font-size: 21px;
-  }
-
   .login-button {
-    height: 32px;
-    background-color: rgba(0, 102, 153, 1);
-    border-radius: 15px;
-    font-family: Roboto, monospace;
-    font-weight: 300;
-    font-size: 14px;
-    color: #FFFFFF;
-    cursor: pointer;
-    text-align: center;
     width: 120px;
   }
 
   .navbar-button-block {
     margin-left: 60px;
-    display: inline-block;
-    font-weight: 100;
-    font-family: Arial, serif;
   }
+
 }
 
 @media screen and (min-width: 960px) {
   .navbar-button-block {
     margin-left: 60px;
-    display: inline-block;
-
   }
 }
 

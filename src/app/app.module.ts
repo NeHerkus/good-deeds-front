@@ -1,4 +1,3 @@
-// angular imports
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AngularMaterialModule} from './angular-material';
@@ -11,7 +10,7 @@ import {AppComponent} from './app.component';
 import {NewIdeaFormpageComponent} from './newideaformpage/new-idea-formpage.component';
 import {HomePageComponent} from './homepage/home-page.component';
 import {NavigationBarComponent} from './navigationbar/navigation-bar.component';
-import {MatToolbarModule, MatButtonModule, MatIconModule, MatSidenavModule, MatListModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material';
 import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationInterceptorService} from './services/authentication-interceptor.service';
@@ -20,7 +19,6 @@ import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {LayoutModule} from '@angular/cdk/layout';
 import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.component';
 
 
@@ -35,6 +33,7 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     HomePageComponent,
     NavigationBarComponent,
     NewUserFormpageComponent,
+    PageNotFoundComponent,
     AlertComponent,
     NewUserFormpageComponent,
     PageNotFoundComponent,
@@ -52,10 +51,7 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule,
-    LayoutModule,
-    MatSidenavModule,
-    MatListModule
+    FlexLayoutModule
   ],
 
   providers: [IdeaService, AuthenticationInterceptorService, AlertService],
