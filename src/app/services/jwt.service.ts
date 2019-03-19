@@ -14,7 +14,7 @@ export class JwtService {
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post(API_ENDPOINTS.API_URL + 'login', {
+    return this.httpClient.post(API_ENDPOINTS.apiUrl + 'login', {
         email,
         password
       },
@@ -26,7 +26,7 @@ export class JwtService {
   }
 
   register(fullName: string, email: string, password: string) {
-    return this.httpClient.post(API_ENDPOINTS.API_URL + 'user', {
+    return this.httpClient.post(API_ENDPOINTS.apiUrl + 'user', {
       fullName,
       email,
       password
