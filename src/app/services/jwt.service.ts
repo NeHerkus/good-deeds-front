@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
-import {map} from 'rxjs/operators';
-import {Router, ActivatedRoute} from '@angular/router';
+import {API_ENDPOINTS} from '../constants/api-constants';
 
 @Injectable({
   providedIn: 'root'
@@ -10,33 +9,35 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class JwtService {
 
   constructor(
-    private httpClient: HttpClient,
-    private router: Router,
-    private route: ActivatedRoute
+    private httpClient: HttpClient
   ) {
   }
 
   login(email: string, password: string) {
-    return this.httpClient.post<{ access_token: string }>('https://good-deed.herokuapp.com/login', {
-        email,
-        password
-      },
-      {observe: 'response'})
-      .pipe(map(res => {
-        localStorage.setItem('access_token', res.headers.get('Authorization'));
-      }));
-  }
-
-  register(fullName: string, email: string, password: string) {
-    return this.httpClient.post<{ access_token: string }>('https://good-deed.herokuapp.com/user', {
-        fullName,
+    return this.httpClient.post(API_ENDPOINTS.apiUrl + 'login', {
         email,
         password
       },
       {observe: 'response'})
       .pipe(tap(res => {
-        this.login(email, password);
+        localStorage.setItem('access_token', res.headers.get('Authorization'));
+
       }));
+  }
+
+  register(fullName: string, email: string, password: string) {
+    return this.httpClient.post(API_ENDPOINTS.apiUrl + 'user', {
+      fullName,
+      email,
+      password
+    })
+      .pipe(tap(() => {
+        this.login(email, password).subscribe();
+      }));
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
   }
 
   public get isLoggedIn(): boolean {
