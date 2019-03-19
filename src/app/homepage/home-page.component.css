@@ -136,6 +136,23 @@ button {
 
 .background {
 
-  background-color: lightskyblue;
+  background-color: rgba(96,112,255,0.3);
   border-bottom-style: groove;
+}
+
+.line {
+
+  border-color: grey;
+  border-style: double;
+  margin-bottom: 70px;
+  margin-right: 80px;
+  margin-left: 80px;
+
+}
+
+.smallbutton {
+
+  margin-bottom: 10%;
+  width: 200px;
+  height: 50px
 }
