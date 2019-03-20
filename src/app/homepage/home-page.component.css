@@ -45,8 +45,7 @@ h1, h2, h3, h4, h5 {
 
 
 .img {
-  margin-right: 10%;
-  margin-bottom: 10%;
+  margin-bottom: 10px;
   float: left;
   max-width: 125px;
   max-height: 125px;
@@ -68,6 +67,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .smallbutton {
+  margin-top: 20px;
   font-size: 12pt;
   position: relative;
   bottom: 30px;
@@ -156,9 +156,17 @@ h1, h2, h3, h4, h5 {
 .res{
   width: 100%;
   height: auto;
+  max-width: 100px;
+  min-width: 50px;
 }
 .smallbutton-container{
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-container{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
