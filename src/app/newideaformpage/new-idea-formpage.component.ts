@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IdeaService} from '../services/idea.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import {IDEA_FORM_OPTIONS} from '../constants/idea-form-constants';
 import {IdeaCategory} from '../enums/idea-category';
@@ -56,7 +56,7 @@ export class NewIdeaFormpageComponent implements OnInit {
   }
 
   get categories() {
-    return this.ideaForm.get('categories');
+    return this.ideaForm.get('categories') as FormArray;
   }
 
   createIdeaForm() {
