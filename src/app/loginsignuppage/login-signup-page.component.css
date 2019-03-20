@@ -14,6 +14,15 @@
   font-size: 30px;
 }
 
+.form {
+  flex: 1;
+  margin: auto;
+}
+
+.page-form {
+  display: flex;
+  justify-content: space-around;
+}
 
 .checkbox-section-header {
   text-align: center;
@@ -36,8 +45,7 @@
   min-width: 300px;
   max-width: 500px;
   height: auto;
-  margin-top: 20px;
-  margin-right: auto;
+  margin: auto ;
 }
 
 .card-content {
@@ -46,13 +54,7 @@
 
 .submit-button {
   position: center;
-  margin-top: 15px;
-}
-
-.submit-button-block {
-  max-width: 650px;
-  height: 85px;
-  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .flex-container {
@@ -61,6 +63,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .the-button {
   background-color: #f7cd02;
   color: #0e0e0e;
