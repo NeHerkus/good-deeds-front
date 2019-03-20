@@ -1,7 +1,8 @@
 
 .t {
+  display: flex;
+  flex-direction: row;
   margin-left: 32%;
-  margin-bottom: 15%;
 }
 
 .top-level-container {
@@ -76,7 +77,8 @@ h1, h2, h3, h4, h5 {
 
 }
 .text-container{
-
+  flex-direction: column;
+  align-items: flex-start;
 }
 .left {
   text-align: left;
@@ -169,4 +171,11 @@ h1, h2, h3, h4, h5 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.heading{
+  font-size: 18px;
+}
+.paragraph{
+  font-family: "Arial";
+  font-size: 14px;
 }
