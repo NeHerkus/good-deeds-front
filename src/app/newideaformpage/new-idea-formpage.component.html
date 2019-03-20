@@ -58,7 +58,7 @@
       <mat-form-field class="input-form">
         <mat-label>Optimal participators amount</mat-label>
         <input matInput
-               formControlName="optimalParticipatorsAmount"
+               formControlName="optimalParticipantsAmount"
                type="text"
                maxlength="{{ideaFormOptions.optimalParticipantsAmount}}"
                placeholder="Unimportant">
@@ -69,12 +69,8 @@
       <!--Checkboxes-->
       <mat-card-content class="checkbox-form-part">
         <h2 class="checkbox-section-header">Categorize your idea</h2>
-        <section class="checkbox-section">
-          <mat-checkbox class="checkbox">Time/Help to others</mat-checkbox>
-          <mat-checkbox class="checkbox">Time for better environment</mat-checkbox>
-          <mat-checkbox class="checkbox">Time of sharing knowledge</mat-checkbox>
-          <mat-checkbox class="checkbox">Time for local communities</mat-checkbox>
-          <mat-checkbox class="checkbox">Professional volunteering</mat-checkbox>
+        <section class="checkbox-section" *ngFor="let category of categories.controls; let i=index">
+          <mat-checkbox class="checkbox" [formControl]="category">{{ideaCategory[i].name}}</mat-checkbox>
         </section>
       </mat-card-content>
 

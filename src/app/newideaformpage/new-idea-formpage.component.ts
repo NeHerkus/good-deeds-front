@@ -3,6 +3,8 @@ import {IdeaService} from '../services/idea.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar} from '@angular/material';
 import {IDEA_FORM_OPTIONS} from '../constants/idea-form-constants';
+import {IdeaCategory} from '../enums/idea-category';
+import {Idea} from '../models/idea';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -13,6 +15,14 @@ export class NewIdeaFormpageComponent implements OnInit {
 
   ideaFormOptions = IDEA_FORM_OPTIONS;
   ideaForm: FormGroup;
+  mappedIdeaCategories: any[] = [];
+  ideaCategory = [
+    {category: IdeaCategory.HELP_FOR_OTHERS, selected: false, name: 'Time/Help to others'},
+    {category: IdeaCategory.TIME_FOR_ENVIRONMENT, selected: false, name: 'Time for better environment'},
+    {category: IdeaCategory.TIME_FOR_KNOWLEDGE, selected: false, name: 'Time of sharing knowledge'},
+    {category: IdeaCategory.TIME_FOR_COMMUNITIES, selected: false, name: 'Time for local communities'},
+    {category: IdeaCategory.VOLUNTEERING, selected: false, name: 'Professional volunteering'}
+  ];
   locations: string[] = [
     'Vilnius',
     'Kaunas',
@@ -45,6 +55,10 @@ export class NewIdeaFormpageComponent implements OnInit {
     this.createIdeaForm();
   }
 
+  get categories() {
+    return this.ideaForm.get('categories');
+  }
+
   createIdeaForm() {
     this.ideaForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.nameFormMaxSymbols)]],
@@ -52,17 +66,33 @@ export class NewIdeaFormpageComponent implements OnInit {
       organization: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.organisationFormMaxSymbols)]],
       website: ['', [Validators.maxLength(IDEA_FORM_OPTIONS.websiteFormMaxSymbols)]],
       optimalParticipantsAmount: ['Unimportant', [Validators.maxLength(IDEA_FORM_OPTIONS.optimalParticipantsAmount)]],
-      // TODO nesugalvojau kaip normaliai sutvarkyti mygtuku kad isduotu enumu array'u,
-      //  rasau category kaip HELP_FOR_OTHERS ir bandau siusti i BE
-      category: [[ null]],
+
+      categories: this.buildCategories(),
       description: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.ideaFormMaxSymbols)]],
       contactPerson: ['', [Validators.required, Validators.maxLength(IDEA_FORM_OPTIONS.contactFormMaxSymbols)]]
     });
   }
 
+  buildCategories() {
+    const categoryArray = this.ideaCategory.map(category => {
+      return this.formBuilder.control(category.selected);
+    });
+    return this.formBuilder.array(categoryArray);
+  }
+
+  createIdea(): Idea {
+    for (let i = 0; i < this.ideaForm.get('categories').value.length; i++) {
+      console.log(this.ideaForm.get('categories').value[i]);
+      if (this.ideaForm.get('categories').value[i]) {
+        this.mappedIdeaCategories.push(this.ideaCategory[i].category);
+      }
+    }
+    return {...this.ideaForm.value, categories: this.mappedIdeaCategories};
+  }
+
   onSubmitButtonPress() {
     if (this.ideaForm.valid) {
-      this.ideaService.createIdea(this.ideaForm.value).subscribe(
+      this.ideaService.createIdea(this.createIdea()).subscribe(
         res => {
           console.log('Request successfully sent');
         },

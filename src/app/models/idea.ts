@@ -4,7 +4,7 @@ export interface Idea {
   organization: string;
   website?: string;
   optimalParticipantsAmount?: string;
-  category?: string[];
+  categories?: string[];
   description: string;
   contactPerson: string;
 }
