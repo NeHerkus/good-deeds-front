@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {USER_FORM_OPTIONS} from '../constants/user-form-constants';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {JwtService} from '../services/jwt.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-signup-page',
@@ -12,9 +13,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class LoginSignupPageComponent implements OnInit {
 
   userFormOptions = USER_FORM_OPTIONS;
-  submitted = false;
+  signUpSubmitted = false;
+  logInSubmitted = false;
   hide = true;
-  userForm: FormGroup;
+  signInForm: FormGroup;
+  logInForm: FormGroup;
   loading = false;
   returnUrl: string;
 
@@ -29,17 +32,18 @@ export class LoginSignupPageComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: JwtService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
   }
 
   ngOnInit() {
-    this.initForm();
+    this.initSignUpForm();
+    this.initLogInForm();
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
-  initForm() {
-    this.userForm = this.formBuilder.group({
+  initSignUpForm() {
+    this.signInForm = this.formBuilder.group({
       fullName: [
         '',
         [Validators.required,
@@ -66,28 +70,64 @@ export class LoginSignupPageComponent implements OnInit {
     }, {validators: LoginSignupPageComponent.checkPasswords});
   }
 
-  get f() {
-    return this.userForm.controls;
-  }
+  onSignUpSubmit() {
+    this.signUpSubmitted = true;
 
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.userForm.invalid) {
+    if (this.signInForm.invalid) {
       return;
     }
 
     this.loading = true;
-    this.authService.register(this.f.fullName.value, this.f.email.value, this.f.password.value)
-    // .pipe(first())
+    this.authService.register(
+      this.signUpFormControls.fullName.value,
+      this.signUpFormControls.email.value,
+      this.signUpFormControls.password.value
+    ).subscribe(
+      data => {
+        this.router.navigate([this.returnUrl]);
+      },
+      error => {
+        // this.alertService.error(error);
+        this.loading = false;
+      });
+  }
+
+  get signUpFormControls() {
+    return this.signInForm.controls;
+  }
+
+  initLogInForm() {
+    this.logInForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
+  }
+
+  onLogInSubmit() {
+    this.logInSubmitted = true;
+
+    if (this.logInForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.authService.login(this.logInFormControls.email.value, this.logInFormControls.password.value)
+      .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          // this.alertService.error(error);
           this.loading = false;
         });
+  }
+
+  get logInFormControls() {
+    return this.logInForm.controls;
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 }

@@ -1,3 +1,21 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-form {
+  flex: 1;
+  margin: 10px;
+  order: 2;
+}
+
+.log-in-form {
+  flex: 1;
+  margin: 10px;
+  order: 1;
+  align-self: stretch;
+}
 
 .input-form {
   width: 100%;
@@ -14,33 +32,6 @@
   font-size: 30px;
 }
 
-.form {
-  flex: 1;
-  margin: auto;
-}
-
-.page-form {
-  display: flex;
-  justify-content: space-around;
-}
-
-.checkbox-section-header {
-  text-align: center;
-}
-
-.checkbox-section {
-  margin-top: 10px;
-  margin-right: 5px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.checkbox {
-  margin-left: auto;
-  margin-right: 2%;
-}
-
-/*card part*/
 .card {
   min-width: 300px;
   max-width: 500px;
@@ -65,11 +56,15 @@
 }
 
 .the-button {
-  background-color: #f7cd02;
-  color: #0e0e0e;
   font-size: 17px;
   border: none;
   cursor: pointer;
+  border-radius: 15px;
+  background-color: rgba(0, 102, 153, 1);
+  font-family: Roboto, monospace;
+  color: #FFFFFF;
+  text-align: center;
+  width: 120px;
 }
 .footer{
   background-color: #242623 !important;
@@ -80,7 +75,7 @@
 }
 
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
-  color: #2196f3;
+  color: #000000;
 }
 
 ::ng-deep .mat-input-element{
