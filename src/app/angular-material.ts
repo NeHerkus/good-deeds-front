@@ -5,6 +5,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material';
+import {LayoutModule} from '@angular/cdk/layout';
+
 
 @NgModule({
   exports: [
@@ -18,7 +20,8 @@ import {MatSnackBarModule} from '@angular/material';
     MatToolbarModule,
     MatSnackBarModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    LayoutModule
   ]
 })
 export class AngularMaterialModule {

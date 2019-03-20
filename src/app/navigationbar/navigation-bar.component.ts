@@ -10,9 +10,10 @@ import {first} from 'rxjs/operators';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  form: FormGroup;                    // {1}
+  form: FormGroup;
   private formSubmitAttempt: boolean;
-  maxInputLength = 77;
+
+
   submitted = false;
   loading = false;
   returnUrl: string;

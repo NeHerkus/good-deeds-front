@@ -1,7 +1,7 @@
 
 .t {
-  margin-left: 30%;
-  margin-bottom: 10%;
+  margin-left: 32%;
+  margin-bottom: 15%;
 }
 
 .top-level-container {
@@ -13,76 +13,11 @@ h1, h2, h3, h4, h5 {
   font-family: "Raleway", sans-serif;
 }
 
-.w3-content {
-
-  max-width: 1400px
-}
-
-
-.header-container {
-  max-width: 1400px;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-
-  45% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.fourth-text {
-  font-size: 1rem;
-  position: absolute;
-  text-align: center;
-  top: 9%;
-  left: 25%;
-  opacity: 0;
-  color: black;
-  animation-name: fadeInOut;
-  animation-delay: 0s;
-  animation-duration: 3s;
-  margin: auto;
-  width: 50%;
-  border: 2px solid black;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-form {
-  border: 3px solid #f1f1f1;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
 
 .footer {
   background-color: #242623 !important;
 }
+
 
 .center {
 
@@ -108,34 +43,113 @@ button {
   color: black;
 }
 
-.img {
-  margin-right: 10%;
-  float: left;
-  width: 200px;
-  height: 200px;
-  color: #333333;
-  box-shadow: #cccccc;
-}
+  .img {
 
-.class2 {
+    margin-right: 10%;
+    margin-bottom: 10%;
+    float: left;
+    width: 200px;
+    height: 200px;
+    box-shadow: #cccccc;
+    opacity: 0.5;
+  }
 
-  position: absolute;
-  left: 2px;
-  top: 115px;
-  height: 125px;
-  font-family: 'Raleway Medium', 'Raleway Regular', 'Raleway';
-  font-weight: 500;
-  font-style: normal;
-  font-size: 21px;
-  text-align: center;
-  border-width: 0px;
-  width: 1352px;
-  word-wrap: break-word
 
-}
 
 .background {
 
-  background-color: lightskyblue;
+  background-color: #e6f0f5;
   border-bottom-style: groove;
+}
+
+.line {
+
+  border-color: grey;
+  border-style: double;
+  margin-bottom: 70px;
+  margin-right: 80px;
+  margin-left: 80px;
+
+}
+
+.smallbutton {
+
+  position: relative;
+  bottom: 30px;
+  width: 200px;
+  height: 50px;
+
+}
+
+.left {
+
+
+  text-align: left;
+  font-family: Arial, serif;
+  font-size: 13pt;
+}
+
+.textcenter {
+
+
+  text-align: center
+}
+
+.margin {
+
+  margin-top: 140px
+}
+
+.bigbutton {
+
+  position: relative;
+  bottom: -40px;
+}
+
+.background2 {
+
+  background-color: rgba(96, 112, 255, 0.3);
+  border-top-style: groove;
+}
+
+.container:after, .container:before {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.padding {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important
+}
+
+
+
+  .responsive {
+
+    position: relative;
+    right: 20px;
+
+  }
+
+
+@media screen and (max-width: 992px) {
+  .column {
+    width: 40%;
+    margin-left: 40%;
+  }
+}
+
+/*!* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other *!*/
+/*@media screen and (max-width: 100px) {*/
+  /*.column {*/
+    /*width: 100%;*/
+  /*}*/
+/*}*/
+@media screen and (max-width: 992px) {
+  .column2 {
+    text-align: center;
+    margin-right: 15%;
+    margin-left: 20%
+  }
 }
