@@ -82,7 +82,6 @@ export class NewIdeaFormpageComponent implements OnInit {
 
   createIdea(): Idea {
     for (let i = 0; i < this.ideaForm.get('categories').value.length; i++) {
-      console.log(this.ideaForm.get('categories').value[i]);
       if (this.ideaForm.get('categories').value[i]) {
         this.mappedIdeaCategories.push(this.ideaCategory[i].category);
       }
