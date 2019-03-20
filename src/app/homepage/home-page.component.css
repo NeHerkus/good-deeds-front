@@ -21,7 +21,6 @@ h1, h2, h3, h4, h5 {
 
 
 .center {
-
   font-family: Raleway;
   text-align: center;
   font-size: 14pt;
@@ -48,8 +47,6 @@ h1, h2, h3, h4, h5 {
 .img {
   margin-bottom: 10px;
   float: left;
-  max-width: 125px;
-  max-height: 125px;
   box-shadow: #cccccc;
   opacity: 0.5;
 }
@@ -68,13 +65,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .smallbutton {
-  margin-top: 20px;
   font-size: 12pt;
   position: relative;
   bottom: 30px;
   width: 200px;
   height: 50px;
-
 }
 .text-container{
   flex-direction: column;
@@ -87,7 +82,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .textcenter {
-
   justify-content: center;
   text-align: center
 }
@@ -128,12 +122,12 @@ h1, h2, h3, h4, h5 {
 }
 
 
-@media screen and (max-width: 992px) {
-  .column {
-    width: 40%;
-    margin-left: 40%;
-  }
-}
+/*@media screen and (max-width: 992px) {*/
+  /*.column {*/
+    /*width: 40%;*/
+    /*margin-left: 40%;*/
+  /*}*/
+/*}*/
 
 /*!* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other *!*/
 /*@media screen and (max-width: 100px) {*/
@@ -159,18 +153,22 @@ h1, h2, h3, h4, h5 {
   width: 100%;
   height: auto;
   max-width: 100px;
+  max-height: 100px;
   min-width: 50px;
+  min-height: 50px;
 }
 .smallbutton-container{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 35px;
 }
 .icon-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 50px;
 }
 .heading{
   font-size: 18px;
@@ -178,4 +176,17 @@ h1, h2, h3, h4, h5 {
 .paragraph{
   font-family: "Arial";
   font-size: 14px;
+}
+
+@media screen and (max-width: 1000px) {
+  .icon-container {
+    flex-direction: row-reverse;
+  }
+  .t{
+    flex-direction: column;
+  }
+  .top-level-container{
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }
