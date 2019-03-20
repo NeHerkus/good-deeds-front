@@ -1,26 +1,28 @@
 import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
-
+import {JwtService} from './jwt.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationInterceptorService implements HttpInterceptor {
 
-  intercept(req: HttpRequest<any>,
-            next: HttpHandler): Observable<HttpEvent<any>> {
+  constructor(public auth: JwtService) {}
 
-    const accessToken = localStorage.getItem('access_token');
+  intercept(request: HttpRequest<any>, next: HttpHandler):
+    Observable<HttpEvent<any>> {
 
-    if (accessToken) {
-      const cloned = req.clone({
-        headers: req.headers.set('Authorisation', accessToken)
+    if (this.auth.isLoggedIn) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `${this.auth.getToken()}`
+        }
       });
 
-      return next.handle(cloned);
+      return next.handle(request);
     } else {
-      return next.handle(req);
+      return next.handle(request);
     }
   }
 }

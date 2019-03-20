@@ -2,7 +2,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AngularMaterialModule} from './angular-material';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -21,7 +21,7 @@ import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
-import { LayoutModule } from '@angular/cdk/layout';
+import {LayoutModule} from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -56,7 +56,16 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule
   ],
-  providers: [IdeaService, AlertService, AuthenticationInterceptorService],
+  providers: [
+    IdeaService,
+    AlertService,
+    AuthenticationInterceptorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap:
     [AppComponent]
 })
