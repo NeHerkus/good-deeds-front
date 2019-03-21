@@ -12,8 +12,6 @@ import {first} from 'rxjs/operators';
 export class NavigationBarComponent implements OnInit {
   form: FormGroup;
   private formSubmitAttempt: boolean;
-
-
   submitted = false;
   loading = false;
   returnUrl: string;
@@ -27,7 +25,6 @@ export class NavigationBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createUserForm();
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
@@ -73,5 +70,9 @@ export class NavigationBarComponent implements OnInit {
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }

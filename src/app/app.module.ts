@@ -1,4 +1,3 @@
-// angular imports
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AngularMaterialModule} from './angular-material';
