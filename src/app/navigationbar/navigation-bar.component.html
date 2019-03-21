@@ -1,41 +1,86 @@
-<mat-toolbar color="green">
+<div fxLayout="column" fxFlex>
+  <mat-toolbar class="mat-toolbar">
 
-  <span class="example-fill-remaining-space"></span>
-  <div>
-    <a class="a" href="/home">
-      <button mat-button>
-        <mat-icon color="white">home</mat-icon>
-        <b> Home</b>
-      </button>
-    </a>
-    <a class="a" href="/newidea">
-      <button mat-button>
-        <mat-icon color="white">assignment</mat-icon>
-        <b>Add idea</b>
-      </button>
-    </a>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!isLoggedIn()">
-      <input type="text" name="email" formControlName="email" maxlength="{{maxInputLength}}" placeholder="Email">
-      <mat-error *ngIf="isFieldInvalid('email')">
-        <b class="emailmessage"> Please enter your email</b>
-      </mat-error>
-      <input class="password" type="password" formControlName="password" name="password" maxlength="{{maxInputLength}}"
-             placeholder="Password">
-      <mat-error *ngIf="isFieldInvalid('password')">
-        <b class="passwordmessage"> Please enter your password</b>
-      </mat-error>
-      <button class="loginbutton" mat-button (click)="onSubmit()">Login</button>
-    </form>
-    <div *ngIf="!isLoggedIn()">
-      <a href="/newuser">
-        <button mat-button class="button">
-          <mat-icon>how_to_reg</mat-icon>
-          <b>Sign up</b>
-        </button>
-      </a>
-    </div>
-  </div>
-</mat-toolbar>
+    <mat-toolbar-row class="border">
+      <div class="navbar-title">
+        <div class="navbar-title-text">
+          Summer of good deeds
+        </div>
+      </div>
 
+      <div class="navbar-button-block"
+           fxShow="false"
+           fxShow.gt-xs>
 
+        <div class="navbar-button">
+          <a routerLink="home">
+            <button mat-button class="color">
+              <b>Home</b>
+            </button>
+          </a>
+        </div>
+
+        <div class="navbar-button">
+          <a routerLink="newidea">
+            <button mat-button class="color">
+              <b>Deeds list</b>
+            </button>
+          </a>
+        </div>
+
+        <div class="navbar-button">
+          <a routerLink="newidea">
+            <button mat-button class="color">
+              <b> Add idea</b>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <span class="example-spacer"></span>
+
+      <div *ngIf="!isLoggedIn()" class="login-button">
+        <div class="login-button-text" >Log in / Sign up</div>
+      </div>
+
+      <div (click)="onLogout()" *ngIf="isLoggedIn()" class="logout-button">
+        <div class="login-button-text" >Log out</div>
+      </div>
+
+    </mat-toolbar-row>
+
+    <mat-toolbar-row class="border" fxShow="false" fxShow.xs>
+
+      <div class="navbar-button">
+        <a routerLink="home">
+          <button mat-button class="button-text">
+            <b>Home</b>
+          </button>
+        </a>
+      </div>
+
+      <span class="example-spacer"></span>
+
+      <div class="navbar-button">
+        <a routerLink="newidea">
+          <button mat-button class="button-text">
+            <b>Deeds list</b>
+          </button>
+        </a>
+      </div>
+
+      <span class="example-spacer"></span>
+
+      <div class="navbar-button">
+        <a routerLink="newidea">
+          <button mat-button class="button-text">
+            <b> Add idea</b>
+          </button>
+        </a>
+      </div>
+
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+</div>
 

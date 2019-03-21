@@ -15,9 +15,10 @@ import {IdeasTableComponent} from './ideastable/ideas-table.component';
 import {IdeaService} from './services/idea.service';
 import {AuthenticationInterceptorService} from './services/authentication-interceptor.service';
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
-import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
+import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {AlertService} from './services/alert.service';
     NavigationBarComponent,
     NewUserFormpageComponent,
     PageNotFoundComponent,
-    AlertComponent
+    AlertComponent,
+    NewUserFormpageComponent,
+    PageNotFoundComponent,
   ],
 
   imports: [
@@ -44,7 +47,8 @@ import {AlertService} from './services/alert.service';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [IdeaService, AuthenticationInterceptorService, AlertService],
   bootstrap:
