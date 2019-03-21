@@ -48,7 +48,6 @@
 
 .submit-button-block {
   max-width: 650px;
-  height: 85px;
   margin: 0 auto;
 }
 
@@ -58,7 +57,7 @@
   justify-content: center;
   align-items: center;
 }
-.the-button {
+.button {
   background-color: #f7cd02;
   color: #0e0e0e;
   font-size: 17px;

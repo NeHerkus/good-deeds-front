@@ -8,7 +8,9 @@
         </div>
       </div>
 
-      <div class="navbar-button-block" fxShow="false" fxShow.gt-xs >
+      <div class="navbar-button-block"
+           fxShow="false"
+           fxShow.gt-xs>
 
         <div class="navbar-button">
           <a routerLink="/home">
@@ -37,24 +39,29 @@
 
       <span class="example-spacer"></span>
 
-      <div class="login-button">
-        <div class="login-button-text">Log in / Sign up</div>
+      <div routerLink="login" *ngIf="!isLoggedIn()" class="login-button">
+
+        <div class="login-button-text" >Log in / Sign up</div>
+
       </div>
+
+      <div (click)="onLogout()" *ngIf="isLoggedIn()" class="logout-button">
+        <div class="login-button-text" >Log out</div>
+      </div>
+
     </mat-toolbar-row>
 
-    <mat-toolbar-row fxShow="false" fxShow.xs class="border">
+    <mat-toolbar-row class="border" fxShow="false" fxShow.xs>
+
+      <div class="navbar-button">
+        <a routerLink="home">
+          <button mat-button color="primary">
+            <b>Home</b>
+          </button>
+        </a>
+      </div>
 
       <span class="example-spacer"></span>
-
-        <div class="navbar-button">
-          <a routerLink="/home">
-            <button mat-button class="button-text">
-              <b>Home</b>
-            </button>
-          </a>
-        </div>
-
-        <span class="example-spacer"></span>
 
         <div class="navbar-button">
           <a routerLink="/newidea">
@@ -64,7 +71,7 @@
           </a>
         </div>
 
-        <span class="example-spacer"></span>
+      <span class="example-spacer"></span>
 
         <div class="navbar-button">
           <a routerLink="/newidea">
@@ -74,7 +81,6 @@
           </a>
         </div>
 
-      <span class="example-spacer"></span>
     </mat-toolbar-row>
 
   </mat-toolbar>
