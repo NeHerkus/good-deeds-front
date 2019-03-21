@@ -15,6 +15,7 @@ export class NavigationBarComponent implements OnInit {
   submitted = false;
   loading = false;
   returnUrl: string;
+  userInfo: any = JSON.parse(localStorage.getItem('user'));
 
   constructor(
     private formBuilder: FormBuilder,      // {3}
