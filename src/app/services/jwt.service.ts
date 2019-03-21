@@ -21,7 +21,7 @@ export class JwtService {
       {observe: 'response'})
       .pipe(tap(res => {
         localStorage.setItem('access_token', res.headers.get('Authorization'));
-
+        this.getUserInfo();
       }));
   }
 
@@ -38,6 +38,7 @@ export class JwtService {
 
   logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('user');
   }
 
   public get isLoggedIn(): boolean {
@@ -46,5 +47,12 @@ export class JwtService {
 
   public getToken(): string {
     return localStorage.getItem('access_token');
+  }
+
+  getUserInfo() {
+    this.httpClient.get(API_ENDPOINTS.apiUrl + 'user', {observe: 'response'})
+      .subscribe( res => {
+      localStorage.setItem('user', JSON.stringify(res.body));
+    });
   }
 }
