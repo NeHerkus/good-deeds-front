@@ -4,6 +4,7 @@ import {AngularMaterialModule} from './angular-material';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LayoutModule} from '@angular/cdk/layout';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -19,9 +20,7 @@ import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
 import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
-import {LayoutModule} from '@angular/cdk/layout';
-
+import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +36,7 @@ import {LayoutModule} from '@angular/cdk/layout';
     AlertComponent,
     NewUserFormpageComponent,
     PageNotFoundComponent,
+    LoginSignupPageComponent,
   ],
 
   imports: [
@@ -55,6 +55,9 @@ import {LayoutModule} from '@angular/cdk/layout';
     MatSidenavModule,
     MatListModule
   ],
+
+  providers: [IdeaService, AuthenticationInterceptorService, AlertService],
+
   providers: [
     IdeaService,
     AlertService,

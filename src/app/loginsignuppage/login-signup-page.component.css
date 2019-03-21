@@ -1,0 +1,100 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-form {
+  flex: 1;
+  margin: 10px;
+  order: 2;
+}
+
+.log-in-form {
+  flex: 1;
+  margin: 10px;
+  order: 1;
+  align-self: stretch;
+}
+
+.input-form {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.centered {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(0, 102, 153, 0.9);
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.card {
+  min-width: 300px;
+  max-width: 500px;
+  height: auto;
+  margin: auto ;
+}
+
+.card-content {
+  height: auto;
+}
+
+.submit-button {
+  position: center;
+  margin-top: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.the-button {
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: rgba(0, 102, 153, 1);
+  font-family: Roboto, monospace;
+  color: #FFFFFF;
+  text-align: center;
+  width: 120px;
+}
+.footer{
+  background-color: #242623 !important;
+}
+
+::ng-deep .mat-card-content{
+  color: #2196f3;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #000000;
+}
+
+::ng-deep .mat-input-element{
+  color: rgba(10, 10, 10, 0.73);
+  font-family: Arial, serif;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 100%;
+}
+
+::ng-deep.mat-card-content>:last-child:not(.mat-card-footer), .mat-card>:last-child:not(.mat-card-footer) {
+  margin-bottom: 15px;
+}
+
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: block;
+  position: relative;
+  padding: 25px;
+  border-radius: 15px;
+}
