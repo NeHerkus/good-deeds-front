@@ -40,7 +40,7 @@
       <span class="example-spacer"></span>
 
       <div class="login-button">
-        <div class="login-button-text">Log in / Sign up</div>
+        <div *ngIf="isLoggedIn()" class="login-button-text" >Log in / Sign up</div>
       </div>
     </mat-toolbar-row>
 

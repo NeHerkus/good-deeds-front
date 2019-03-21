@@ -12,8 +12,6 @@ import {first} from 'rxjs/operators';
 export class NavigationBarComponent implements OnInit {
   form: FormGroup;
   private formSubmitAttempt: boolean;
-
-
   submitted = false;
   loading = false;
   returnUrl: string;
@@ -27,51 +25,55 @@ export class NavigationBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createUserForm();
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
-  }
-
-  createUserForm() {
-    this.form = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-
-  }
-
-  isFieldInvalid(field: string) {
-    return (
-      (!this.form.get(field).valid && this.form.get(field).touched) ||
-      (this.form.get(field).untouched && this.formSubmitAttempt)
-    );
-  }
-
-  get f() {
-    return this.form.controls;
-  }
-
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.form.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          // this.alertService.error(error);
-          this.loading = false;
-        });
   }
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
+
+  onLogout() {
+    this.authService.logout();
+  }
 }
+
+// createUserForm() {
+//   this.form = this.formBuilder.group({
+//     email: ['', Validators.required],
+//     password: ['', Validators.required]
+//   });
+//
+// }
+
+// isFieldInvalid(field: string) {
+//   return (
+//     (!this.form.get(field).valid && this.form.get(field).touched) ||
+//     (this.form.get(field).untouched && this.formSubmitAttempt)
+//   );
+// }
+
+// get f() {
+//   return this.form.controls;
+// }
+
+// onSubmit() {
+//   this.submitted = true;
+//
+//   // stop here if form is invalid
+//   if (this.form.invalid) {
+//     return;
+//   }
+//
+//   this.loading = true;
+//   this.authService.login(this.f.email.value, this.f.password.value)
+//     .pipe(first())
+//     .subscribe(
+//       data => {
+//         this.router.navigate([this.returnUrl]);
+//       },
+//       error => {
+//         // this.alertService.error(error);
+//         this.loading = false;
+//       });
+// }
+
