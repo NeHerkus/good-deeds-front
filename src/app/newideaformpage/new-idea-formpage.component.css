@@ -30,7 +30,6 @@
   margin-right: 2%;
 }
 
-/*card part*/
 .card {
   min-width: 300px;
   max-width: 600px;
@@ -43,11 +42,9 @@
   height: auto;
 }
 
-
 .submit-button {
   position: center;
   margin-top: 15px;
-
 }
 
 .footer {
@@ -67,6 +64,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
 }
 
 .button {
@@ -100,7 +98,6 @@
 ::ng-deep.mat-card-content>:last-child:not(.mat-card-footer), .mat-card>:last-child:not(.mat-card-footer) {
   margin-bottom: -25px;
 }
-
 
 .mat-card {
   transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
