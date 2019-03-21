@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs/operators';
 import {API_ENDPOINTS} from '../constants/api-constants';
@@ -7,6 +7,8 @@ import {API_ENDPOINTS} from '../constants/api-constants';
   providedIn: 'root'
 })
 export class JwtService {
+
+  onGetUserInfoEvent = new EventEmitter();
 
   constructor(
     private httpClient: HttpClient
@@ -53,6 +55,7 @@ export class JwtService {
     this.httpClient.get(API_ENDPOINTS.apiUrl + 'user', {observe: 'response'})
       .subscribe( res => {
       localStorage.setItem('user', JSON.stringify(res.body));
+      this.onGetUserInfoEvent.emit();
     });
   }
 }

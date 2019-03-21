@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router, ActivatedRoute} from '@angular/router';
 import {JwtService} from '../services/jwt.service';
-import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -10,63 +7,18 @@ import {first} from 'rxjs/operators';
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent implements OnInit {
-  form: FormGroup;
-  private formSubmitAttempt: boolean;
-  submitted = false;
-  loading = false;
-  returnUrl: string;
-  userInfo: any = JSON.parse(localStorage.getItem('user'));
 
-  constructor(
-    private formBuilder: FormBuilder,      // {3}
-    private authService: JwtService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
-  }
-
-  ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
-  }
-
-  createUserForm() {
-    this.form = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-
-  }
-
-  isFieldInvalid(field: string) {
-    return (
-      (!this.form.get(field).valid && this.form.get(field).touched) ||
-      (this.form.get(field).untouched && this.formSubmitAttempt)
+  constructor(private authService: JwtService) {
+    this.authService.onGetUserInfoEvent.subscribe(
+      () => {
+        this.userInfo = JSON.parse(localStorage.getItem('user'));
+      }
     );
   }
 
-  get f() {
-    return this.form.controls;
-  }
+  userInfo: string = JSON.parse(localStorage.getItem('user'));
 
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.form.invalid) {
-      return;
-    }
-
-    this.loading = true;
-    this.authService.login(this.f.email.value, this.f.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          // this.alertService.error(error);
-          this.loading = false;
-        });
+  ngOnInit() {
   }
 
   isLoggedIn(): boolean {
