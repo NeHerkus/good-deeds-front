@@ -60,10 +60,10 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   }
 
   onParticipateButtonPress(id: string) {
-    this.ideaService.updateParticipating(id, 'Participate');
+    this.ideaService.updateParticipating(id, 'PARTICIPANT');
   }
 
   onOrganizeButtonPress(id: string) {
-    this.ideaService.updateParticipating(id, 'Organize');
+    this.ideaService.updateParticipating(id, 'CAPTAIN');
   }
 }
