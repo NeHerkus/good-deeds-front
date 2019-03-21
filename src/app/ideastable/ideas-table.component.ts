@@ -3,11 +3,18 @@ import {IdeaService} from '../services/idea.service';
 import {Idea} from '../models/idea';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 import {JwtService} from '../services/jwt.service';
+import {animate, state, trigger, style, transition} from '@angular/animations';
 
 @Component({
   selector: 'app-ideas-table',
   templateUrl: './ideas-table.component.html',
   styleUrls: ['./ideas-table.component.css'],
+  animations: [trigger('detailExpand',
+    [state('collapsed', style({height: '0px', minHeight: '0', display: 'none'})),
+      state('expanded', style({height: '*'})),
+      transition('expand <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class IdeasTableComponent implements OnInit, AfterViewInit {
 
@@ -18,6 +25,7 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   columnNames: string[] = ['name', 'organization', 'location', 'action'];
   private paginator: MatPaginator;
   private isParticipating: boolean;
+  expandedIdea: Idea | null;
 
   @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
     this.paginator = mp;
