@@ -18,7 +18,7 @@
         <a *ngIf="!authService.isLoggedIn">You need to sign in to participate in Ideas</a>
         <button class="btn btn-success"
                 *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
-        (click)="onOrganizeButtonPress(idea.id)">Organize
+                (click)="onOrganizeButtonPress(idea.id)">Organize
         </button>
         <button class="btn btn-success"
                 *ngIf="authService.isLoggedIn && !isParticipating"
