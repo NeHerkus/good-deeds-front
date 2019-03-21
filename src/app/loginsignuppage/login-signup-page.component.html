@@ -1,7 +1,8 @@
-<div class="form-container"
-     fxFlex fxLayout="column"
-     fxLayout.gt-sm="row">
+<div >
 
+<div class="form-container"
+     fxFlex fxLayout="row"
+     style="text-align: center">
   <div class="sign-in-form">
     <form class="form"
           [formGroup]="signInForm">
@@ -97,7 +98,6 @@
             <div class="submit-button-block button-container">
               <div class="submit-button">
                 <button mat-raised-button
-                        color="primary"
                         (click)="onSignUpSubmit()"
                         class="the-button">
                   <b>Register</b>
@@ -150,7 +150,6 @@
             <div class="submit-button-block button-container">
               <div class="submit-button">
                 <button mat-raised-button
-                        color="primary"
                         (click)="onLogInSubmit()"
                         class="the-button">
                   <b>Log in</b>
@@ -164,7 +163,10 @@
   </div>
 
 </div>
+</div>
 
+<div class="center footer">
+</div>
 
 
 

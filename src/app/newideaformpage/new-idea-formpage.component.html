@@ -11,7 +11,7 @@
                maxlength="{{ideaFormOptions.nameFormMaxSymbols}}"
                placeholder="Name of idea"
                required>
-        <mat-hint align="start"><strong>Enter the name of your idea</strong></mat-hint>
+        <mat-hint align="start">Enter the name of your idea</mat-hint>
         <mat-hint align="end"> {{ideaForm.controls['name'].value.length}} / {{ideaFormOptions.nameFormMaxSymbols}} </mat-hint>
       </mat-form-field>
 
@@ -34,7 +34,7 @@
                maxlength="{{ideaFormOptions.organisationFormMaxSymbols}}"
                placeholder="Organization or person"
                required>
-        <mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>
+        <mat-hint align="start">Enter the organization name where you are going to do good job
         </mat-hint>
         <mat-hint align="end"> {{ideaForm.controls['organization'].value.length}} / {{ideaFormOptions.organisationFormMaxSymbols}}</mat-hint>
       </mat-form-field>
@@ -46,8 +46,8 @@
                type="text"
                maxlength="77"
                placeholder="Web site">
-        <mat-hint align="start"><strong>Enter the website of the organization where you are going to do the good
-          deed</strong>
+        <mat-hint align="start">Enter the website of the organization where you are going to do the good
+          deed
         </mat-hint>
         <mat-hint align="end"> {{ideaForm.controls['website'].value.length}} / {{ideaFormOptions.websiteFormMaxSymbols}}</mat-hint>
       </mat-form-field>
@@ -81,7 +81,7 @@
                     placeholder="Idea for a good job"
                     required></textarea>
         <mat-hint align="end"> {{ideaForm.controls['description'].value.length}} / {{ideaFormOptions.ideaFormMaxSymbols}}</mat-hint>
-        <mat-hint align="start"><strong>Enter your idea</strong>
+        <mat-hint align="start">Enter your idea
         </mat-hint>
       </mat-form-field>
 
@@ -94,25 +94,24 @@
                     placeholder="Contact person"
                     required></textarea>
         <mat-hint align="end"> {{ideaForm.controls['contactPerson'].value.length}} / {{ideaFormOptions.contactFormMaxSymbols}}</mat-hint>
-        <mat-hint align="start"><strong>Enter contact's info</strong>
+        <mat-hint align="start">Enter contact's info
         </mat-hint>
       </mat-form-field>
+
+      <div class="flex-container">
+        <div class="submit-button-block button-container">
+          <div class="button">
+            <button mat-button
+                    (click)="onSubmitButtonPress()">
+              <b>Submit</b>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
     </mat-card-content>
   </mat-card>
 </form>
 
-<div class="flex-container">
-  <div class="submit-button-block button-container">
-    <div class="submit-button">
-      <button mat-button
-              class="button"
-              color="primary"
-              (click)="onSubmitButtonPress()">
-              <b>Submit</b>
-      </button>
-    </div>
-  </div>
-</div>
 
-<footer class="w3-container w3-padding-32 footer ">
-</footer>

@@ -1,4 +1,4 @@
-/*input form part*/
+
 .input-form {
   width: 100%;
   margin-top: 10px;
@@ -9,7 +9,6 @@
   text-align: center;
 }
 
-/*checkbox section part*/
 
 .checkbox-form-part {
   height: auto;
@@ -44,16 +43,23 @@
   height: auto;
 }
 
-/*submit button part*/
+
 .submit-button {
   position: center;
   margin-top: 15px;
+
+}
+
+.footer {
+  border-top-width: thin;
+  border-top-style: groove;
+  height: 75px;
 }
 
 .submit-button-block {
   max-width: 650px;
-  height: 85px;
-  margin: 0 auto;
+  height: 80px;
+  margin: 40px auto 0;
 }
 
 .flex-container {
@@ -62,13 +68,45 @@
   justify-content: center;
   align-items: center;
 }
+
 .button {
-  background-color: #f7cd02;
-  color: #0e0e0e;
   font-size: 17px;
   border: none;
   cursor: pointer;
+  border-radius: 15px;
+  background-color: rgba(0, 102, 153, 1);
+  font-family: Roboto, monospace;
+  color: #FFFFFF;
+  text-align: center;
+  width: 120px;
 }
 .footer{
   background-color: #242623 !important;
 }
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #000000;
+}
+
+::ng-deep .mat-input-element{
+  color: rgba(10, 10, 10, 0.73);
+  font-family: Arial, serif;
+}
+
+::ng-deep.mat-form-field-subscript-wrapper {
+  font-size: 100%;
+}
+
+::ng-deep.mat-card-content>:last-child:not(.mat-card-footer), .mat-card>:last-child:not(.mat-card-footer) {
+  margin-bottom: -25px;
+}
+
+
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: block;
+  position: relative;
+  padding: 25px;
+  border-radius: 15px;
+}
+
