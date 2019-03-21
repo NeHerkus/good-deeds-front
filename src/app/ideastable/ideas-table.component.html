@@ -1,36 +1,97 @@
-<div *ngIf="ideasLength">
-  <table mat-table [dataSource]="ideasSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let idea"> {{idea.name}} </td>
-    </ng-container>
-    <ng-container matColumnDef="organization">
-      <th mat-header-cell *matHeaderCellDef>Organization</th>
-      <td mat-cell *matCellDef="let idea"> {{idea.organization}} </td>
-    </ng-container>
-    <ng-container matColumnDef="location">
-      <th mat-header-cell *matHeaderCellDef>Location</th>
-      <td mat-cell *matCellDef="let idea"> {{idea.location}} </td>
-    </ng-container>
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Action</th>
-      <td mat-cell *matCellDef="let idea">
-        <a *ngIf="!authService.isLoggedIn">You need to sign in to participate in Ideas</a>
-        <button class="btn btn-success"
-                *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
-                (click)="onOrganizeButtonPress(idea.id)">Organize
-        </button>
-        <button class="btn btn-success"
-                *ngIf="authService.isLoggedIn && !isParticipating"
-                (click)="onParticipateButtonPress(idea.id)">Participate
-        </button>
-        <a *ngIf="authService.isLoggedIn && isParticipating">Already participating</a>
-      </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
-    <tr mat-row *matRowDef="let row; columns: columnNames"></tr>
-  </table>
-  <mat-paginator [length]="ideasLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-                 showFirstLastButtons></mat-paginator>
+<div>
+  <div></div>
+  <div>
+    <table mat-table
+           [dataSource]="ideasSource" multiTemplateDataRows
+           class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th class="name-header" mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell class="text" *matCellDef="let idea"> {{idea.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="organization">
+        <th class="org-header" mat-header-cell *matHeaderCellDef>Organization</th>
+        <td mat-cell class="text" *matCellDef="let idea"> {{idea.organization}} </td>
+      </ng-container>
+      <ng-container matColumnDef="location">
+        <th class="location-header" mat-header-cell *matHeaderCellDef>Location</th>
+        <td mat-cell class="text" *matCellDef="let idea"> {{idea.location}} </td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th class="action action-header" mat-header-cell *matHeaderCellDef>Action</th>
+        <td mat-cell class="text action" *matCellDef="let idea">
+          <a *ngIf="!authService.isLoggedIn"><b>Sign in to participate</b></a>
+          <button class="btn btn-success"
+                  *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
+                  (click)="onOrganizeButtonPress(idea.id)">Organize
+          </button>
+          <button class="btn btn-success"
+                  *ngIf="authService.isLoggedIn && !isParticipating"
+                  (click)="onParticipateButtonPress(idea.id)">Participate
+          </button>
+          <a *ngIf="authService.isLoggedIn && isParticipating"><b>Already participating</b></a>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let idea" [attr.colspan]="columnNames.length">
+          <div class="idea-detail"
+               [@detailExpand]="idea == expandedIdea ? 'expanded' : 'collapsed'">
+            <div class="action-small">
+              <a *ngIf="!authService.isLoggedIn"><b>Sign in to participate</b></a>
+              <button class="btn btn-success"
+                      *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
+                      (click)="onOrganizeButtonPress(idea.id)">Organize
+              </button>
+              <button class="btn btn-success"
+                      *ngIf="authService.isLoggedIn && !isParticipating"
+                      (click)="onParticipateButtonPress(idea.id)">Participate
+              </button>
+              <a *ngIf="authService.isLoggedIn && isParticipating"><b>Already participating</b></a>
+            </div>
+            <div class="idea-description detail">
+              <div class="detail-name">
+                <b>Description: </b>
+              </div>
+              <div class="detail-text text">
+                {{idea.description}}
+              </div>
+            </div>
+            <div class="idea-website detail">
+              <div class="detail-name">
+                <b>Website: </b>
+              </div>
+              <div class="detail-text text">
+                {{idea.website}}
+              </div>
+            </div>
+            <div class="idea-optimal detail">
+              <div class="detail-name">
+                <b>Participants amount: </b>
+              </div>
+              <div class="detail-text text">
+                {{idea.optimalParticipantsAmount}}
+              </div>
+            </div>
+            <div class="idea-contact detail">
+              <div class="detail-name">
+                <b>Contact person: </b>
+              </div>
+              <div class="detail-text">
+                {{idea.contactPerson}}
+              </div>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+      <tr mat-row *matRowDef="let idea; columns: columnNames;"
+          class="idea-row"
+          [class.expanded-row]="expandedIdea === idea"
+          (click)="expandedIdea = expandedIdea === idea ? null : idea">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+    </table>
+    <mat-paginator [length]="ideasLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+                   showFirstLastButtons></mat-paginator>
+  </div>
 </div>
 <div class="footer"></div>
