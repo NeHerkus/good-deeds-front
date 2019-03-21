@@ -18,7 +18,6 @@ import {AuthenticationInterceptorService} from './services/authentication-interc
 import {NewUserFormpageComponent} from './newuserformpage/new-user-formpage.component';
 import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
-import {PageNotFoundComponent} from './pagenotfound/page-not-found.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.component';
 
@@ -35,7 +34,6 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     NewUserFormpageComponent,
     AlertComponent,
     NewUserFormpageComponent,
-    PageNotFoundComponent,
     LoginSignupPageComponent,
   ],
 
