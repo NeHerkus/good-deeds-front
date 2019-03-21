@@ -94,7 +94,12 @@
   border-radius: 15px;
 }
 .footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  position: absolute;
   border-top-width: thin;
   border-top-style: groove;
-  height: 75px;
 }
