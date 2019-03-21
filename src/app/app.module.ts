@@ -56,8 +56,6 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     MatListModule
   ],
 
-  providers: [IdeaService, AuthenticationInterceptorService, AlertService],
-
   providers: [
     IdeaService,
     AlertService,

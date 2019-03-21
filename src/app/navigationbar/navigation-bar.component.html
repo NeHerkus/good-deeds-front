@@ -39,8 +39,10 @@
 
       <span class="example-spacer"></span>
 
-      <div *ngIf="!isLoggedIn()" class="login-button">
+      <div routerLink="login" *ngIf="!isLoggedIn()" class="login-button">
+
         <div class="login-button-text" >Log in / Sign up</div>
+
       </div>
 
       <div (click)="onLogout()" *ngIf="isLoggedIn()" class="logout-button">
