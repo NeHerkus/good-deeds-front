@@ -4,6 +4,7 @@ import {IdeasTableComponent} from './ideas-table.component';
 import {AngularMaterialModule} from '../angular-material';
 import {MatPaginatorModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 describe('IdeasTableComponent', () => {
@@ -13,7 +14,7 @@ describe('IdeasTableComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [IdeasTableComponent],
-      imports: [AngularMaterialModule, MatPaginatorModule, HttpClientModule]
+      imports: [AngularMaterialModule, MatPaginatorModule, HttpClientModule, BrowserAnimationsModule]
     })
       .compileComponents();
   }));
