@@ -29,6 +29,6 @@ export class IdeaService {
   }
 
   updateParticipating(id: string, message: string) {
-    return this.http.post(API_ENDPOINTS.apiUrl + 'idea', {id, message});
+    return this.http.put(API_ENDPOINTS.apiUrl + 'idea', {id, message});
   }
 }
