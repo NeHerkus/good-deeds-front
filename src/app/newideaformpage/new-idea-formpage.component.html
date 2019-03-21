@@ -32,7 +32,7 @@
                formControlName="organization"
                type="text"
                maxlength="{{ideaFormOptions.organisationFormMaxSymbols}}"
-               placeholder="Organization"
+               placeholder="Organization or person"
                required>
         <mat-hint align="start"><strong>Enter the organization name where you are going to do good job</strong>
         </mat-hint>
@@ -46,15 +46,15 @@
                type="text"
                maxlength="77"
                placeholder="Web site">
-        <mat-hint align="start"><strong>Enter the website of the organization where you are going to do good
-          job</strong>
+        <mat-hint align="start"><strong>Enter the website of the organization where you are going to do the good
+          deed</strong>
         </mat-hint>
         <mat-hint align="end"> {{ideaForm.controls['website'].value.length}} / {{ideaFormOptions.websiteFormMaxSymbols}}</mat-hint>
       </mat-form-field>
 
       <!--Optimal participators amount-->
       <mat-form-field class="input-form">
-        <mat-label>Optimal participators amount</mat-label>
+        <mat-label>Number of participants</mat-label>
         <input matInput
                formControlName="optimalParticipantsAmount"
                type="text"
@@ -78,7 +78,7 @@
                     formControlName="description"
                     type="text"
                     maxlength="{{ideaFormOptions.ideaFormMaxSymbols}}"
-                    placeholder="Idea for good job"
+                    placeholder="Idea for a good job"
                     required></textarea>
         <mat-hint align="end"> {{ideaForm.controls['description'].value.length}} / {{ideaFormOptions.ideaFormMaxSymbols}}</mat-hint>
         <mat-hint align="start"><strong>Enter your idea</strong>

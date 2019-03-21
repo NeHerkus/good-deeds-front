@@ -17,7 +17,7 @@ export class NewIdeaFormpageComponent implements OnInit {
   ideaForm: FormGroup;
   mappedIdeaCategories: any[] = [];
   ideaCategory = [
-    {category: IdeaCategory.HELP_FOR_OTHERS, selected: false, name: 'Time/Help to others'},
+    {category: IdeaCategory.HELP_FOR_OTHERS, selected: false, name: 'Time for another'},
     {category: IdeaCategory.TIME_FOR_ENVIRONMENT, selected: false, name: 'Time for better environment'},
     {category: IdeaCategory.TIME_FOR_KNOWLEDGE, selected: false, name: 'Time of sharing knowledge'},
     {category: IdeaCategory.TIME_FOR_COMMUNITIES, selected: false, name: 'Time for local communities'},
@@ -91,6 +91,7 @@ export class NewIdeaFormpageComponent implements OnInit {
 
   onSubmitButtonPress() {
     if (this.ideaForm.valid) {
+      this.optPartFieldNotEmpty();
       this.ideaService.createIdea(this.createIdea()).subscribe(
         res => {
           console.log('Request successfully sent');
@@ -109,5 +110,12 @@ export class NewIdeaFormpageComponent implements OnInit {
       duration: 3000,
     });
   }
+
+  optPartFieldNotEmpty() {
+    if (this.ideaForm.controls.optimalParticipantsAmount.value === '') {
+      this.ideaForm.controls.optimalParticipantsAmount.setValue('Unimportant');
+    }
+  }
+
 }
 
