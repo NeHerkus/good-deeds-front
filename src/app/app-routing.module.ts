@@ -13,8 +13,7 @@ const routes: Routes = [
   {path: 'newuser', component: NewUserFormpageComponent},
   {path: 'login', component: LoginSignupPageComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'notfound', component: PageNotFoundComponent},
-  {path: '**', redirectTo: '/notfound', pathMatch: 'full'}
+  {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({
