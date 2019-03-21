@@ -44,7 +44,19 @@
   cursor: pointer;
   text-align: center;
   width: 120px;
+}
 
+.logout-button {
+  height: 32px;
+  background-color: rgba(0, 102, 153, 1);
+  border-radius: 15px;
+  font-family: Roboto, monospace;
+  font-weight: 300;
+  font-size: 14px;
+  color: #FFFFFF;
+  cursor: pointer;
+  text-align: center;
+  width: 70px;
 }
 
 .example-spacer {
