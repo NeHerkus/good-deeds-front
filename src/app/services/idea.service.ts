@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Idea} from '../models/idea';
 import {API_ENDPOINTS} from '../constants/api-constants';
@@ -28,7 +28,7 @@ export class IdeaService {
     return this.http.post(API_ENDPOINTS.apiUrl + 'idea', idea);
   }
 
-  updateParticipating(id: string, message: string) {
-    return this.http.put(API_ENDPOINTS.apiUrl + 'idea', {id, message});
+  updateParticipating(ideaId: string, ideaRole: string) {
+    return this.http.post(API_ENDPOINTS.apiUrl + 'idea/update', {ideaId, ideaRole});
   }
 }

@@ -4,6 +4,7 @@ import {Idea} from '../models/idea';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 import {JwtService} from '../services/jwt.service';
 import {animate, state, trigger, style, transition} from '@angular/animations';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-ideas-table',
@@ -20,7 +21,7 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
 
   ideasLength: number;
   ideasSource = new MatTableDataSource<Idea>();
-  readonly pageSize: number = 5;
+  readonly pageSize: number = 10;
   readonly pageSizeOptions: number[] = [5, 10, 15];
   columnNames: string[] = ['name', 'organization', 'location', 'action'];
   private paginator: MatPaginator;
@@ -33,7 +34,8 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   }
 
   constructor(private ideaService: IdeaService,
-              private authService: JwtService) {
+              private authService: JwtService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -42,7 +44,7 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
         this.ideasSource.data = ideasList;
         this.ideasLength = ideasList.length;
         for (let i = 0; i < this.ideasLength; i++) {
-          if (this.ideasSource.data[i].isUserParticipating === true) {
+          if (this.ideasSource.data[i].isUserParticipating === true || this.ideasSource.data[i].isUserCaptain === true) {
             this.isParticipating = true;
           }
         }
@@ -68,10 +70,14 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   }
 
   onParticipateButtonPress(id: string) {
-    this.ideaService.updateParticipating(id, 'PARTICIPANT');
+    this.ideaService.updateParticipating(id, 'PARTICIPANT').subscribe(() => {
+      this.router.navigateByUrl('/deeds');
+    });
   }
 
   onOrganizeButtonPress(id: string) {
-    this.ideaService.updateParticipating(id, 'CAPTAIN');
+    this.ideaService.updateParticipating(id, 'CAPTAIN').subscribe(() => {
+      this.router.navigateByUrl('/deeds');
+    });
   }
 }

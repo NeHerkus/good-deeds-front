@@ -47,7 +47,8 @@ export class NewIdeaFormpageComponent implements OnInit {
     'Šilutė',
     'Palanga',
     'Radviliškis',
-    'Gargždai'];
+    'Gargždai',
+    'Kita'];
 
   constructor(private formBuilder: FormBuilder,
               private ideaService: IdeaService,
