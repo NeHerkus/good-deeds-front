@@ -4,6 +4,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {JwtService} from '../services/jwt.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {first} from 'rxjs/operators';
+import {FormNotificatorService} from '../services/form-notificator.service';
 
 @Component({
   selector: 'app-login-signup-page',
@@ -33,6 +34,7 @@ export class LoginSignupPageComponent implements OnInit {
     private authService: JwtService,
     private router: Router,
     private route: ActivatedRoute,
+    private formNotificator: FormNotificatorService
   ) {
   }
 
@@ -73,23 +75,26 @@ export class LoginSignupPageComponent implements OnInit {
   onSignUpSubmit() {
     this.signUpSubmitted = true;
 
-    if (this.signInForm.invalid) {
-      return;
+    if (this.signInForm.valid) {
+      this.loading = true;
+      this.authService.register(
+        this.signUpFormControls.fullName.value,
+        this.signUpFormControls.email.value,
+        this.signUpFormControls.password.value
+      ).subscribe(
+        data => {
+          this.router.navigate([this.returnUrl]);
+          this.formNotificator.formNotificatorService(this.userFormOptions.successfulSignUpMessage, 'OK');
+          window.scrollTo(0, 0);
+        },
+        error => {
+          this.loading = false;
+          this.formNotificator.formNotificatorService(this.userFormOptions.unsuccessfulSignUpMessage, 'OK');
+        }
+      );
+    } else {
+      this.formNotificator.formNotificatorService(this.userFormOptions.invalidSignUpFormMessage, 'OK');
     }
-
-    this.loading = true;
-    this.authService.register(
-      this.signUpFormControls.fullName.value,
-      this.signUpFormControls.email.value,
-      this.signUpFormControls.password.value
-    ).subscribe(
-      data => {
-        this.router.navigate([this.returnUrl]);
-      },
-      error => {
-        // this.alertService.error(error);
-        this.loading = false;
-      });
   }
 
   get signUpFormControls() {
@@ -107,20 +112,22 @@ export class LoginSignupPageComponent implements OnInit {
   onLogInSubmit() {
     this.logInSubmitted = true;
 
-    if (this.logInForm.invalid) {
-      return;
+    if (this.logInForm.valid) {
+      this.loading = true;
+      this.authService.login(this.logInFormControls.email.value, this.logInFormControls.password.value)
+        .pipe(first())
+        .subscribe(
+          data => {
+            this.router.navigate([this.returnUrl]);
+            this.formNotificator.formNotificatorService(this.userFormOptions.successfulLogInMessage, 'OK');
+            window.scrollTo(0, 0);
+          },
+          error => {
+            this.loading = false;
+          });
+    } else {
+      this.formNotificator.formNotificatorService(this.userFormOptions.invalidLogInFormMessage, 'OK');
     }
-
-    this.loading = true;
-    this.authService.login(this.logInFormControls.email.value, this.logInFormControls.password.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.router.navigate([this.returnUrl]);
-        },
-        error => {
-          this.loading = false;
-        });
   }
 
   get logInFormControls() {
@@ -131,3 +138,5 @@ export class LoginSignupPageComponent implements OnInit {
     return this.authService.isLoggedIn;
   }
 }
+
+

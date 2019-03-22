@@ -52,7 +52,7 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     FlexLayoutModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
   ],
 
   providers: [

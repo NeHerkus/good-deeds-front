@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {IdeaService} from '../services/idea.service';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatSnackBar} from '@angular/material';
 import {IDEA_FORM_OPTIONS} from '../constants/idea-form-constants';
 import {IdeaCategory} from '../enums/idea-category';
 import {Idea} from '../models/idea';
+import {JwtService} from '../services/jwt.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormNotificatorService} from '../services/form-notificator.service';
 
 @Component({
   selector: 'app-new-idea-formpage',
@@ -15,6 +17,7 @@ export class NewIdeaFormpageComponent implements OnInit {
 
   ideaFormOptions = IDEA_FORM_OPTIONS;
   ideaForm: FormGroup;
+  returnUrl: string;
   mappedIdeaCategories: any[] = [];
   ideaCategory = [
     {category: IdeaCategory.HELP_FOR_OTHERS, selected: false, name: 'Time for another'},
@@ -48,11 +51,15 @@ export class NewIdeaFormpageComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private ideaService: IdeaService,
-              private invalidFormError: MatSnackBar) {
+              private authService: JwtService,
+              private router: Router,
+              private route: ActivatedRoute,
+              private formNotificator: FormNotificatorService) {
   }
 
   ngOnInit() {
     this.createIdeaForm();
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/deeds';
   }
 
   get categories() {
@@ -94,21 +101,16 @@ export class NewIdeaFormpageComponent implements OnInit {
       this.optPartFieldNotEmpty();
       this.ideaService.createIdea(this.createIdea()).subscribe(
         res => {
-          console.log('Request successfully sent');
+          this.router.navigate([this.returnUrl]);
+          this.formNotificator.formNotificatorService(this.ideaFormOptions.successfulIdeaSubmitMessage, 'OK');
+          window.scrollTo(0, 0);
         },
         err => {
-          console.log('Error while sending request');
-        }
-      );
+          this.formNotificator.formNotificatorService(this.ideaFormOptions.unsuccessfulIdeaSubmitMessage, 'OK');
+        });
     } else {
-      this.openInvalidFormError('The form is invalid', 'Close');
+      this.formNotificator.formNotificatorService(this.ideaFormOptions.invalidIdeaFormMessage, 'OK');
     }
-  }
-
-  openInvalidFormError(message: string, action: string) {
-    this.invalidFormError.open(message, action, {
-      duration: 3000,
-    });
   }
 
   optPartFieldNotEmpty() {

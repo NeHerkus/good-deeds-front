@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router, ActivatedRoute} from '@angular/router';
 import {JwtService} from '../services/jwt.service';
+import {FormNotificatorService} from '../services/form-notificator.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -8,7 +11,17 @@ import {JwtService} from '../services/jwt.service';
 })
 export class NavigationBarComponent implements OnInit {
 
-  constructor(private authService: JwtService) {
+  form: FormGroup;
+  returnUrl: string;
+  userInfo: string = JSON.parse(localStorage.getItem('user'));
+
+  constructor(
+    private authService: JwtService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
+    private formNotificator: FormNotificatorService
+  ) {
     this.authService.onGetUserInfoEvent.subscribe(
       () => {
         this.userInfo = JSON.parse(localStorage.getItem('user'));
@@ -16,9 +29,8 @@ export class NavigationBarComponent implements OnInit {
     );
   }
 
-  userInfo: string = JSON.parse(localStorage.getItem('user'));
-
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   isLoggedIn(): boolean {
@@ -26,6 +38,8 @@ export class NavigationBarComponent implements OnInit {
   }
 
   onLogout() {
+    this.formNotificator.formNotificatorService('Successfully logged out', 'OK');
     this.authService.logout();
   }
+
 }
