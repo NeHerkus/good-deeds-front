@@ -72,12 +72,14 @@ export class IdeasTableComponent implements OnInit, AfterViewInit {
   onParticipateButtonPress(id: string) {
     this.ideaService.updateParticipating(id, 'PARTICIPANT').subscribe(() => {
       this.router.navigateByUrl('/deeds');
+      window.scrollTo(0, 0);
     });
   }
 
   onOrganizeButtonPress(id: string) {
     this.ideaService.updateParticipating(id, 'CAPTAIN').subscribe(() => {
       this.router.navigateByUrl('/deeds');
+      window.scrollTo(0, 0);
     });
   }
 }
