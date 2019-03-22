@@ -69,6 +69,9 @@
 
 
 @media screen and (max-width: 630px) {
+  .username-container{
+    display: none;
+  }
   .navbar-title {
     color: #003b77;
     font-size: 16px;
@@ -81,6 +84,9 @@
 
   .navbar-button-block {
     margin-left: 20px;
+  }
+  .user-icon{
+    display: block !important;
   }
 }
 
@@ -124,6 +130,12 @@
   border-left: 1px solid #CCCCCC;
   border-right: 1px solid #CCCCCC;
   color: black;
+}
+
+.user-icon{
+  display: none;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 
