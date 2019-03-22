@@ -105,3 +105,29 @@
 }
 
 
+@media screen and (max-width: 600px) {
+  .footer {
+    left: 0;
+    width: 100%;
+    bottom: unset;
+    height: 50px;
+    text-align: center;
+    position: unset;
+    border-top-width: thin;
+    border-top-style: groove;
+  }
+
+}
+@media screen and (max-height: 800px) {
+  .footer {
+    left: 0;
+    width: 100%;
+    bottom: unset;
+    height: 50px;
+    text-align: center;
+    position: unset;
+    border-top-width: thin;
+    border-top-style: groove;
+  }
+
+}
