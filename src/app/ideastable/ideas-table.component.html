@@ -21,12 +21,12 @@
         <td mat-cell class="text action" *matCellDef="let idea">
           <a *ngIf="!authService.isLoggedIn"><b>Sign in to participate</b></a>
           <button class="btn btn-success"
-                  *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
-                  (click)="onOrganizeButtonPress(idea.id)">Organize
-          </button>
-          <button class="btn btn-success"
                   *ngIf="authService.isLoggedIn && !isParticipating"
                   (click)="onParticipateButtonPress(idea.id)">Participate
+          </button>
+          <button class="btn btn-success"
+                  *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
+                  (click)="onOrganizeButtonPress(idea.id)">Organize
           </button>
           <a *ngIf="authService.isLoggedIn && isParticipating"><b>Already participating</b></a>
         </td>
@@ -38,12 +38,12 @@
             <div class="action-small">
               <a *ngIf="!authService.isLoggedIn"><b>Sign in to participate</b></a>
               <button class="btn btn-success"
-                      *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
-                      (click)="onOrganizeButtonPress(idea.id)">Organize
-              </button>
-              <button class="btn btn-success"
                       *ngIf="authService.isLoggedIn && !isParticipating"
                       (click)="onParticipateButtonPress(idea.id)">Participate
+              </button>
+              <button class="btn btn-success"
+                      *ngIf="authService.isLoggedIn && !idea.hasCaptain && !isParticipating"
+                      (click)="onOrganizeButtonPress(idea.id)">Organize
               </button>
               <a *ngIf="authService.isLoggedIn && isParticipating"><b>Already participating</b></a>
             </div>
@@ -94,4 +94,4 @@
                    showFirstLastButtons></mat-paginator>
   </div>
 </div>
-<div class="footer"></div>
+
