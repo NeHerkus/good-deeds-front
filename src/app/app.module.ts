@@ -20,6 +20,7 @@ import {AlertComponent} from './alert/alert.component';
 import {AlertService} from './services/alert.service';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     AlertComponent,
     NewUserFormpageComponent,
     LoginSignupPageComponent,
+
   ],
 
   imports: [
@@ -53,6 +55,7 @@ import {LoginSignupPageComponent} from './loginsignuppage/login-signup-page.comp
     LayoutModule,
     MatSidenavModule,
     MatListModule,
+    MatTooltipModule
   ],
 
   providers: [

@@ -47,6 +47,9 @@
       <div class="username-container" *ngIf="isLoggedIn()">
         {{userInfo.fullName}}
       </div>
+      <i class="material-icons user-icon" matTooltip="{{userInfo.fullName}}">
+        account_circle
+      </i>
       <div (click)="onLogout()" *ngIf="isLoggedIn()" class="logout-button">
         <div class="login-button-text" >Log out</div>
       </div>
