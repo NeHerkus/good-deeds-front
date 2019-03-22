@@ -13,7 +13,7 @@ export class NavigationBarComponent implements OnInit {
 
   form: FormGroup;
   returnUrl: string;
-  userInfo: string = JSON.parse(localStorage.getItem('user'));
+  userInfo: any = JSON.parse(localStorage.getItem('user'));
 
   constructor(
     private authService: JwtService,
